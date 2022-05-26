@@ -53,7 +53,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+
   justify-content: space-between;
   text-align: start;
   padding: 6px;
