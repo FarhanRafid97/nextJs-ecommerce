@@ -1,11 +1,12 @@
 import React from 'react';
 import productStyle from '../styles/Product.module.css';
+import Image from 'next/image';
 
 const ProductItem = ({ product }) => {
   return (
     <div className={productStyle.cardProduct}>
       <div className={productStyle.productPhoto}>
-        <img src={product.image} alt="photoproduct" />
+        <Image src={product.image} alt="photoproduct" />
       </div>
       <div className={productStyle.description}>
         <p className={productStyle.titleProduct}>{product.title}</p>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const about = () => {
+const About = () => {
   const [data, setData] = useState(1);
   return (
     <div>
@@ -10,4 +10,4 @@ const about = () => {
   );
 };
 
-export default about;
+export default About;

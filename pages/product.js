@@ -3,14 +3,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import ProductItem from '../components/ProductItem';
 import { getDataProduk } from '../src/redux/actions/product';
 import productStyle from '../styles/Product.module.css';
-const product = () => {
+const Product = () => {
   const dispatch = useDispatch();
 
   const [byId, setByid] = useState(8);
   const data = useSelector((state) => state.product);
   const scrollNav = () => {
-    const buttonHeigh = document.querySelector('.containerProduct');
-
     var limit =
       document.documentElement.scrollHeight -
       document.documentElement.clientHeight;
@@ -37,4 +35,4 @@ const product = () => {
   );
 };
 
-export default product;
+export default Product;
