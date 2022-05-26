@@ -5,11 +5,12 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+
   text-align: center;
 }
 
 .main {
-  padding: 5rem 0;
+  padding: 2rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -20,4 +21,8 @@
 
 .title {
   font-size: 14px;
+}
+
+.h3Text {
+  margin-bottom: 20px;
 }

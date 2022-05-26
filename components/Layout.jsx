@@ -6,11 +6,7 @@ const Layout = ({ children }) => {
     <>
       <Nav />
       <div className={layout.container}>
-        <main className={layout.main}>
-          <Header />
-          <h3>Hello This From gitHub</h3>
-          {children}
-        </main>
+        <main className={layout.main}>{children}</main>
       </div>
     </>
   );
