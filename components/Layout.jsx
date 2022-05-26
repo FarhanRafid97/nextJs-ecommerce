@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
       <div className={layout.container}>
         <main className={layout.main}>
           <Header />
-          <h3>Hello</h3>
+          <h3>Hello This From gitHub</h3>
           {children}
         </main>
       </div>
