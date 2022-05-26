@@ -1,6 +1,6 @@
 import '../styles/globals.css';
 import Layout from '../components/Layout';
-
+import { wrapper } from '../src/redux/store';
 function MyApp({ Component, pageProps }) {
   return (
     <>
@@ -11,4 +11,4 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default MyApp;
+export default wrapper.withRedux(MyApp);
