@@ -1,0 +1,16 @@
+.navbar {
+  background-color: antiquewhite;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.navbar ul {
+  display: flex;
+  column-gap: 5px;
+  align-items: center;
+}
+.navbar ul li {
+  list-style: none;
+}
