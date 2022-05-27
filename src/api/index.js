@@ -1,3 +1,6 @@
 import axios from 'axios';
 
-export const getProuct = () => axios.get('https://fakestoreapi.com/products');
+export const getProduct = (limit) =>
+  axios.get(`https://fakestoreapi.com/products?limit=${limit}`);
+export const getDetailProuct = (id) =>
+  axios.get(`https://fakestoreapi.com/products/${id}`);

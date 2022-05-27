@@ -20,7 +20,6 @@ const ProductItem = ({ product }) => {
           <p className={productStyle.priceProduct}>$.{product?.price}</p>
 
           <p className={productStyle.productDesc}>{product?.description}</p>
-          <button className={productStyle.buttonProduct}>BUY NOW</button>
         </div>
       </a>
     </Link>

@@ -13,22 +13,22 @@ const Product = () => {
     var limit =
       document.documentElement.scrollHeight -
       document.documentElement.clientHeight;
-    if (limit <= window.scrollY) {
+    if (limit <= window.scrollY && byId !== data.jmlData) {
       setByid(byId + 4);
     }
-    console.log(limit);
-    console.log(window.scrollY);
   };
+  console.log(data);
   useEffect(() => {
     window.addEventListener('scroll', scrollNav);
     dispatch(getDataProduk(byId));
   }, [dispatch, byId]);
+  console.log(data);
 
   return (
     <div className={productStyle.product}>
       <h3 className={`${productStyle.titlePageProduct}`}>Our Latest Product</h3>
       <div className={`${productStyle.containerProduct} containerProduct`}>
-        {data?.dataById?.map((product, index) => (
+        {data?.data?.map((product, index) => (
           <ProductItem product={product} key={index} />
         ))}
       </div>
