@@ -12,3 +12,15 @@ export const getDataProduk = (id) => async (dispatch) => {
     console.log(error.message);
   }
 };
+export const detailPorduct = (id) => async (dispatch) => {
+  try {
+    const { data } = await api.getProuct();
+    const detailData = data.filter((data) => Number(data.id) === Number(id));
+    dispatch({
+      type: 'DETAIL_PRODUCT',
+      data: detailData,
+    });
+  } catch (error) {
+    console.log(error.message);
+  }
+};

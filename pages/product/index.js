@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import ProductItem from '../components/ProductItem';
-import { getDataProduk } from '../src/redux/actions/product';
-import productStyle from '../styles/Product.module.css';
+import ProductItem from '../../components/ProductItem';
+import { getDataProduk } from '../../src/redux/actions/product';
+import productStyle from '../../styles/Product.module.css';
+
 const Product = () => {
   const dispatch = useDispatch();
 
