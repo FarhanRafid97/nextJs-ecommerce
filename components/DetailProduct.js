@@ -58,8 +58,8 @@ const DetailProduct = ({ product, router }) => {
         <div className={detailStyle.description}>
           <p> {product?.description}</p>
           <ul className={detailStyle.moreInfo}>
-            {moreInfo.map((bahan) => (
-              <li>{bahan}</li>
+            {moreInfo.map((bahan, index) => (
+              <li key={index}>{bahan}</li>
             ))}
           </ul>
         </div>
