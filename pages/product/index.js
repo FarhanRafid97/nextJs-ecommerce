@@ -7,21 +7,21 @@ import productStyle from '../../styles/Product.module.css';
 const Product = () => {
   const dispatch = useDispatch();
 
-  const [byId, setByid] = useState(8);
+  const [limit, setLimit] = useState(8);
   const data = useSelector((state) => state.product);
-  const scrollNav = () => {
-    var limit =
+  const scrollAddData = () => {
+    var maxHeigh =
       document.documentElement.scrollHeight -
       document.documentElement.clientHeight;
-    if (limit <= window.scrollY && byId !== data.jmlData) {
-      setByid(byId + 4);
+    if (maxHeigh <= window.scrollY && limit !== data.jmlData) {
+      setLimit(limit + 4);
     }
   };
-  console.log(data);
+
   useEffect(() => {
-    window.addEventListener('scroll', scrollNav);
-    dispatch(getDataProduk(byId));
-  }, [dispatch, byId]);
+    dispatch(getDataProduk(limit));
+    window.addEventListener('scroll', scrollAddData);
+  }, [dispatch, limit]);
   console.log(data);
 
   return (

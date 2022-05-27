@@ -36,7 +36,7 @@
 .cardProduct:hover {
   transform: translateY(-1%);
   padding: 7px;
-  border: 1px solid rgb(42, 40, 189);
+  border: 1px solid #805ad5;
 }
 .productPhoto {
   display: flex;
