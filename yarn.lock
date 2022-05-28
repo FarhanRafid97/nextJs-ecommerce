@@ -737,7 +737,7 @@
     "@chakra-ui/utils" "2.0.1"
     "@chakra-ui/visually-hidden" "2.0.1"
 
-"@chakra-ui/transition@2.0.1":
+"@chakra-ui/transition@^2.0.1", "@chakra-ui/transition@2.0.1":
   "integrity" "sha512-EI0Z61Mk7ZdiWxHA0twgtgGIUUcWGvL7GsVQrDeJQl7u2Boq+isONLWqYPqZReOXRGoSFBiKZOaxnzrmmD3OBg=="
   "resolved" "https://registry.npmjs.org/@chakra-ui/transition/-/transition-2.0.1.tgz"
   "version" "2.0.1"

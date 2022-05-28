@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
-import detailStyle from '../pages/product/DetailProduct.module.css';
-import Image from 'next/image';
-import { Flex, Button, Container, Text } from '@chakra-ui/react';
+import {
+  Flex,
+  Button,
+  Container,
+  Text,
+  Img,
+  UnorderedList,
+  ListItem,
+} from '@chakra-ui/react';
 
 import {
   AiOutlineHeart,
@@ -11,7 +17,7 @@ import {
 } from 'react-icons/ai';
 
 import { IoIosArrowBack } from 'react-icons/io';
-import { GrShop } from 'react-icons/gr';
+import CollapseEx from './CollapsEx';
 
 const DetailProduct = ({ product, router }) => {
   const moreInfo = [
@@ -31,52 +37,46 @@ const DetailProduct = ({ product, router }) => {
         alignItems="center"
         backgroundColor="white"
       >
-        {product?.image ? (
-          <>
-            <Button
-              position="absolute"
-              backgroundColor="black"
-              top="0"
-              left="0"
-              color="white"
-              borderRadius="none"
-              fontSize="40px"
-              padding="30px"
-              _hover={{ bg: 'rgb(0,0,0,0.75)', transition: '0.5s' }}
-              onClick={() => router.back()}
-            >
-              <IoIosArrowBack />
-            </Button>
+        <Button
+          position="absolute"
+          backgroundColor="black"
+          top="0"
+          left="0"
+          color="white"
+          borderRadius="none"
+          fontSize="40px"
+          padding="30px"
+          _hover={{ bg: 'rgb(0,0,0,0.75)', transition: '0.5s' }}
+          onClick={() => router.back()}
+        >
+          <IoIosArrowBack />
+        </Button>
 
-            <Button
-              position="absolute"
-              backgroundColor="black"
-              top="0"
-              right="0"
-              color="white"
-              borderRadius="none"
-              fontSize="40px"
-              padding="35px"
-              _hover={{ bg: 'black', transition: '0.5s' }}
-              _focus={{ border: 'none' }}
-              onClick={() => setLike(!like)}
-            >
-              {!like ? <AiOutlineHeart /> : <AiFillHeart />}
-            </Button>
+        <Button
+          position="absolute"
+          backgroundColor="black"
+          top="0"
+          right="0"
+          color="white"
+          borderRadius="none"
+          fontSize="40px"
+          padding="35px"
+          _hover={{ bg: 'black', transition: '0.5s' }}
+          _focus={{ border: 'none' }}
+          onClick={() => setLike(!like)}
+        >
+          {!like ? <AiOutlineHeart /> : <AiFillHeart />}
+        </Button>
 
-            <Image
-              className="imgProduct"
-              src={product?.image}
-              width={450}
-              height={450}
-              alt="Landscape picture"
-            />
-          </>
-        ) : (
-          <div className="placeholder"></div>
-        )}
+        <Img src={product?.image} width="400px" height="450px" border="none" />
       </Flex>
-      <Container color="white" textAlign="start" flex="1" padding="35px 15px">
+      <Container
+        color="white"
+        textAlign="start"
+        flex="1"
+        padding="35px 15px"
+        overflowY="scroll"
+      >
         <Text
           fontSize="xl"
           paddingLeft="5px"
@@ -94,11 +94,11 @@ const DetailProduct = ({ product, router }) => {
           <Text fontSize="md" fontWeight="light" paddingLeft="5px">
             {product?.description}
           </Text>
-          <Text paddingLeft="15px" fontSize="md" fontWeight="light">
+          <UnorderedList paddingLeft="15px" fontSize="md" fontWeight="light">
             {moreInfo.map((bahan, index) => (
-              <li key={index}>{bahan}</li>
+              <ListItem key={index}>{bahan}</ListItem>
             ))}
-          </Text>
+          </UnorderedList>
         </Container>
         <Flex padding="30px 25px" columnGap="20px">
           <Button width="50%" bg="orange.400" display="flex" columnGap="4px">
@@ -109,6 +109,11 @@ const DetailProduct = ({ product, router }) => {
             <AiOutlineShoppingCart />
             Chart
           </Button>
+        </Flex>
+        <Flex flexDirection="column" rowGap="15px">
+          <CollapseEx />
+          <CollapseEx />
+          <CollapseEx />
         </Flex>
       </Container>
     </>
