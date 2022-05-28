@@ -7,6 +7,8 @@ import {
   Img,
   UnorderedList,
   ListItem,
+  Spinner,
+  Skeleton,
 } from '@chakra-ui/react';
 
 import {
@@ -17,7 +19,10 @@ import {
 } from 'react-icons/ai';
 
 import { IoIosArrowBack } from 'react-icons/io';
-import CollapseEx from './CollapsEx';
+import CollapseEx from './detailProductComponents/CollapsEx';
+import HowMany from './detailProductComponents/HowMany';
+import Review from './detailProductComponents/Review';
+import SelectSize from './detailProductComponents/SelectSize';
 
 const DetailProduct = ({ product, router }) => {
   const moreInfo = [
@@ -68,7 +73,16 @@ const DetailProduct = ({ product, router }) => {
           {!like ? <AiOutlineHeart /> : <AiFillHeart />}
         </Button>
 
-        <Img src={product?.image} width="400px" height="450px" border="none" />
+        {product?.image ? (
+          <Img
+            src={product?.image}
+            width="400px"
+            height="450px"
+            border="none"
+          />
+        ) : (
+          <Spinner size="xl" />
+        )}
       </Flex>
       <Container
         color="white"
@@ -85,11 +99,18 @@ const DetailProduct = ({ product, router }) => {
         >
           {product?.title}
         </Text>
-        <Text padding="15px 5px">${product?.price}</Text>
-        <Container
+        {product?.price ? (
+          <Text padding="15px 5px">${product?.price}</Text>
+        ) : (
+          <Skeleton height="20px" margin="15px 5px" />
+        )}
+        <Flex
           padding="25px 0"
           borderBottom="2px solid white"
           borderTop="2px solid white"
+          flexDirection="column"
+          rowGap="15px"
+          color="white"
         >
           <Text fontSize="md" fontWeight="light" paddingLeft="5px">
             {product?.description}
@@ -99,7 +120,10 @@ const DetailProduct = ({ product, router }) => {
               <ListItem key={index}>{bahan}</ListItem>
             ))}
           </UnorderedList>
-        </Container>
+          <HowMany />
+          <SelectSize />
+          <Review />
+        </Flex>
         <Flex padding="30px 25px" columnGap="20px">
           <Button width="50%" bg="orange.400" display="flex" columnGap="4px">
             <AiOutlineShopping />

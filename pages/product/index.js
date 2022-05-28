@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import ProductItem from '../../components/ProductItem';
 import { getDataProduk } from '../../src/redux/actions/product';
 import productStyle from '../../styles/Product.module.css';
+import { Spinner } from '@chakra-ui/react';
 
 const Product = () => {
   const dispatch = useDispatch();
@@ -22,12 +23,13 @@ const Product = () => {
     dispatch(getDataProduk(limit));
     window.addEventListener('scroll', scrollAddData);
   }, [dispatch, limit]);
-  console.log(data);
+  console.log(data?.data);
 
   return (
     <div className={productStyle.product}>
       <h3 className={`${productStyle.titlePageProduct}`}>Our Latest Product</h3>
       <div className={`${productStyle.containerProduct} containerProduct`}>
+        {!data?.data && <Spinner size="xl" />}
         {data?.data?.map((product, index) => (
           <ProductItem product={product} key={index} />
         ))}
