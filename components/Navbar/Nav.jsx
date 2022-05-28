@@ -14,9 +14,6 @@ import { useEffect, useState } from 'react';
 const Nav = () => {
   const [search, setSearch] = useState(false);
 
-  if (search) {
-    document.body.style.overflow = 'hidden';
-  }
   return (
     <>
       {search && <NavSearch setSearch={setSearch} search={search} />}

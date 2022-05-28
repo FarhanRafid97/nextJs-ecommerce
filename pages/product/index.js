@@ -4,12 +4,14 @@ import ProductItem from '../../components/ProductItem';
 import { getDataProduk } from '../../src/redux/actions/product';
 import productStyle from '../../styles/Product.module.css';
 import { Spinner } from '@chakra-ui/react';
+import { getDataJson } from '../../src/redux/actions/jsonPlaceholder';
 
 const Product = () => {
   const dispatch = useDispatch();
 
   const [limit, setLimit] = useState(8);
   const data = useSelector((state) => state.product);
+  const json = useSelector((state) => state.json);
   const scrollAddData = () => {
     var maxHeigh =
       document.documentElement.scrollHeight -
@@ -18,11 +20,14 @@ const Product = () => {
       setLimit(limit + 4);
     }
   };
-
   useEffect(() => {
     window.addEventListener('scroll', scrollAddData);
+  }, [limit]);
+  useEffect(() => {
     dispatch(getDataProduk(limit));
   }, [dispatch, limit]);
+  console.log(data);
+  console.log(json);
 
   return (
     <div className={productStyle.product}>
