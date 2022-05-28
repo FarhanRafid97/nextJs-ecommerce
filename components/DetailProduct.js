@@ -125,11 +125,23 @@ const DetailProduct = ({ product, router }) => {
           <Review />
         </Flex>
         <Flex padding="30px 25px" columnGap="20px">
-          <Button width="50%" bg="orange.400" display="flex" columnGap="4px">
+          <Button
+            width="50%"
+            display="flex"
+            columnGap="4px"
+            colorScheme="orange"
+            _focus={{ border: 'none' }}
+          >
             <AiOutlineShopping />
             Buy Now
           </Button>
-          <Button width="50%" bg="orange.400" display="flex" columnGap="4px">
+          <Button
+            width="50%"
+            colorScheme="orange"
+            _focus={{ border: 'none' }}
+            display="flex"
+            columnGap="4px"
+          >
             <AiOutlineShoppingCart />
             Chart
           </Button>

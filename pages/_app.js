@@ -6,11 +6,11 @@ import { ChakraProvider } from '@chakra-ui/react';
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Layout>
-        <ChakraProvider>
+      <ChakraProvider>
+        <Layout>
           <Component {...pageProps} />
-        </ChakraProvider>
-      </Layout>
+        </Layout>
+      </ChakraProvider>
     </>
   );
 }

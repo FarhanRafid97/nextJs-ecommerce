@@ -20,10 +20,9 @@ const Product = () => {
   };
 
   useEffect(() => {
-    dispatch(getDataProduk(limit));
     window.addEventListener('scroll', scrollAddData);
+    dispatch(getDataProduk(limit));
   }, [dispatch, limit]);
-  console.log(data?.data);
 
   return (
     <div className={productStyle.product}>

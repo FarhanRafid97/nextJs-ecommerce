@@ -16,8 +16,13 @@ function CollapseEx() {
       <Container borderBottom="1px solid white" padding="10px ">
         <Flex alignItems="center" justifyContent="space-between">
           <Text fontSize="16px">Deskription</Text>
-          <Button bg="orange.400" fontSize="14px" onClick={onToggle}>
-            Show More
+          <Button
+            fontSize="14px"
+            colorScheme="orange"
+            _focus={{ border: 'none' }}
+            onClick={onToggle}
+          >
+            {isOpen ? 'Show Less' : 'Show More'}
           </Button>
         </Flex>
         <Collapse in={isOpen} animateOpacity>

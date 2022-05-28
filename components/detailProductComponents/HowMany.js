@@ -17,9 +17,11 @@ const HowMany = () => {
   return (
     <Flex color="white" paddingLeft="5px">
       <Button
-        bg="orange.400"
         borderRadius="none"
         borderLeftRadius="5px"
+        colorScheme="orange"
+        _focus={{ border: '1px solid white' }}
+        border="1px solid white"
         onClick={reductionValue}
       >
         -
@@ -33,8 +35,10 @@ const HowMany = () => {
         borderRadius="none"
       />
       <Button
-        bg="orange.400"
+        colorScheme="orange"
+        _focus={{ border: '1px solid white' }}
         borderRadius="none"
+        border="1px solid white"
         borderRightRadius="5px"
         onClick={addValue}
       >

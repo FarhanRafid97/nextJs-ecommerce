@@ -1,6 +1,6 @@
 import layout from '../styles/Layout.module.css';
-import Header from './Header';
-import Nav from './Nav';
+
+import Nav from './Navbar/Nav';
 const Layout = ({ children }) => {
   return (
     <>
