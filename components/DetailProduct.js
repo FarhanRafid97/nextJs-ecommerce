@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import detailStyle from '../pages/product/DetailProduct.module.css';
 import Image from 'next/image';
+import { Flex, Button, Container, Text } from '@chakra-ui/react';
 
 import {
   AiOutlineHeart,
@@ -19,26 +20,49 @@ const DetailProduct = ({ product, router }) => {
     'Form-fitting shape',
     'One size fits most',
   ];
+
   const [like, setLike] = useState(false);
   return (
     <>
-      <div className={`${detailStyle.photoProduct}`}>
+      <Flex
+        flex="1.5"
+        position="relative"
+        justifyContent="center"
+        alignItems="center"
+        backgroundColor="white"
+      >
         {product?.image ? (
           <>
-            <div className={detailStyle.wrapperProduct}>
-              <button
-                className={detailStyle.backButton}
-                onClick={() => router.back()}
-              >
-                <IoIosArrowBack />
-              </button>
-            </div>
-            <button
-              className={detailStyle.buttonLike}
+            <Button
+              position="absolute"
+              backgroundColor="black"
+              top="0"
+              left="0"
+              color="white"
+              borderRadius="none"
+              fontSize="40px"
+              padding="30px"
+              _hover={{ bg: 'rgb(0,0,0,0.75)', transition: '0.5s' }}
+              onClick={() => router.back()}
+            >
+              <IoIosArrowBack />
+            </Button>
+
+            <Button
+              position="absolute"
+              backgroundColor="black"
+              top="0"
+              right="0"
+              color="white"
+              borderRadius="none"
+              fontSize="40px"
+              padding="35px"
+              _hover={{ bg: 'black', transition: '0.5s' }}
+              _focus={{ border: 'none' }}
               onClick={() => setLike(!like)}
             >
               {!like ? <AiOutlineHeart /> : <AiFillHeart />}
-            </button>
+            </Button>
 
             <Image
               className="imgProduct"
@@ -51,29 +75,42 @@ const DetailProduct = ({ product, router }) => {
         ) : (
           <div className="placeholder"></div>
         )}
-      </div>
-      <div className={detailStyle.detailProductDesc}>
-        <h3 className={detailStyle.titleProduct}>{product?.title}</h3>
-        <p className={detailStyle.priceProduct}>${product?.price}</p>
-        <div className={detailStyle.description}>
-          <p> {product?.description}</p>
-          <ul className={detailStyle.moreInfo}>
+      </Flex>
+      <Container color="white" textAlign="start" flex="1" padding="35px 15px">
+        <Text
+          fontSize="xl"
+          paddingLeft="5px"
+          paddingBottom="25px"
+          borderBottom="2px solid white"
+        >
+          {product?.title}
+        </Text>
+        <Text padding="15px 5px">${product?.price}</Text>
+        <Container
+          padding="25px 0"
+          borderBottom="2px solid white"
+          borderTop="2px solid white"
+        >
+          <Text fontSize="md" fontWeight="light" paddingLeft="5px">
+            {product?.description}
+          </Text>
+          <Text paddingLeft="15px" fontSize="md" fontWeight="light">
             {moreInfo.map((bahan, index) => (
               <li key={index}>{bahan}</li>
             ))}
-          </ul>
-        </div>
-        <div className={detailStyle.actionMenu}>
-          <button className={detailStyle.actionButton}>
-            <AiOutlineShopping className={detailStyle.shopIcon} />
+          </Text>
+        </Container>
+        <Flex padding="30px 25px" columnGap="20px">
+          <Button width="50%" bg="orange.400" display="flex" columnGap="4px">
+            <AiOutlineShopping />
             Buy Now
-          </button>
-          <button className={detailStyle.actionButton}>
+          </Button>
+          <Button width="50%" bg="orange.400" display="flex" columnGap="4px">
             <AiOutlineShoppingCart />
             Chart
-          </button>
-        </div>
-      </div>
+          </Button>
+        </Flex>
+      </Container>
     </>
   );
 };
