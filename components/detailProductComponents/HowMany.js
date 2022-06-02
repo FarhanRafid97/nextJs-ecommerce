@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { Flex, Button, Input } from '@chakra-ui/react';
 
-const HowMany = () => {
-  const [value, setValue] = useState(0);
-
+const HowMany = ({ value, setValue }) => {
   const reductionValue = () => {
     if (value > 0) {
       setValue(value - 1);

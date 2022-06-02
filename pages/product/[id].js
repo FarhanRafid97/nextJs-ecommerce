@@ -1,19 +1,15 @@
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { detailPorduct } from '../../src/redux/actions/product';
 import detailStyle from './DetailProduct.module.css';
-
 import DetailProduct from '../../components/DetailProduct';
+import data from '../../product.json';
 
 const Detail = ({ params }) => {
-  const dispatch = useDispatch();
   const router = useRouter();
-  const product = useSelector((state) => state.product);
+  const product = data.products.filter(
+    (data) => data.id === Number(params.id)
+  )[0];
 
-  useEffect(() => {
-    dispatch(detailPorduct(params.id));
-  }, [dispatch]);
+  console.log(product);
 
   return (
     <div className={detailStyle.detailContainer}>
@@ -29,11 +25,7 @@ export function getStaticProps(context) {
 }
 
 export const getStaticPaths = async () => {
-  const res = await fetch(`https://fakestoreapi.com/products`);
-
-  const articles = await res.json();
-
-  const ids = articles.map((article) => article.id);
+  const ids = data.products.map((article) => article.id);
   const paths = ids.map((id) => ({ params: { id: id.toString() } }));
 
   return {

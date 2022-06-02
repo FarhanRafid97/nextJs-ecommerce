@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Flex,
   Button,
@@ -32,7 +32,17 @@ const DetailProduct = ({ product, router }) => {
     'One size fits most',
   ];
 
+  const [value, setValue] = useState(0);
+  const [chart, setChart] = useState(false);
   const [like, setLike] = useState(false);
+
+  useEffect(() => {
+    if (value !== 0) {
+      setChart(true);
+    } else {
+      setChart(false);
+    }
+  }, [value]);
   return (
     <>
       <Flex
@@ -120,7 +130,7 @@ const DetailProduct = ({ product, router }) => {
               <ListItem key={index}>{bahan}</ListItem>
             ))}
           </UnorderedList>
-          <HowMany />
+          <HowMany value={value} setValue={setValue} />
           <SelectSize />
           <Review />
         </Flex>
@@ -135,16 +145,30 @@ const DetailProduct = ({ product, router }) => {
             <AiOutlineShopping />
             Buy Now
           </Button>
-          <Button
-            width="50%"
-            colorScheme="orange"
-            _focus={{ border: 'none' }}
-            display="flex"
-            columnGap="4px"
-          >
-            <AiOutlineShoppingCart />
-            Chart
-          </Button>
+          {chart ? (
+            <Button
+              width="50%"
+              colorScheme="orange"
+              _focus={{ border: 'none' }}
+              display="flex"
+              columnGap="4px"
+            >
+              <AiOutlineShoppingCart />
+              Chart
+            </Button>
+          ) : (
+            <Button
+              width="50%"
+              colorScheme="orange"
+              _focus={{ border: 'none' }}
+              display="flex"
+              columnGap="4px"
+              disabled
+            >
+              <AiOutlineShoppingCart />
+              Chart
+            </Button>
+          )}
         </Flex>
         <Flex flexDirection="column" rowGap="15px">
           <CollapseEx />

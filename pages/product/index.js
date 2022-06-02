@@ -4,37 +4,37 @@ import ProductItem from '../../components/ProductItem';
 import { getDataProduk } from '../../src/redux/actions/product';
 import productStyle from '../../styles/Product.module.css';
 import { Spinner } from '@chakra-ui/react';
-import { getDataJson } from '../../src/redux/actions/jsonPlaceholder';
+import data from '../../product.json';
 
 const Product = () => {
-  const dispatch = useDispatch();
-
   const [limit, setLimit] = useState(8);
-  const data = useSelector((state) => state.product);
+
+  const dataLimit = data.products.filter((data) => data.id <= limit);
 
   const scrollAddData = () => {
     var maxHeigh =
       document.documentElement.scrollHeight -
       document.documentElement.clientHeight;
+
     if (maxHeigh <= window.scrollY && limit !== data.jmlData) {
-      setLimit(limit + 4);
+      setTimeout(() => {
+        setLimit(limit + 4);
+      }, 500);
     }
   };
   useEffect(() => {
     window.addEventListener('scroll', scrollAddData);
   }, [limit]);
+  console.log('halo');
 
-  useEffect(() => {
-    dispatch(getDataProduk(limit));
-  }, [dispatch, limit]);
-  console.log(data);
+  console.log(dataLimit);
 
   return (
     <div className={productStyle.product}>
       <h3 className={`${productStyle.titlePageProduct}`}>Our Latest Product</h3>
       <div className={`${productStyle.containerProduct} containerProduct`}>
-        {!data?.data && <Spinner size="xl" />}
-        {data?.data?.map((product, index) => (
+        {!data?.products && <Spinner size="xl" />}
+        {dataLimit.map((product, index) => (
           <ProductItem product={product} key={index} />
         ))}
       </div>

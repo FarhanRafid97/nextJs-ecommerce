@@ -6,7 +6,7 @@ import { Spinner } from '@chakra-ui/react';
 
 const ProductItem = ({ product }) => {
   return (
-    <Link href={`product/${product?.id}`}>
+    <Link href={`/product/${product.id}`}>
       <a className={productStyle.cardProduct}>
         <div className={productStyle.productPhoto}>
           {product?.image ? (
@@ -23,7 +23,6 @@ const ProductItem = ({ product }) => {
         <div className={productStyle.description}>
           <p className={productStyle.titleProduct}>{product?.title}</p>
           <p className={productStyle.priceProduct}>$.{product?.price}</p>
-
           <p className={productStyle.productDesc}>{product?.description}</p>
         </div>
       </a>
