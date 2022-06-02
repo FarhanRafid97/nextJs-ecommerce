@@ -9,5 +9,10 @@ npm run dev
 # or
 yarn dev
 ```
+Instalation
+
+```bash
+npm install
+```
 
 unfinished preview : https://wonderful-fox-bd6967.netlify.app/
