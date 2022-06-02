@@ -8,6 +8,7 @@ import {
 } from '@chakra-ui/react';
 
 import { AiOutlineSearch } from 'react-icons/ai';
+import { GiHamburgerMenu } from 'react-icons/gi';
 import NavSearch from './NavSearch';
 import { useEffect, useState } from 'react';
 
@@ -33,6 +34,7 @@ const Nav = () => {
             Logo
           </Text>
           <Flex
+            display={['none']}
             padding="7px"
             bg="white"
             width="300px"
@@ -50,6 +52,7 @@ const Nav = () => {
             <UnorderedList
               listStyleType="none"
               display="flex"
+              display={['none', 'flex']}
               columnGap="15px"
               width="300px"
               justifyContent="end"
@@ -64,6 +67,9 @@ const Nav = () => {
                 <Link href="/product">Product</Link>
               </ListItem>
             </UnorderedList>
+            <Flex display={['flex', 'none']}>
+              <GiHamburgerMenu />
+            </Flex>
           </Flex>
         </Flex>
       </Container>

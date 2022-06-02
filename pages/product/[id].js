@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import detailStyle from './DetailProduct.module.css';
 import DetailProduct from '../../components/DetailProduct';
 import data from '../../product.json';
+import { Flex } from '@chakra-ui/react';
 
 const Detail = ({ params }) => {
   const router = useRouter();
@@ -12,9 +13,13 @@ const Detail = ({ params }) => {
   console.log(product);
 
   return (
-    <div className={detailStyle.detailContainer}>
+    <Flex
+      bg="black"
+      width="100vw"
+      flexDirection={['column', 'column', 'column', 'row']}
+    >
       <DetailProduct product={product} router={router} />
-    </div>
+    </Flex>
   );
 };
 

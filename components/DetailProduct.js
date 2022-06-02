@@ -59,8 +59,8 @@ const DetailProduct = ({ product, router }) => {
           left="0"
           color="white"
           borderRadius="none"
-          fontSize="40px"
-          padding="30px"
+          fontSize={['24px', '40px']}
+          padding={['15px', '30px']}
           _hover={{ bg: 'rgb(0,0,0,0.75)', transition: '0.5s' }}
           onClick={() => router.back()}
         >
@@ -74,8 +74,8 @@ const DetailProduct = ({ product, router }) => {
           right="0"
           color="white"
           borderRadius="none"
-          fontSize="40px"
-          padding="35px"
+          fontSize={['24px', '40px']}
+          padding={['15px', '30px']}
           _hover={{ bg: 'black', transition: '0.5s' }}
           _focus={{ border: 'none' }}
           onClick={() => setLike(!like)}
@@ -100,6 +100,7 @@ const DetailProduct = ({ product, router }) => {
         flex="1"
         padding="35px 15px"
         overflowY="scroll"
+        maxHeight={['200vh', '100vh']}
       >
         <Text
           fontSize="xl"

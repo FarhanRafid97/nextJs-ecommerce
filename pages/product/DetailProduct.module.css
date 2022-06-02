@@ -1,9 +1,3 @@
-.detailContainer {
-  background-color: black;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-}
 .wrapperProduct {
   max-width: 500px;
   position: absolute;
