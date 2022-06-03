@@ -30,14 +30,14 @@ const Nav = () => {
           justifyContent="space-between"
           alignItems="center"
         >
-          <Text width="300px" fontSize="24px">
+          <Text width={['100px', '100px', '100px', '300px']} fontSize="24px">
             Logo
           </Text>
           <Flex
             display={['none', 'flex']}
             padding="7px"
             bg="white"
-            width="300px"
+            width={['200px', '200px', '250px', '300px']}
             color="black"
             fontSize="20px"
             alignItems="center"
@@ -52,7 +52,7 @@ const Nav = () => {
             <UnorderedList
               listStyleType="none"
               display="flex"
-              display={['none', 'flex']}
+              display={['none', 'none', 'none', 'flex']}
               columnGap="15px"
               width="300px"
               alignItems="center"
@@ -72,7 +72,11 @@ const Nav = () => {
                 <AiOutlineShoppingCart />
               </ListItem>
             </UnorderedList>
-            <Flex display={['flex', 'none']}>
+            <Flex
+              display={['flex', 'flex', 'flex', 'none']}
+              w="80px"
+              justifyContent="end"
+            >
               <GiHamburgerMenu />
             </Flex>
           </Flex>

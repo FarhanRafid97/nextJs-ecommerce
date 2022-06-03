@@ -13,26 +13,28 @@ const HomeIndex = () => {
     <Flex
       width="100%"
       bg="blackAlpha.100"
-      height="100vh"
-      flexDirection={['column', 'row']}
+      minHeight="100vh"
+      maxHeight={['none', 'none', 'none', '100vh']}
+      flexDirection={['column', 'column', 'column', 'row']}
     >
       <Flex
-        flexBasis="72%"
+        flexBasis={['100%', '100%', '100%', '72%']}
         h="100vh"
         backgroundColor="orange.500"
         position="relative"
         overflow="hidden"
       >
-        <Box position="absolute" textColor="white" textAlign="start" left="0">
-          <Text backgroundColor="black" padding="5px 10px" fontSize="30px">
+        <Box
+          position="absolute"
+          textColor="white"
+          textAlign="start"
+          left="0"
+          fontSize={['20px', '28px']}
+        >
+          <Text backgroundColor="black" padding="5px 10px">
             {dataProductHome[0].title}
           </Text>
-          <Text
-            backgroundColor="black"
-            display="inline"
-            padding="5px 10px"
-            fontSize="30px"
-          >
+          <Text backgroundColor="black" display="inline" padding="5px 10px">
             ${dataProductHome[0].price}
           </Text>
         </Box>
@@ -70,16 +72,12 @@ const HomeIndex = () => {
               textColor="white"
               textAlign="start"
               left="0"
+              fontSize={['20px', '28px']}
             >
-              <Text backgroundColor="black" padding="5px 10px" fontSize="26px">
+              <Text backgroundColor="black" padding="5px 10px">
                 {product.title}
               </Text>
-              <Text
-                backgroundColor="black"
-                display="inline"
-                padding="5px 10px"
-                fontSize="26px"
-              >
+              <Text backgroundColor="black" display="inline" padding="5px 10px">
                 ${product.price}
               </Text>
             </Box>

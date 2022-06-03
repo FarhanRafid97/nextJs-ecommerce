@@ -19,6 +19,7 @@ const Carousel = () => {
       columnGap="25px"
       alignItems="center"
       borderBottom="1px solid black"
+      padding=" 0 15px"
       className={homeStyle.carouselFlex}
     >
       {carouselProduct.map((product) => (

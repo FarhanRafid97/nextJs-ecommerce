@@ -7,31 +7,43 @@ const SomeText = () => {
       color="white"
       w="100%"
       h="50vh"
+      padding="15px"
       justifyContent="center"
       backgroundColor="white"
       alignItems="center"
+      flexDirection={['column', 'row']}
     >
       <Flex
-        w="50%"
-        h="100%"
-        alignItems="center"
-        justifyContent="end"
+        w={['100%', '50%']}
+        h={['50%', '100%']}
+        alignItems={['end', 'center']}
+        justifyContent={['center', 'end']}
         paddingEnd="15px"
+        paddingBottom={['15px', '0']}
       >
-        <Text color="black" fontSize="48px" fontWeight="bold" textAlign="end">
+        <Text
+          color="black"
+          fontSize={['24px', '26px', '34px', '38px']}
+          fontWeight="bold"
+          textAlign={['center', 'end']}
+        >
           Dessert dragée halvah croissant.
         </Text>
       </Flex>
       <Flex
-        w="50%"
-        h="100%"
-        alignItems="start"
-        justifyContent="center"
+        w={['100%', '50%']}
+        h={['50%', '100%']}
+        alignItems={['center', 'start']}
+        justifyContent={['start', 'center']}
         paddingEnd="15px"
         rowGap="5px"
         flexDirection="column"
       >
-        <Text textAlign="start" color="black">
+        <Text
+          textAlign={['center', 'start']}
+          color="black"
+          fontSize={['14px', '16px', '14px', '20px']}
+        >
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis,
           provident laudantium recusandae itaque sit odio error! Alias
           distinctio nostrum modi!
