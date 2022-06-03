@@ -1,0 +1,10 @@
+.imageHome {
+  transition: 0.4s;
+}
+.imageHome:hover {
+  transform: scale(1.1);
+  transition: 0.6s;
+}
+.carouselFlex::-webkit-scrollbar {
+  display: none;
+}

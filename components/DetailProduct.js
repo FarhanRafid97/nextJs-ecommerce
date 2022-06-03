@@ -84,12 +84,7 @@ const DetailProduct = ({ product, router }) => {
         </Button>
 
         {product?.image ? (
-          <Img
-            src={product?.image}
-            width="400px"
-            height="450px"
-            border="none"
-          />
+          <Img src={product?.image} maxW="600px" maxH="500px" />
         ) : (
           <Spinner size="xl" />
         )}
@@ -123,10 +118,15 @@ const DetailProduct = ({ product, router }) => {
           rowGap="15px"
           color="white"
         >
-          <Text fontSize="md" fontWeight="light" paddingLeft="5px">
+          <Text
+            fontSize="md"
+            fontWeight="bold"
+            paddingLeft="5px"
+            letterSpacing="0.1rem"
+          >
             {product?.description}
           </Text>
-          <UnorderedList paddingLeft="15px" fontSize="md" fontWeight="light">
+          <UnorderedList paddingLeft="16px" fontSize="md" fontWeight="light">
             {moreInfo.map((bahan, index) => (
               <ListItem key={index}>{bahan}</ListItem>
             ))}

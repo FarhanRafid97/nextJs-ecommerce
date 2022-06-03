@@ -7,10 +7,10 @@ import {
   Container,
 } from '@chakra-ui/react';
 
-import { AiOutlineSearch } from 'react-icons/ai';
+import { AiOutlineSearch, AiOutlineShoppingCart } from 'react-icons/ai';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import NavSearch from './NavSearch';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const Nav = () => {
   const [search, setSearch] = useState(false);
@@ -20,7 +20,7 @@ const Nav = () => {
       {search && <NavSearch setSearch={setSearch} search={search} />}
       <Container
         minWidth="100%"
-        padding="15px"
+        padding="20px"
         backgroundColor="black"
         color="white"
       >
@@ -30,11 +30,11 @@ const Nav = () => {
           justifyContent="space-between"
           alignItems="center"
         >
-          <Text width="300px" fontSize="20  px">
+          <Text width="300px" fontSize="24px">
             Logo
           </Text>
           <Flex
-            display={['none']}
+            display={['none', 'flex']}
             padding="7px"
             bg="white"
             width="300px"
@@ -55,7 +55,9 @@ const Nav = () => {
               display={['none', 'flex']}
               columnGap="15px"
               width="300px"
+              alignItems="center"
               justifyContent="end"
+              fontSize="14px"
             >
               <ListItem>
                 <Link href="/">Home</Link>
@@ -65,6 +67,9 @@ const Nav = () => {
               </ListItem>
               <ListItem>
                 <Link href="/product">Product</Link>
+              </ListItem>
+              <ListItem fontSize="20px">
+                <AiOutlineShoppingCart />
               </ListItem>
             </UnorderedList>
             <Flex display={['flex', 'none']}>

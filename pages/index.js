@@ -1,26 +1,23 @@
+import { Flex, Box } from '@chakra-ui/react';
 import Head from 'next/head';
 import Image from 'next/image';
 import { useEffect } from 'react';
-import Article from '../components/Article';
-import styles from '../styles/Layout.module.css';
+import Carousel from '../components/home/Carousel';
+import HomeIndex from '../components/home/HomeIndex';
+import Homeindex2 from '../components/home/HomeIndex2';
+import HomeIndex3 from '../components/home/HomeIndex3';
 
-export default function Home({ articles }) {
+export default function Home() {
   return (
-    <div className={styles.container}>
-      <h3>Welcome TO next App</h3>
-      <Article articles={articles} />
-    </div>
+    <Box
+      width="100vw"
+      minH="100vh"
+      backgroundColor="red.100"
+      alignItems="start"
+    >
+      <HomeIndex />
+      <Homeindex2 />
+      <HomeIndex3 />
+    </Box>
   );
 }
-
-export const getStaticProps = async () => {
-  const res = await fetch(
-    `https://jsonplaceholder.typicode.com/posts?_limit=6`
-  );
-  const articles = await res.json();
-  return {
-    props: {
-      articles,
-    },
-  };
-};

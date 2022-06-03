@@ -10,8 +10,6 @@ const Detail = ({ params }) => {
     (data) => data.id === Number(params.id)
   )[0];
 
-  console.log(product);
-
   return (
     <Flex
       bg="black"

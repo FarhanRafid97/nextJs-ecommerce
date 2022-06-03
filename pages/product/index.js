@@ -25,9 +25,6 @@ const Product = () => {
   useEffect(() => {
     window.addEventListener('scroll', scrollAddData);
   }, [limit]);
-  console.log('halo');
-
-  console.log(dataLimit);
 
   return (
     <div className={productStyle.product}>
