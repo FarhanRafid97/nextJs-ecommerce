@@ -23,7 +23,7 @@ const SomeText = () => {
       >
         <Text
           color="black"
-          fontSize={['24px', '26px', '34px', '38px']}
+          fontSize={['24px', '26px', '34px', '44px']}
           fontWeight="bold"
           textAlign={['center', 'end']}
         >

@@ -7,7 +7,7 @@ import homeStyle from './home.module.css';
 
 const Carousel = () => {
   const carouselProduct = dataProduct.products
-    .filter((product) => product.id < 8 || product.id > 20)
+    .filter((product) => product.id < 15)
     .reverse();
   console.log(carouselProduct);
   return (
@@ -16,7 +16,7 @@ const Carousel = () => {
       height="50vh"
       overflowX="scroll"
       backgroundColor="white"
-      columnGap="25px"
+      columnGap="55px"
       alignItems="center"
       borderBottom="1px solid black"
       padding=" 0 15px"
@@ -27,7 +27,7 @@ const Carousel = () => {
           <Link
             display="flex"
             flexDirection="column"
-            minW="300px"
+            minW={['200px', '250px', '275px', '300px']}
             padding="7px"
             alignItems="center"
             justifyContent="center"

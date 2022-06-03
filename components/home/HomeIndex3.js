@@ -22,8 +22,8 @@ const HomeIndex3 = () => {
           <Flex
             maxWidth="100%"
             key={index}
-            display={product.id === 22 ? 'none' : 'flex'}
-            backgroundColor={product.id === 23 ? '#d62828' : 'orange.500'}
+            display={product.id === 10 ? 'none' : 'flex'}
+            backgroundColor={product.id === 11 ? '#d62828' : 'orange.500'}
             h="50%"
             justifyContent="center"
             overflow="hidden"
