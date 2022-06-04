@@ -26,7 +26,7 @@ const ShoppingChart = () => {
     <>
       <Flex
         cursor="pointer"
-        fontSize="28px"
+        fontSize={['18px', '28px']}
         position="relative"
         ref={btnRef}
         onClick={onOpen}
@@ -35,7 +35,7 @@ const ShoppingChart = () => {
           <Badge
             background="red.600"
             position="absolute"
-            fontSize="14px"
+            fontSize={['10px', '14px']}
             right="-7px"
             top="-9px"
             color="white"

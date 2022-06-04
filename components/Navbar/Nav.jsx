@@ -26,7 +26,7 @@ const Nav = () => {
         color="white"
       >
         <Flex
-          width="80%"
+          width={['90%', '80%']}
           margin="auto"
           justifyContent="space-between"
           alignItems="center"
@@ -77,8 +77,11 @@ const Nav = () => {
               display={['flex', 'flex', 'flex', 'none']}
               w="80px"
               justifyContent="end"
+              alignItems="center"
+              columnGap="10px"
             >
               <GiHamburgerMenu />
+              <ShoppingChart />
             </Flex>
           </Flex>
         </Flex>
