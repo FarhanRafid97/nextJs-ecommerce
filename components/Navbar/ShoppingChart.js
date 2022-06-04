@@ -53,6 +53,7 @@ const ShoppingChart = () => {
         placement="right"
         onClose={onClose}
         finalFocusRef={btnRef}
+        over
       >
         <DrawerOverlay />
         <DrawerContent>
@@ -60,9 +61,11 @@ const ShoppingChart = () => {
           <DrawerHeader>Create your account</DrawerHeader>
 
           <DrawerBody>
-            {chartItems.map((items, index) => (
-              <ChartItems items={items} key={index} />
-            ))}
+            <Flex flexDirection="column" rowGap="15px">
+              {chartItems.map((items, index) => (
+                <ChartItems items={items} key={index} />
+              ))}
+            </Flex>
           </DrawerBody>
 
           <DrawerFooter>

@@ -15,6 +15,8 @@ export default (state = [], action) => {
       return isDuplicate.length !== 0
         ? duplicateData
         : (state = [...state, action.data]);
+    case 'REMOVE_CHART':
+      return state.filter((data) => data.product.id !== action.id);
 
     default:
       return state;

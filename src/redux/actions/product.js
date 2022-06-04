@@ -43,3 +43,13 @@ export const getChartData = () => (dispatch) => {
     console.log(error.message);
   }
 };
+export const removeChartData = (id) => (dispatch) => {
+  try {
+    dispatch({
+      type: 'REMOVE_CHART',
+      id,
+    });
+  } catch (error) {
+    console.log(error.message);
+  }
+};
