@@ -35,7 +35,7 @@ const HomeIndex3 = () => {
               left="0"
               fontSize={['20px', '28px']}
             >
-              <Text backgroundColor="black" padding="5px 10px" f>
+              <Text backgroundColor="black" padding="5px 10px">
                 {product.title}
               </Text>
               <Text backgroundColor="black" display="inline" padding="5px 10px">
@@ -50,7 +50,7 @@ const HomeIndex3 = () => {
                 justifyContent="center"
                 className={homeStyle.imageHome}
               >
-                <Image src={product.image} alt="Dan Abramov" />
+                <Image src={product.image} alt={product.title} />
               </Link>
             </NextLink>
           </Flex>
@@ -84,7 +84,10 @@ const HomeIndex3 = () => {
               justifyContent="center"
               className={homeStyle.imageHome}
             >
-              <Image src={dataProductHome[1].image} alt="Dan Abramov" />
+              <Image
+                src={dataProductHome[1].image}
+                alt={dataProductHome[1].title}
+              />
             </Link>
           </NextLink>
         </Box>

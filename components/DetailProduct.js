@@ -23,8 +23,14 @@ import CollapseEx from './detailProductComponents/CollapsEx';
 import HowMany from './detailProductComponents/HowMany';
 import Review from './detailProductComponents/Review';
 import SelectSize from './detailProductComponents/SelectSize';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToChart } from '../src/redux/actions/product';
 
 const DetailProduct = ({ product, router }) => {
+  const dispatch = useDispatch();
+
+  const chartData = useSelector((state) => state.chart);
+  console.log(chartData);
   const moreInfo = [
     '60% cotton, 40% acrylic',
     'Breathable cotton blend',
@@ -32,17 +38,10 @@ const DetailProduct = ({ product, router }) => {
     'One size fits most',
   ];
 
-  const [value, setValue] = useState(0);
-  const [chart, setChart] = useState(false);
+  const [value, setValue] = useState(1);
+
   const [like, setLike] = useState(false);
 
-  useEffect(() => {
-    if (value !== 0) {
-      setChart(true);
-    } else {
-      setChart(false);
-    }
-  }, [value]);
   return (
     <>
       <Flex
@@ -146,30 +145,18 @@ const DetailProduct = ({ product, router }) => {
             <AiOutlineShopping />
             Buy Now
           </Button>
-          {chart ? (
-            <Button
-              width="50%"
-              colorScheme="orange"
-              _focus={{ border: 'none' }}
-              display="flex"
-              columnGap="4px"
-            >
-              <AiOutlineShoppingCart />
-              Chart
-            </Button>
-          ) : (
-            <Button
-              width="50%"
-              colorScheme="orange"
-              _focus={{ border: 'none' }}
-              display="flex"
-              columnGap="4px"
-              disabled
-            >
-              <AiOutlineShoppingCart />
-              Chart
-            </Button>
-          )}
+
+          <Button
+            width="50%"
+            colorScheme="orange"
+            _focus={{ border: 'none' }}
+            display="flex"
+            columnGap="4px"
+            onClick={() => dispatch(addToChart({ jumlah: value, product }))}
+          >
+            <AiOutlineShoppingCart />
+            Chart
+          </Button>
         </Flex>
         <Flex flexDirection="column" rowGap="15px">
           <CollapseEx />

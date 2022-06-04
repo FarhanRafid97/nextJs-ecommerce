@@ -11,6 +11,7 @@ import { AiOutlineSearch, AiOutlineShoppingCart } from 'react-icons/ai';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import NavSearch from './NavSearch';
 import { useState } from 'react';
+import ShoppingChart from './ShoppingChart';
 
 const Nav = () => {
   const [search, setSearch] = useState(false);
@@ -69,7 +70,7 @@ const Nav = () => {
                 <Link href="/product">Product</Link>
               </ListItem>
               <ListItem fontSize="20px">
-                <AiOutlineShoppingCart />
+                <ShoppingChart />
               </ListItem>
             </UnorderedList>
             <Flex

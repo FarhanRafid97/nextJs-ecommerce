@@ -24,3 +24,22 @@ export const detailPorduct = (id) => async (dispatch) => {
     console.log(error.message);
   }
 };
+export const addToChart = (product) => (dispatch) => {
+  try {
+    dispatch({
+      type: 'ADD_CHART',
+      data: product,
+    });
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+export const getChartData = () => (dispatch) => {
+  try {
+    dispatch({
+      type: 'FETCH_DATA',
+    });
+  } catch (error) {
+    console.log(error.message);
+  }
+};

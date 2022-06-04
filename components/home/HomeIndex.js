@@ -5,6 +5,7 @@ import { Flex, Image, Box, Text, Link } from '@chakra-ui/react';
 import homeStyle from './home.module.css';
 
 const HomeIndex = () => {
+  
   const dataProductHome = product.products.filter(
     (prod) => prod.forHome === true
   );
@@ -51,7 +52,10 @@ const HomeIndex = () => {
               justifyContent="center"
               className={homeStyle.imageHome}
             >
-              <Image src={dataProductHome[0].image} alt="Dan Abramov" />
+              <Image
+                src={dataProductHome[0].image}
+                alt={dataProductHome[0].title}
+              />
             </Link>
           </NextLink>
         </Box>
@@ -89,7 +93,7 @@ const HomeIndex = () => {
                 justifyContent="center"
                 className={homeStyle.imageHome}
               >
-                <Image src={product.image} alt="Dan Abramov" />
+                <Image src={product.image} alt={product.title} />
               </Link>
             </NextLink>
           </Flex>

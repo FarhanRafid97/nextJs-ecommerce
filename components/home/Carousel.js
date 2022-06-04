@@ -22,8 +22,8 @@ const Carousel = () => {
       padding=" 0 15px"
       className={homeStyle.carouselFlex}
     >
-      {carouselProduct.map((product) => (
-        <NextLink href={`/product/${product.id}`}>
+      {carouselProduct.map((product, index) => (
+        <NextLink href={`/product/${product.id}`} key={index}>
           <Link
             display="flex"
             flexDirection="column"
