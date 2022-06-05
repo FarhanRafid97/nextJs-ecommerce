@@ -54,7 +54,7 @@ const DetailProduct = ({ product, router }) => {
       >
         <Button
           position="absolute"
-          backgroundColor="black"
+          bg="black"
           top="0"
           left="0"
           color="white"
@@ -69,7 +69,7 @@ const DetailProduct = ({ product, router }) => {
 
         <Button
           position="absolute"
-          backgroundColor="black"
+          bg="black"
           top="0"
           right="0"
           color="white"
@@ -90,7 +90,7 @@ const DetailProduct = ({ product, router }) => {
         )}
       </Flex>
       <Container
-        color="white"
+        color="gray.300"
         textAlign="start"
         flex="1"
         padding="35px 15px"
@@ -116,17 +116,17 @@ const DetailProduct = ({ product, router }) => {
           borderTop="2px solid white"
           flexDirection="column"
           rowGap="15px"
-          color="white"
+          color="gray.200"
         >
           <Text
-            fontSize="md"
+            fontSize="16px"
             fontWeight="bold"
             paddingLeft="5px"
             letterSpacing="0.1rem"
           >
             {product?.description}
           </Text>
-          <UnorderedList paddingLeft="16px" fontSize="md" fontWeight="light">
+          <UnorderedList paddingLeft="16px" fontSize="md" fontWeight="normal">
             {moreInfo.map((bahan, index) => (
               <ListItem key={index}>{bahan}</ListItem>
             ))}

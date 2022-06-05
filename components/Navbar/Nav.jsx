@@ -52,7 +52,6 @@ const Nav = () => {
           <Flex>
             <UnorderedList
               listStyleType="none"
-              display="flex"
               display={['none', 'none', 'none', 'flex']}
               columnGap="15px"
               width="300px"

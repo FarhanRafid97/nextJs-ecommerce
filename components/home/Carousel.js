@@ -9,7 +9,7 @@ const Carousel = () => {
   const carouselProduct = dataProduct.products
     .filter((product) => product.id < 15)
     .reverse();
-  console.log(carouselProduct);
+
   return (
     <Flex
       w="100%"
@@ -40,16 +40,12 @@ const Carousel = () => {
               justifyContent="center"
               className={homeStyle.imageHome}
             >
-              {product?.image ? (
-                <Image
-                  src={product?.image}
-                  width="22 0px"
-                  height="250px"
-                  alt="Landscape picture"
-                />
-              ) : (
-                <Spinner size="xl" />
-              )}
+              <Image
+                src={product?.image}
+                width="22 0px"
+                height="250px"
+                alt="Landscape picture"
+              />
             </Flex>
             <Box
               position="absolute"

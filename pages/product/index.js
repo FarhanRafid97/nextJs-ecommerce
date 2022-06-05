@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import ProductItem from '../../components/ProductItem';
-import { getDataProduk } from '../../src/redux/actions/product';
 import productStyle from '../../styles/Product.module.css';
 import { Spinner } from '@chakra-ui/react';
 import data from '../../product.json';
@@ -11,19 +10,22 @@ const Product = () => {
 
   const dataLimit = data.products.filter((data) => data.id <= limit);
 
-  const scrollAddData = () => {
-    var maxHeigh =
-      document.documentElement.scrollHeight -
-      document.documentElement.clientHeight;
-
-    if (maxHeigh <= window.scrollY && limit !== data.jmlData) {
-      setTimeout(() => {
-        setLimit(limit + 4);
-      }, 500);
-    }
-  };
   useEffect(() => {
+    const scrollAddData = () => {
+      var maxHeigh =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+      if (maxHeigh <= window.scrollY && limit !== data.jmlData) {
+        setTimeout(() => {
+          setLimit(limit + 4);
+        }, 500);
+      }
+    };
     window.addEventListener('scroll', scrollAddData);
+    return () => {
+      window.removeEventListener('scroll', scrollAddData);
+    };
   }, [limit]);
 
   return (

@@ -23,6 +23,7 @@ const Footer = () => {
         <Image
           src="https://raw.githubusercontent.com/chakra-ui/chakra-ui/main/logo/logo-colored@2x.png?raw=true"
           width="380px"
+          alt="chakra-ui image"
         />
         <Flex justify="space-between" direction="row" align="center">
           <ButtonGroup variant="ghost">

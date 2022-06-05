@@ -6,7 +6,7 @@ export default (state = [], action) => {
           data.product.id === action.data.product.id &&
           data.size === action.data.size
       );
-      console.log(action.data);
+
       const duplicateData = state.map((data) =>
         data.product.id === action.data.product.id &&
         data.size === action.data.size
