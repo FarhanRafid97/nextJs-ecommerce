@@ -29,7 +29,6 @@ import { addToChart } from '../src/redux/actions/product';
 const DetailProduct = ({ product, router }) => {
   const dispatch = useDispatch();
   const [size, setSize] = useState('XL');
-  const chartData = useSelector((state) => state.chart);
 
   const moreInfo = [
     '60% cotton, 40% acrylic',
@@ -41,9 +40,34 @@ const DetailProduct = ({ product, router }) => {
   const [value, setValue] = useState(1);
 
   const [like, setLike] = useState(false);
+  const [addChart, setAddChart] = useState(false);
+
+  const addChartHandler = () => {
+    setAddChart(true);
+    dispatch(addToChart({ jumlah: value, size: size, product }));
+    setTimeout(() => {
+      setAddChart(false);
+    }, 2000);
+  };
 
   return (
     <>
+      <Flex
+        position="fixed"
+        color="black"
+        top="40px"
+        left={['26%', '43%']}
+        backgroundColor="green.300"
+        padding="2px 10px"
+        borderRadius="10px"
+        zIndex="99"
+        fontSize="16px"
+        transition="0.6s"
+        opacity={addChart ? '1' : '0'}
+      >
+        Data berhasil di tambahkan
+      </Flex>
+
       <Flex
         flex="1.5"
         position="relative"
@@ -153,9 +177,7 @@ const DetailProduct = ({ product, router }) => {
             _focus={{ border: 'none' }}
             display="flex"
             columnGap="4px"
-            onClick={() =>
-              dispatch(addToChart({ jumlah: value, size: size, product }))
-            }
+            onClick={addChartHandler}
           >
             <AiOutlineShoppingCart />
             Chart

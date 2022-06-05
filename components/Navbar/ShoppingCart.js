@@ -15,12 +15,12 @@ import {
 } from '@chakra-ui/react';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { useSelector } from 'react-redux';
-import ChartItems from './ChartItems';
+import CartItems from './CartItems';
 
-const ShoppingChart = () => {
+const ShoppingCart = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
-  const chartItems = useSelector((state) => state.chart);
+  const cartItems = useSelector((state) => state.chart);
 
   return (
     <>
@@ -31,7 +31,7 @@ const ShoppingChart = () => {
         ref={btnRef}
         onClick={onOpen}
       >
-        {chartItems.length > 0 && (
+        {cartItems.length > 0 && (
           <Badge
             background="red.600"
             position="absolute"
@@ -41,7 +41,7 @@ const ShoppingChart = () => {
             color="white"
             borderRadius="3xl"
           >
-            {chartItems.length}
+            {cartItems.length}
           </Badge>
         )}
 
@@ -53,17 +53,17 @@ const ShoppingChart = () => {
         placement="right"
         onClose={onClose}
         finalFocusRef={btnRef}
-        over
+        size={['sm', 'sm']}
       >
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader>Your items{`(${chartItems.length})`}</DrawerHeader>
+          <DrawerHeader>Your items{`(${cartItems.length})`}</DrawerHeader>
 
           <DrawerBody>
             <Flex flexDirection="column" rowGap="15px">
-              {chartItems.map((items, index) => (
-                <ChartItems items={items} key={index} index={index} />
+              {cartItems.map((items, index) => (
+                <CartItems items={items} key={index} index={index} />
               ))}
             </Flex>
           </DrawerBody>
@@ -80,4 +80,4 @@ const ShoppingChart = () => {
   );
 };
 
-export default ShoppingChart;
+export default ShoppingCart;

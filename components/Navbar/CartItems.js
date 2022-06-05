@@ -4,15 +4,15 @@ import { AiFillDelete } from 'react-icons/ai';
 import { useDispatch } from 'react-redux';
 import { removeChartData } from '../../src/redux/actions/product';
 
-const ChartItems = ({ items, index }) => {
+const CartItems = ({ items, index }) => {
   const dispatch = useDispatch();
   return (
     <Flex alignItems="center" flexDirection="column" w="100%" boxShadow="lg">
-      <Flex w="100%" alignItems="center" padding="5px" columnGap="8px">
+      <Flex w="100%" alignItems="center" padding="15px" columnGap="8px">
         <Box>
-          <Img src={items.product.image} minW="90px" maxWidth="90px"></Img>
+          <Img src={items.product.image} minW="120px" maxWidth="90px"></Img>
         </Box>
-        <Flex fontSize="12px" flexDirection="column" rowGap="4px">
+        <Flex fontSize="14px" flexDirection="column" rowGap="4px">
           <Text>{items.product.title}</Text>
           <Text>Price:${items.product.price}</Text>
           <Text>Size :{items.size}</Text>
@@ -32,4 +32,4 @@ const ChartItems = ({ items, index }) => {
   );
 };
 
-export default ChartItems;
+export default CartItems;

@@ -54,3 +54,13 @@ export const removeChartData = (index) => (dispatch) => {
     console.log(error.message);
   }
 };
+export const addTotal = (index, params) => (dispatch) => {
+  try {
+    dispatch({
+      type: 'ADD_TOTAL_CART',
+      payload: { index, params },
+    });
+  } catch (error) {
+    console.log(error.message);
+  }
+};

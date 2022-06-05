@@ -13,6 +13,7 @@ const Detail = ({ params }) => {
   return (
     <Flex
       bg="black"
+      position="relative"
       width="100vw"
       flexDirection={['column', 'column', 'column', 'row']}
     >
