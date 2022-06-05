@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Select } from '@chakra-ui/react';
-const SelectSize = () => {
+const SelectSize = ({ size, setSize }) => {
   return (
-    <Select marginTop="15px">
-      <option value="option1" disabled defaultValue>
-        --Select Size--
-      </option>
-      <option value="option1">Size XL</option>
-      <option value="option2">Size L</option>
-      <option value="option3">Size M</option>
-      <option value="option3">Size S</option>
+    <Select
+      marginTop="15px"
+      value={size}
+      onChange={(e) => setSize(e.target.value)}
+      required
+    >
+      <option value="XL">Size XL</option>
+      <option value="L">Size L</option>
+      <option value="M">Size M</option>
+      <option value="S">Size S</option>
     </Select>
   );
 };

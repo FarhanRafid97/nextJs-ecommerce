@@ -58,12 +58,12 @@ const ShoppingChart = () => {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader>Create your account</DrawerHeader>
+          <DrawerHeader>Your items{`(${chartItems.length})`}</DrawerHeader>
 
           <DrawerBody>
             <Flex flexDirection="column" rowGap="15px">
               {chartItems.map((items, index) => (
-                <ChartItems items={items} key={index} />
+                <ChartItems items={items} key={index} index={index} />
               ))}
             </Flex>
           </DrawerBody>

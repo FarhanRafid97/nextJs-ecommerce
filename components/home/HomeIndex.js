@@ -3,9 +3,9 @@ import product from '../../product.json';
 import NextLink from 'next/link';
 import { Flex, Image, Box, Text, Link } from '@chakra-ui/react';
 import homeStyle from './home.module.css';
+import { motion } from 'framer-motion';
 
 const HomeIndex = () => {
-  
   const dataProductHome = product.products.filter(
     (prod) => prod.forHome === true
   );

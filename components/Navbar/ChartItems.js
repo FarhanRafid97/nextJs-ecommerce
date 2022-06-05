@@ -4,26 +4,27 @@ import { AiFillDelete } from 'react-icons/ai';
 import { useDispatch } from 'react-redux';
 import { removeChartData } from '../../src/redux/actions/product';
 
-const ChartItems = ({ items }) => {
+const ChartItems = ({ items, index }) => {
   const dispatch = useDispatch();
   return (
     <Flex alignItems="center" flexDirection="column" w="100%" boxShadow="lg">
-      <Flex w="100%" alignItems="center">
+      <Flex w="100%" alignItems="center" padding="5px" columnGap="8px">
         <Box>
-          <Img src={items.product.image} w="110px"></Img>
+          <Img src={items.product.image} minW="90px" maxWidth="90px"></Img>
         </Box>
-        <Box>
+        <Flex fontSize="12px" flexDirection="column" rowGap="4px">
           <Text>{items.product.title}</Text>
-          <Text>${items.product.price}</Text>
+          <Text>Price:${items.product.price}</Text>
+          <Text>Size :{items.size}</Text>
           <Text>Total:{items.jumlah}</Text>
-        </Box>
+        </Flex>
       </Flex>
       <Button
         colorScheme="red"
         variant="solid"
         width="100%"
         borderRadius="1px"
-        onClick={() => dispatch(removeChartData(items.product.id))}
+        onClick={() => dispatch(removeChartData(index))}
       >
         <AiFillDelete /> Remove
       </Button>

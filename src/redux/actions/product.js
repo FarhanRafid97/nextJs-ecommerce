@@ -1,29 +1,29 @@
 import * as api from '../../api';
 
-export const getDataProduk = (limit) => async (dispatch) => {
-  try {
-    const { data } = await api.getProduct(limit);
+// export const getDataProduk = (limit) => async (dispatch) => {
+//   try {
+//     const { data } = await api.getProduct(limit);
 
-    dispatch({
-      type: 'DATA_PRODUCT',
-      data: { data, jmlData: data.length },
-    });
-  } catch (error) {
-    console.log(error.message);
-  }
-};
-export const detailPorduct = (id) => async (dispatch) => {
-  try {
-    const { data } = await api.getDetailProuct(id);
+//     dispatch({
+//       type: 'DATA_PRODUCT',
+//       data: { data, jmlData: data.length },
+//     });
+//   } catch (error) {
+//     console.log(error.message);
+//   }
+// };
+// export const detailPorduct = (id) => async (dispatch) => {
+//   try {
+//     const { data } = await api.getDetailProuct(id);
 
-    dispatch({
-      type: 'DETAIL_PRODUCT',
-      data,
-    });
-  } catch (error) {
-    console.log(error.message);
-  }
-};
+//     dispatch({
+//       type: 'DETAIL_PRODUCT',
+//       data,
+//     });
+//   } catch (error) {
+//     console.log(error.message);
+//   }
+// };
 export const addToChart = (product) => (dispatch) => {
   try {
     dispatch({
@@ -34,6 +34,7 @@ export const addToChart = (product) => (dispatch) => {
     console.log(error.message);
   }
 };
+
 export const getChartData = () => (dispatch) => {
   try {
     dispatch({
@@ -43,11 +44,11 @@ export const getChartData = () => (dispatch) => {
     console.log(error.message);
   }
 };
-export const removeChartData = (id) => (dispatch) => {
+export const removeChartData = (index) => (dispatch) => {
   try {
     dispatch({
       type: 'REMOVE_CHART',
-      id,
+      index,
     });
   } catch (error) {
     console.log(error.message);

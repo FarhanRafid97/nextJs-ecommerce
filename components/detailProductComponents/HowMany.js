@@ -8,6 +8,7 @@ const HowMany = ({ value, setValue }) => {
     } else {
       setValue(0);
     }
+    return;
   };
   const addValue = () => {
     setValue(value + 1);

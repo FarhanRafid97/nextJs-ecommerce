@@ -28,9 +28,9 @@ import { addToChart } from '../src/redux/actions/product';
 
 const DetailProduct = ({ product, router }) => {
   const dispatch = useDispatch();
-
+  const [size, setSize] = useState('XL');
   const chartData = useSelector((state) => state.chart);
-  console.log(chartData);
+
   const moreInfo = [
     '60% cotton, 40% acrylic',
     'Breathable cotton blend',
@@ -50,6 +50,7 @@ const DetailProduct = ({ product, router }) => {
         justifyContent="center"
         alignItems="center"
         backgroundColor="white"
+        padding="50px"
       >
         <Button
           position="absolute"
@@ -83,7 +84,7 @@ const DetailProduct = ({ product, router }) => {
         </Button>
 
         {product?.image ? (
-          <Img src={product?.image} maxW="600px" maxH="500px" />
+          <Img src={product?.image} maxW={['200px', '600px']} maxH="500px" />
         ) : (
           <Spinner size="xl" />
         )}
@@ -131,7 +132,7 @@ const DetailProduct = ({ product, router }) => {
             ))}
           </UnorderedList>
           <HowMany value={value} setValue={setValue} />
-          <SelectSize />
+          <SelectSize setSize={setSize} size={size} />
           <Review />
         </Flex>
         <Flex padding="30px 25px" columnGap="20px">
@@ -152,7 +153,9 @@ const DetailProduct = ({ product, router }) => {
             _focus={{ border: 'none' }}
             display="flex"
             columnGap="4px"
-            onClick={() => dispatch(addToChart({ jumlah: value, product }))}
+            onClick={() =>
+              dispatch(addToChart({ jumlah: value, size: size, product }))
+            }
           >
             <AiOutlineShoppingCart />
             Chart

@@ -58,7 +58,9 @@ const Carousel = () => {
               left="0"
               top="0"
             >
-              <Text backgroundColor="black">$.{product?.price}</Text>
+              <Text backgroundColor="black" padding="3px 10px">
+                $.{product?.price}
+              </Text>
             </Box>
           </Link>
         </NextLink>
