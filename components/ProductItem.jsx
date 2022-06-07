@@ -1,5 +1,4 @@
 import React from 'react';
-import productStyle from '../styles/Product.module.css';
 
 import NextLink from 'next/link';
 import { Flex, Image, Box, Text, Link } from '@chakra-ui/react';
@@ -20,7 +19,7 @@ const ProductItem = ({ product }) => {
           border="1px solid #7c7c7c40"
           _hover={{ border: '1px solid blue' }}
         >
-          <Image src={product.image} w="100%" h="200px" />
+          <Image src={product.image} w="100%" h="205px" alt={product.title} />
 
           <Flex
             flexDirection="column"

@@ -58,6 +58,7 @@ const TableCart = () => {
                   maxW={['60px', '100px']}
                   maxH={['100px', '140px']}
                   flex="1"
+                  alt={cart.product.title}
                 />
               </Link>
             </NextLink>

@@ -1,12 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import ProductItem from '../../components/ProductItem';
-import productStyle from '../../styles/Product.module.css';
-import { Spinner } from '@chakra-ui/react';
 import data from '../../product.json';
 import Footer from '../../components/Footer/Footer';
-import NextLink from 'next/link';
-import { Flex, Image, Box, Text, Link, Select } from '@chakra-ui/react';
+import { Flex, Text, Select } from '@chakra-ui/react';
 
 const Product = () => {
   const [limit, setLimit] = useState(8);
@@ -46,7 +42,7 @@ const Product = () => {
             paddingBottom="5px"
             paddingTop="20px"
             paddingLeft="10px"
-            fontWeight="bold"
+            fontWeight="medium"
             fontSize="24px"
           >
             Category
@@ -77,7 +73,9 @@ const Product = () => {
             paddingBottom="5px"
             alignItems="center"
           >
-            <Text fontSize={['18px', '24p']}>Top Collection</Text>
+            <Text fontSize={['18px', '24px']} fontWeight="medium">
+              Top Collection{`(${data.products.length})`}
+            </Text>
             <Select
               placeholder="filter"
               w={['120px', '200px']}
