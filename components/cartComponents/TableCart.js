@@ -1,14 +1,5 @@
 import React from 'react';
-import {
-  Select,
-  Flex,
-  Image,
-  Text,
-  Box,
-  Button,
-  Container,
-  Link,
-} from '@chakra-ui/react';
+import { Flex, Image, Text, Button, Container, Link } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import { AiFillDelete } from 'react-icons/ai';
 import { useSelector, useDispatch } from 'react-redux';
@@ -19,22 +10,6 @@ const TableCart = () => {
   console.log(dataCart);
   return (
     <Container minW="100%">
-      {/* <Flex
-        w="100%"
-        justifyContent="space-between"
-        textAlign="center"
-        border="1px solid black"
-        padding="10px 0"
-        fontSize="12px"
-        marginBottom="15px"
-      >
-        <Text flex="1">Product</Text>
-        <Text flex="1">Price</Text>
-        <Text flex="1">Size</Text>
-        <Text flex="1">Kuantity</Text>
-        <Text flex="1"> Total</Text>
-        <Text flex="1"> </Text>
-      </Flex> */}
       <Flex
         w="100%"
         justifyContent="center"
@@ -65,7 +40,7 @@ const TableCart = () => {
             textAlign="center"
             alignItems="center"
             borderTop={index !== 0 && '1px solid black'}
-            fontSize={['12px', '14px']}
+            fontSize={['12px', '12px', '12px', '14px']}
             columnGap="20px"
             padding=" 3px 10px"
             key={index}

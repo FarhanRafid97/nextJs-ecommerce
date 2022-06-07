@@ -1,21 +1,9 @@
 import React, { useState } from 'react';
-import {
-  Select,
-  Flex,
-  Image,
-  Text,
-  Box,
-  Button,
-  Container,
-  Link,
-} from '@chakra-ui/react';
+import { Select, Flex, Text, Button } from '@chakra-ui/react';
 import { useSelector } from 'react-redux';
 const TotalPay = () => {
   const dataCart = useSelector((state) => state.chart);
   const totalPerProduct = dataCart?.map((a) => a.jumlah * a.product.price);
-  const [total, setTotal] = useState(0);
-
-  console.log(totalPerProduct);
 
   const [shipPrice, setShipPrice] = useState(0);
 
@@ -25,20 +13,20 @@ const TotalPay = () => {
 
   const shippingPrice = (e) => {
     if (e.target.value === 'jne') {
-      setShipPrice(22);
+      setShipPrice(4);
     }
     if (e.target.value === 'jnt') {
-      setShipPrice(33);
+      setShipPrice(3);
     }
     if (e.target.value === 'sicepat') {
-      setShipPrice(18);
+      setShipPrice(2.5);
     }
   };
 
   return (
     <Flex w="100%" justifyContent="end" marginBottom="40px">
       <Flex
-        w={['350px', '500px']}
+        w={['100%', '80%', '60%', '500px']}
         backgroundColor="gray.200"
         padding="15px"
         flexDirection="column"
@@ -61,12 +49,12 @@ const TotalPay = () => {
         <Flex justifyContent="space-between" alignItems="center">
           <Text>Chose shipping</Text>
           <Select
-            w={['130px', '250px']}
+            w={['130px', '130px', '130px', '250px']}
             onChange={shippingPrice}
             backgroundColor="black"
             color="white"
+            value="jne"
           >
-            <option disabled>--select shipping--</option>
             <option value="jne">jne</option>
             <option value="jnt">jnt</option>
             <option value="sicepat">siCepat</option>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
   Flex,
   Button,
@@ -56,12 +56,12 @@ const DetailProduct = ({ product, router }) => {
         position="fixed"
         color="black"
         top="40px"
-        left={['26%', '43%']}
+        left={['31%', '13%', '37%', '43%']}
         backgroundColor="green.300"
         padding="2px 10px"
         borderRadius="10px"
         zIndex="99"
-        fontSize="16px"
+        fontSize={['12px', '18px']}
         transition="0.6s"
         opacity={addChart ? '1' : '0'}
       >

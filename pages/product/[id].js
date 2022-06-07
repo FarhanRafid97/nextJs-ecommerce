@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router';
-import detailStyle from './DetailProduct.module.css';
 import DetailProduct from '../../components/DetailProduct';
 import data from '../../product.json';
 import { Flex } from '@chakra-ui/react';

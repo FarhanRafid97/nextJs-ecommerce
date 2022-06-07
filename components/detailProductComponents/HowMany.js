@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Flex, Button, Input } from '@chakra-ui/react';
 
 const HowMany = ({ value, setValue }) => {

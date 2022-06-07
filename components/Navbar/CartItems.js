@@ -10,10 +10,18 @@ const CartItems = ({ items, index }) => {
     <Flex alignItems="center" flexDirection="column" w="100%" boxShadow="lg">
       <Flex w="100%" alignItems="center" padding="15px" columnGap="8px">
         <Box>
-          <Img src={items.product.image} minW="120px" maxWidth="90px"></Img>
+          <Img src={items.product.image} width="90px"></Img>
         </Box>
         <Flex fontSize="14px" flexDirection="column" rowGap="4px">
-          <Text>{items.product.title}</Text>
+          <Text
+            maxW={['180px', '', '210px', '220px']}
+            overflow="hidden"
+            textOverflow="ellipsis"
+            whiteSpace="nowrap"
+            textAlign="start"
+          >
+            {items.product.title}
+          </Text>
           <Text>Price:${items.product.price}</Text>
           <Text>Size :{items.size}</Text>
           <Text>Total:{items.jumlah}</Text>

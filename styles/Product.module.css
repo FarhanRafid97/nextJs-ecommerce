@@ -30,7 +30,7 @@
   border-radius: 15px;
   transition: 0.4s;
   box-shadow: 0px 1px 12px rgb(124, 124, 124, 0.25);
-  border: 1px solid rgb(124, 124, 124, 0.25);
+  border: 1px solid #7c7c7c40;
 }
 
 .cardProduct:hover {

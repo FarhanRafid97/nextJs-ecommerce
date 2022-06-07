@@ -1,32 +1,48 @@
 import React from 'react';
 import productStyle from '../styles/Product.module.css';
-import Image from 'next/image';
-import Link from 'next/link';
-import { Spinner } from '@chakra-ui/react';
+
+import NextLink from 'next/link';
+import { Flex, Image, Box, Text, Link } from '@chakra-ui/react';
 
 const ProductItem = ({ product }) => {
   return (
-    <Link href={`/product/${product.id}`}>
-      <a className={productStyle.cardProduct}>
-        <div className={productStyle.productPhoto}>
-          {product?.image ? (
-            <Image
-              src={product?.image}
-              width={200}
-              height={250}
-              alt="Landscape picture"
-            />
-          ) : (
-            <Spinner size="xl" />
-          )}
-        </div>
-        <div className={productStyle.description}>
-          <p className={productStyle.titleProduct}>{product?.title}</p>
-          <p className={productStyle.priceProduct}>$.{product?.price}</p>
-          <p className={productStyle.productDesc}>{product?.description}</p>
-        </div>
-      </a>
-    </Link>
+    <NextLink href={`/product/${product.id}`}>
+      <Link _hover={{ textDecoration: 'none' }}>
+        <Flex
+          flexDirection="column"
+          backgroundColor="white"
+          w={['167px', '220px']}
+          boxShadow="md"
+          padding={['10px', '15px']}
+          alignItems="center"
+          justifyContent="center"
+          rowGap="15px"
+          border="1px solid #7c7c7c40"
+          _hover={{ border: '1px solid blue' }}
+        >
+          <Image src={product.image} w="100%" h="200px" />
+
+          <Flex
+            flexDirection="column"
+            fontSize={['12px', '14px']}
+            textAlign="start"
+            w="100%"
+          >
+            <Text
+              width={['100%', '180px']}
+              overflow="hidden"
+              textOverflow="ellipsis"
+              whiteSpace="nowrap"
+              textAlign="start"
+            >
+              {product.title}
+            </Text>
+            <Text color="gray.500">{product.category}</Text>
+            <Text>${product.price}</Text>
+          </Flex>
+        </Flex>
+      </Link>
+    </NextLink>
   );
 };
 

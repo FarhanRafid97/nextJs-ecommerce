@@ -1,18 +1,19 @@
-import Link from 'next/link';
 import {
   Flex,
   ListItem,
   UnorderedList,
   Text,
   Container,
+  Link,
 } from '@chakra-ui/react';
 
-import { AiOutlineSearch, AiOutlineShoppingCart } from 'react-icons/ai';
-import { GiHamburgerMenu } from 'react-icons/gi';
+import { AiOutlineSearch } from 'react-icons/ai';
+
 import NavSearch from './NavSearch';
 import { useState } from 'react';
 import ShoppingCart from './ShoppingCart';
 import NavMenuMobile from './NavMenuMobile';
+import NextLink from 'next/link';
 
 const Nav = () => {
   const [search, setSearch] = useState(false);
@@ -32,9 +33,11 @@ const Nav = () => {
           justifyContent="space-between"
           alignItems="center"
         >
-          <Text width={['100px', '100px', '100px', '300px']} fontSize="24px">
-            Logo
-          </Text>
+          <NextLink href="/">
+            <Link width={['100px', '100px', '100px', '300px']} fontSize="24px">
+              Logo
+            </Link>
+          </NextLink>
           <Flex
             display={['none', 'flex']}
             padding="7px"
@@ -61,13 +64,13 @@ const Nav = () => {
               fontSize="16px"
             >
               <ListItem>
-                <Link href="/">Home</Link>
+                <NextLink href="/">Home</NextLink>
               </ListItem>
               <ListItem>
-                <Link href="/cart">About</Link>
+                <NextLink href="/cart">About</NextLink>
               </ListItem>
               <ListItem>
-                <Link href="/product">Product</Link>
+                <NextLink href="/product">Product</NextLink>
               </ListItem>
               <ListItem fontSize="20px">
                 <ShoppingCart />

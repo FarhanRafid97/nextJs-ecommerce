@@ -8,13 +8,13 @@ import {
   DrawerContent,
   DrawerCloseButton,
   useDisclosure,
-  Button,
-  Input,
+  Link,
   Flex,
   Badge,
 } from '@chakra-ui/react';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { useSelector } from 'react-redux';
+import NextLink from 'next/link';
 import CartItems from './CartItems';
 
 const ShoppingCart = () => {
@@ -69,10 +69,21 @@ const ShoppingCart = () => {
           </DrawerBody>
 
           <DrawerFooter>
-            <Button variant="outline" mr={3} onClick={onClose}>
-              Cancel
-            </Button>
-            <Button colorScheme="blue">Save</Button>
+            <Flex w="100%">
+              <NextLink href="/cart">
+                <Link
+                  width="100%"
+                  textAlign="center"
+                  padding="15px"
+                  backgroundColor="black"
+                  color="White"
+                  onClick={onClose}
+                  cursor="pointer"
+                >
+                  Open Your Shooping Cart
+                </Link>
+              </NextLink>
+            </Flex>
           </DrawerFooter>
         </DrawerContent>
       </Drawer>
