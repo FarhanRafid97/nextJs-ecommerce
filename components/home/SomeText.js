@@ -11,6 +11,7 @@ const SomeText = () => {
       justifyContent="center"
       backgroundColor="white"
       alignItems="center"
+      borderTop="1px solid black"
       flexDirection={['column', 'row']}
     >
       <Flex

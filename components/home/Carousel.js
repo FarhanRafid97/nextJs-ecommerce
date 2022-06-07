@@ -18,7 +18,6 @@ const Carousel = () => {
       backgroundColor="white"
       columnGap="55px"
       alignItems="center"
-      borderBottom="1px solid black"
       padding=" 0 15px"
       className={homeStyle.carouselFlex}
     >

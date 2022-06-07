@@ -11,9 +11,8 @@ export default (state = [], action) => {
         data.product.id === action.data.product.id &&
         data.size === action.data.size
           ? {
-              size: action.data.size,
+              ...action.data,
               jumlah: action.data.jumlah + data.jumlah,
-              product: action.data.product,
             }
           : data
       );

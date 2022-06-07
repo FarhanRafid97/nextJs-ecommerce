@@ -12,7 +12,14 @@ import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <Container as="footer" role="contentinfo" py={{ base: '12', md: '16' }}>
+    <Flex
+      w="100%"
+      as="footer"
+      role="contentinfo"
+      py={{ base: '6', md: '12' }}
+      borderTop="1px solid black"
+      justifyContent="center"
+    >
       <Flex
         spacing={{ base: '4', md: '5' }}
         justifyContent="center"
@@ -53,7 +60,7 @@ const Footer = () => {
         </Text>
         <Text>Farhan Rafid Syauqi</Text>
       </Flex>
-    </Container>
+    </Flex>
   );
 };
 
