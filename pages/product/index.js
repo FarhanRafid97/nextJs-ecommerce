@@ -4,6 +4,7 @@ import ProductItem from '../../components/ProductItem';
 import productStyle from '../../styles/Product.module.css';
 import { Spinner } from '@chakra-ui/react';
 import data from '../../product.json';
+import Footer from '../../components/Footer/Footer';
 
 const Product = () => {
   const [limit, setLimit] = useState(8);
@@ -29,15 +30,20 @@ const Product = () => {
   }, [limit]);
 
   return (
-    <div className={productStyle.product}>
-      <h3 className={`${productStyle.titlePageProduct}`}>Our Latest Product</h3>
-      <div className={`${productStyle.containerProduct} containerProduct`}>
-        {!data?.products && <Spinner size="xl" />}
-        {dataLimit.map((product, index) => (
-          <ProductItem product={product} key={index} />
-        ))}
+    <>
+      <div className={productStyle.product}>
+        <h3 className={`${productStyle.titlePageProduct}`}>
+          Our Latest Product
+        </h3>
+        <div className={`${productStyle.containerProduct} containerProduct`}>
+          {!data?.products && <Spinner size="xl" />}
+          {dataLimit.map((product, index) => (
+            <ProductItem product={product} key={index} />
+          ))}
+        </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 

@@ -40,8 +40,8 @@ const NavMenuMobile = () => {
               <NextLink href="/product">
                 <Text onClick={onClose}>Product</Text>
               </NextLink>
-              <NextLink href="/product">
-                <Text onClick={onClose}>HOME</Text>
+              <NextLink href="/cart">
+                <Text onClick={onClose}>Cart</Text>
               </NextLink>
             </Flex>
           </DrawerBody>

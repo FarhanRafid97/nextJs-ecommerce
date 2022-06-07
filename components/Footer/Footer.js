@@ -19,6 +19,7 @@ const Footer = () => {
       py={{ base: '6', md: '12' }}
       borderTop="1px solid black"
       justifyContent="center"
+      backgroundColor="white"
     >
       <Flex
         spacing={{ base: '4', md: '5' }}
@@ -27,22 +28,19 @@ const Footer = () => {
         rowGap="15px    "
         flexDirection="column"
       >
-        <Image
-          src="https://raw.githubusercontent.com/chakra-ui/chakra-ui/main/logo/logo-colored@2x.png?raw=true"
-          width="380px"
-          alt="chakra-ui image"
-        />
         <Flex justify="space-between" direction="row" align="center">
           <ButtonGroup variant="ghost">
             <IconButton
               as="a"
-              href="#"
+              href="https://www.linkedin.com/in/farhan-rafid-syauqi-268a9820b/"
+              target="_blank"
               aria-label="LinkedIn"
               icon={<FaLinkedin fontSize="1.25rem" />}
             />
             <IconButton
               as="a"
-              href="#"
+              href="https://github.com/FarhanRafid97"
+              target="_blank"
               aria-label="GitHub"
               icon={<FaGithub fontSize="1.25rem" />}
             />
