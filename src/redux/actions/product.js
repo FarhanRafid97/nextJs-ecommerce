@@ -1,17 +1,58 @@
 import * as api from '../../api';
+import data from '../../../product.json';
 
-// export const getDataProduk = (limit) => async (dispatch) => {
-//   try {
-//     const { data } = await api.getProduct(limit);
+export const getDataProduk = () => (dispatch) => {
+  const dataProducts = data.products;
+  dispatch({
+    type: 'DATA_PRODUCT',
+    data: dataProducts,
+  });
+};
 
-//     dispatch({
-//       type: 'DATA_PRODUCT',
-//       data: { data, jmlData: data.length },
-//     });
-//   } catch (error) {
-//     console.log(error.message);
-//   }
-// };
+export const getWomenCategory = () => (dispatch) => {
+  try {
+    const dataProducts = data.products;
+    const filterProduct = dataProducts.filter(
+      (data) => data.category === "women's clothing"
+    );
+    dispatch({
+      type: 'FILTER_PRODUCT_WOMEN',
+      data: filterProduct,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getMenCategory = () => (dispatch) => {
+  try {
+    const dataProducts = data.products;
+    const filterProduct = dataProducts.filter(
+      (data) => data.category === "men's clothing"
+    );
+    dispatch({
+      type: 'FILTER_PRODUCT_MEN',
+      data: filterProduct,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getJaweleryCategory = () => (dispatch) => {
+  try {
+    const dataProducts = data.products;
+    const filterProduct = dataProducts.filter(
+      (data) => data.category === 'jewelery'
+    );
+    dispatch({
+      type: 'FILTER_PRODUCT_JAWEL',
+      data: filterProduct,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
 // export const detailPorduct = (id) => async (dispatch) => {
 //   try {
 //     const { data } = await api.getDetailProuct(id);

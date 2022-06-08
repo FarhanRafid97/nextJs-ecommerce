@@ -34,7 +34,11 @@ const Nav = () => {
           alignItems="center"
         >
           <NextLink href="/">
-            <Link width={['100px', '100px', '100px', '300px']} fontSize="24px">
+            <Link
+              width={['100px', '100px', '100px', '300px']}
+              fontSize="24px"
+              _hover={{ textDecoration: 'none' }}
+            >
               Logo
             </Link>
           </NextLink>
@@ -67,7 +71,7 @@ const Nav = () => {
                 <NextLink href="/">Home</NextLink>
               </ListItem>
               <ListItem>
-                <NextLink href="/cart">About</NextLink>
+                <NextLink href="/cart">Cart</NextLink>
               </ListItem>
               <ListItem>
                 <NextLink href="/product">Product</NextLink>

@@ -2,12 +2,25 @@ import React, { useEffect, useState } from 'react';
 import ProductItem from '../../components/ProductItem';
 import data from '../../product.json';
 import Footer from '../../components/Footer/Footer';
-import { Flex, Text, Select } from '@chakra-ui/react';
+import { Flex, Text, Select, Button } from '@chakra-ui/react';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+  getDataProduk,
+  getJaweleryCategory,
+  getMenCategory,
+  getWomenCategory,
+} from '../../src/redux/actions/product';
 
 const Product = () => {
+  const dispatch = useDispatch();
   const [limit, setLimit] = useState(8);
 
-  const dataLimit = data.products.filter((data) => data.id <= limit);
+  const dataProducts = useSelector((state) => state.product);
+  const dataLimit = dataProducts.filter((data, index) => index < limit);
+
+  useEffect(() => {
+    dispatch(getDataProduk());
+  }, [dispatch]);
 
   useEffect(() => {
     const scrollAddData = () => {
@@ -26,10 +39,21 @@ const Product = () => {
       window.removeEventListener('scroll', scrollAddData);
     };
   }, [limit]);
+  const mobileCategory = (e) => {
+    if (e.target.value === 'all') {
+      dispatch(getDataProduk());
+    } else if (e.target.value === 'women') {
+      dispatch(getWomenCategory());
+    } else if (e.target.value === 'men') {
+      dispatch(getMenCategory());
+    } else {
+      dispatch(getJaweleryCategory());
+    }
+  };
 
   return (
     <>
-      <Flex w="100%" columnGap="15px" padding={['5px', '25px 15px']}>
+      <Flex minW="100%" columnGap="15px" padding={['5px', '25px 15px']}>
         <Flex
           flexBasis="25%"
           maxH="50vh"
@@ -54,17 +78,41 @@ const Product = () => {
             padding="15px"
             rowGap="15px"
           >
-            <Text>Category 1</Text>
-            <Text>Category 1</Text>
-            <Text>Category 1</Text>
-            <Text>Category 1</Text>
+            <Button
+              colorScheme="blackAlpha"
+              backgroundColor="black"
+              onClick={() => dispatch(getDataProduk())}
+            >
+              All Product
+            </Button>
+            <Button
+              colorScheme="blackAlpha"
+              backgroundColor="black"
+              onClick={() => dispatch(getWomenCategory())}
+            >
+              Women Clothing
+            </Button>
+            <Button
+              colorScheme="blackAlpha"
+              backgroundColor="black"
+              onClick={() => dispatch(getMenCategory())}
+            >
+              Men Clothing
+            </Button>
+            <Button
+              colorScheme="blackAlpha"
+              backgroundColor="black"
+              onClick={() => dispatch(getJaweleryCategory())}
+            >
+              Jawelery
+            </Button>
           </Flex>
         </Flex>
         <Flex
           flexBasis={['100%', '70%']}
           flexDirection="column"
           alignItems="start"
-          padding="15px"
+          padding="10px"
         >
           <Flex
             w="100%"
@@ -76,25 +124,30 @@ const Product = () => {
             <Text fontSize={['18px', '24px']} fontWeight="medium">
               Top Collection{`(${data.products.length})`}
             </Text>
+
             <Select
-              placeholder="filter"
-              w={['120px', '200px']}
+              w={['140px', '200px']}
               h={['30px', '40px']}
+              display={['flex', 'none']}
               borderColor="black"
+              fontSize="12px"
+              onChange={mobileCategory}
             >
-              <option value="option1">Option 1</option>
-              <option value="option2">Option 2</option>
-              <option value="option3">Option 3</option>
+              <option value="all">All product</option>
+              <option value="women">Women Product</option>
+              <option value="men">Men Product </option>
+              <option value="jawelery">Jawelery</option>
             </Select>
           </Flex>
           <Flex
+            minW="100%"
             flexWrap="wrap"
             marginTop="15px"
-            columnGap={['15px', '15px']}
+            columnGap={['15px', '5px']}
             justifyContent="space-between"
             rowGap={['10px', '25px']}
           >
-            {dataLimit.map((product, index) => (
+            {dataLimit?.map((product, index) => (
               <ProductItem product={product} key={index} />
             ))}
           </Flex>
