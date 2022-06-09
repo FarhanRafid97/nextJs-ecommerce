@@ -10,7 +10,7 @@ const ProductItem = ({ product }) => {
         <Flex
           flexDirection="column"
           backgroundColor="white"
-          w={['167px', '220px']}
+          w={['170px', '220px']}
           boxShadow="md"
           padding={['10px', '15px']}
           alignItems="center"

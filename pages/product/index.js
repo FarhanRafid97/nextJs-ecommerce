@@ -20,6 +20,7 @@ const Product = () => {
 
   useEffect(() => {
     dispatch(getDataProduk());
+    return;
   }, [dispatch]);
 
   useEffect(() => {
@@ -39,17 +40,17 @@ const Product = () => {
       window.removeEventListener('scroll', scrollAddData);
     };
   }, [limit]);
-  const mobileCategory = (e) => {
-    if (e.target.value === 'all') {
-      dispatch(getDataProduk());
-    } else if (e.target.value === 'women') {
-      dispatch(getWomenCategory());
-    } else if (e.target.value === 'men') {
-      dispatch(getMenCategory());
-    } else {
-      dispatch(getJaweleryCategory());
-    }
-  };
+  // const mobileCategory = (e) => {
+  //   if (e.target.value === 'all') {
+  //     dispatch(getDataProduk());
+  //   } else if (e.target.value === 'women') {
+  //     dispatch(getWomenCategory());
+  //   } else if (e.target.value === 'men') {
+  //     dispatch(getMenCategory());
+  //   } else {
+  //     dispatch(getJaweleryCategory());
+  //   }
+  // };
 
   return (
     <>
@@ -78,7 +79,7 @@ const Product = () => {
             padding="15px"
             rowGap="15px"
           >
-            <Button
+            {/* <Button
               colorScheme="blackAlpha"
               backgroundColor="black"
               onClick={() => dispatch(getDataProduk())}
@@ -105,7 +106,7 @@ const Product = () => {
               onClick={() => dispatch(getJaweleryCategory())}
             >
               Jawelery
-            </Button>
+            </Button> */}
           </Flex>
         </Flex>
         <Flex
@@ -131,7 +132,7 @@ const Product = () => {
               display={['flex', 'none']}
               borderColor="black"
               fontSize="12px"
-              onChange={mobileCategory}
+              // onChange={mobileCategory}
             >
               <option value="all">All product</option>
               <option value="women">Women Product</option>
@@ -143,9 +144,9 @@ const Product = () => {
             minW="100%"
             flexWrap="wrap"
             marginTop="15px"
-            columnGap={['15px', '5px']}
-            justifyContent="space-between"
-            rowGap={['10px', '25px']}
+            columnGap={['25px', '25px']}
+            justifyContent="center"
+            rowGap={['15px', '25px']}
           >
             {dataLimit?.map((product, index) => (
               <ProductItem product={product} key={index} />

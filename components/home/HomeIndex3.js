@@ -50,7 +50,7 @@ const HomeIndex3 = () => {
                 justifyContent="center"
                 className={homeStyle.imageHome}
               >
-                <Image src={product.image} alt={product.title} />
+                <Image width="300px" src={product.image} alt={product.title} />
               </Link>
             </NextLink>
           </Flex>
@@ -85,6 +85,7 @@ const HomeIndex3 = () => {
               className={homeStyle.imageHome}
             >
               <Image
+                width={['300px', '100%']}
                 src={dataProductHome[1].image}
                 alt={dataProductHome[1].title}
               />

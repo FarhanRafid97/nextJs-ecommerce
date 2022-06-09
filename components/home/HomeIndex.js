@@ -29,7 +29,7 @@ const HomeIndex = () => {
           textColor="white"
           textAlign="start"
           left="0"
-          fontSize={['20px', '28px']}
+          fontSize={['16px', '28px']}
         >
           <Text backgroundColor="black" padding="5px 10px">
             {dataProductHome[0].title}
@@ -52,6 +52,7 @@ const HomeIndex = () => {
               className={homeStyle.imageHome}
             >
               <Image
+                width={['300px', '100%']}
                 src={dataProductHome[0].image}
                 alt={dataProductHome[0].title}
               />
@@ -75,7 +76,7 @@ const HomeIndex = () => {
               textColor="white"
               textAlign="start"
               left="0"
-              fontSize={['20px', '28px']}
+              fontSize={['16  px', '28px']}
             >
               <Text backgroundColor="black" padding="5px 10px">
                 {product.title}
@@ -92,7 +93,11 @@ const HomeIndex = () => {
                 justifyContent="center"
                 className={homeStyle.imageHome}
               >
-                <Image src={product.image} alt={product.title} />
+                <Image
+                  width={['300px', '400px']}
+                  src={product.image}
+                  alt={product.title}
+                />
               </Link>
             </NextLink>
           </Flex>

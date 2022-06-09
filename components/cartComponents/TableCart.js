@@ -71,7 +71,7 @@ const TableCart = () => {
             >
               <Text
                 flex="1"
-                w={['180px', '100px']}
+                w={['130px', '160px', '', '100px']}
                 overflow="hidden"
                 textOverflow="ellipsis"
                 whiteSpace="nowrap"

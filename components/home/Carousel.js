@@ -40,8 +40,8 @@ const Carousel = () => {
             >
               <Image
                 src={product?.image}
-                width={['160px', '180px', '200px', '220px']}
-                height={['160px', '180px', '200px', '250px']}
+                width={['130px', '180px', '200px', '220px']}
+                height={['130px', '180px', '200px', '250px']}
                 alt="Landscape picture"
               />
             </Flex>

@@ -1,4 +1,3 @@
-import * as api from '../../api';
 import data from '../../../product.json';
 
 export const getDataProduk = () => (dispatch) => {
@@ -53,18 +52,18 @@ export const getJaweleryCategory = () => (dispatch) => {
     console.log(error);
   }
 };
-// export const detailPorduct = (id) => async (dispatch) => {
-//   try {
-//     const { data } = await api.getDetailProuct(id);
+export const detailPorduct = (id) => async (dispatch) => {
+  try {
+    const { data } = await api.getDetailProuct(id);
 
-//     dispatch({
-//       type: 'DETAIL_PRODUCT',
-//       data,
-//     });
-//   } catch (error) {
-//     console.log(error.message);
-//   }
-// };
+    dispatch({
+      type: 'DETAIL_PRODUCT',
+      data,
+    });
+  } catch (error) {
+    console.log(error.message);
+  }
+};
 export const addToChart = (product) => (dispatch) => {
   try {
     dispatch({
