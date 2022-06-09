@@ -39,6 +39,7 @@ const Product = () => {
       window.removeEventListener('scroll', scrollAddData);
     };
   }, [limit]);
+
   const mobileCategory = (e) => {
     if (e.target.value === 'all') {
       dispatch(getDataProduk());
@@ -53,13 +54,18 @@ const Product = () => {
 
   return (
     <>
-      <Flex minW="100%" columnGap="15px" padding={['5px', '25px 15px']}>
+      <Flex
+        minW="100%"
+        columnGap="15px"
+        padding={['5px', '25px 15px']}
+        justifyContent="center"
+      >
         <Flex
           flexBasis="25%"
           maxH="50vh"
           flexDirection="column"
           textAlign="start"
-          display={['none', 'flex']}
+          display={['none', 'none', 'none', 'flex']}
         >
           <Text
             borderBottom="1px"
@@ -109,7 +115,7 @@ const Product = () => {
           </Flex>
         </Flex>
         <Flex
-          flexBasis={['100%', '70%']}
+          flexBasis={['100%', '100%', '90%', '70%']}
           flexDirection="column"
           alignItems="start"
           padding="10px"
@@ -128,7 +134,7 @@ const Product = () => {
             <Select
               w={['140px', '200px']}
               h={['30px', '40px']}
-              display={['flex', 'none']}
+              display={['flex', 'flex', 'flex', 'none']}
               borderColor="black"
               fontSize="12px"
               onChange={mobileCategory}
