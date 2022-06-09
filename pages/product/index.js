@@ -20,7 +20,6 @@ const Product = () => {
 
   useEffect(() => {
     dispatch(getDataProduk());
-    return;
   }, [dispatch]);
 
   useEffect(() => {
@@ -144,9 +143,9 @@ const Product = () => {
             minW="100%"
             flexWrap="wrap"
             marginTop="15px"
-            columnGap={['25px', '25px']}
+            columnGap={['35px', '25px']}
             justifyContent="center"
-            rowGap={['15px', '25px']}
+            rowGap={['35px', '25px']}
           >
             {dataLimit?.map((product, index) => (
               <ProductItem product={product} key={index} />

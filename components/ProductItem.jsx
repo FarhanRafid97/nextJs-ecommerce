@@ -1,7 +1,7 @@
 import React from 'react';
 
 import NextLink from 'next/link';
-import { Flex, Image, Box, Text, Link } from '@chakra-ui/react';
+import { Flex, Image, Text, Link } from '@chakra-ui/react';
 
 const ProductItem = ({ product }) => {
   return (
@@ -11,15 +11,16 @@ const ProductItem = ({ product }) => {
           flexDirection="column"
           backgroundColor="white"
           w={['170px', '220px']}
+          height={['300px']}
           boxShadow="md"
           padding={['10px', '15px']}
           alignItems="center"
           justifyContent="center"
-          rowGap="15px"
+          rowGap="25px"
           border="1px solid #7c7c7c40"
           _hover={{ border: '1px solid blue' }}
         >
-          <Image src={product.image} w="100%" h="205px" alt={product.title} />
+          <Image src={product.image} w="80%" h="145px" alt={product.title} />
 
           <Flex
             flexDirection="column"
