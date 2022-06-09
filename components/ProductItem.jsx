@@ -10,17 +10,20 @@ const ProductItem = ({ product }) => {
         <Flex
           flexDirection="column"
           backgroundColor="white"
-          w={['170px', '180ox', '190px', '220px']}
-          height={['300px']}
+          w={['160px', '180px', '190px', '220px']}
           boxShadow="md"
           padding={['10px', '15px']}
           alignItems="center"
           justifyContent="center"
-          rowGap="25px"
+          rowGap="35px"
           border="1px solid #7c7c7c40"
           _hover={{ border: '1px solid blue' }}
         >
-          <Image src={product.image} w="80%" h="145px" alt={product.title} />
+          <Image
+            src={product.image}
+            boxSize={['150px', '220px']}
+            alt={product.title}
+          />
 
           <Flex
             flexDirection="column"
@@ -29,7 +32,7 @@ const ProductItem = ({ product }) => {
             w="100%"
           >
             <Text
-              width={['100%', '180px']}
+              width={['120px', '140px', '150px', '180px']}
               overflow="hidden"
               textOverflow="ellipsis"
               whiteSpace="nowrap"

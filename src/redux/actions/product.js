@@ -1,17 +1,15 @@
 import data from '../../../product.json';
 
 export const getDataProduk = () => (dispatch) => {
-  const dataProducts = data.products;
   dispatch({
     type: 'DATA_PRODUCT',
-    data: dataProducts,
+    data: data.products,
   });
 };
 
 export const getWomenCategory = () => (dispatch) => {
   try {
-    const dataProducts = data.products;
-    const filterProduct = dataProducts.filter(
+    const filterProduct = data.products.filter(
       (data) => data.category === "women's clothing"
     );
     dispatch({
@@ -25,8 +23,7 @@ export const getWomenCategory = () => (dispatch) => {
 
 export const getMenCategory = () => (dispatch) => {
   try {
-    const dataProducts = data.products;
-    const filterProduct = dataProducts.filter(
+    const filterProduct = data.products.filter(
       (data) => data.category === "men's clothing"
     );
     dispatch({
@@ -40,8 +37,7 @@ export const getMenCategory = () => (dispatch) => {
 
 export const getJaweleryCategory = () => (dispatch) => {
   try {
-    const dataProducts = data.products;
-    const filterProduct = dataProducts.filter(
+    const filterProduct = data.products.filter(
       (data) => data.category === 'jewelery'
     );
     dispatch({
@@ -52,18 +48,18 @@ export const getJaweleryCategory = () => (dispatch) => {
     console.log(error);
   }
 };
-export const detailPorduct = (id) => async (dispatch) => {
-  try {
-    const { data } = await api.getDetailProuct(id);
+// export const detailPorduct = (id) => async (dispatch) => {
+//   try {
+//     const { data } = await api.getDetailProuct(id);
 
-    dispatch({
-      type: 'DETAIL_PRODUCT',
-      data,
-    });
-  } catch (error) {
-    console.log(error.message);
-  }
-};
+//     dispatch({
+//       type: 'DETAIL_PRODUCT',
+//       data,
+//     });
+//   } catch (error) {
+//     console.log(error.message);
+//   }
+// };
 export const addToChart = (product) => (dispatch) => {
   try {
     dispatch({

@@ -19,10 +19,6 @@ const Product = () => {
   const dataLimit = dataProducts.filter((data, index) => index < limit);
 
   useEffect(() => {
-    dispatch(getDataProduk());
-  }, [dispatch]);
-
-  useEffect(() => {
     const scrollAddData = () => {
       var maxHeigh =
         document.documentElement.scrollHeight -
