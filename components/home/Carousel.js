@@ -54,8 +54,8 @@ const Carousel = () => {
             >
               <Text
                 backgroundColor="black"
-                padding="3px 10px"
-                fontSize={['14px', '16px', '16px', '16px']}
+                padding="4px 15px"
+                fontSize={['14px', '16px', '16px', '14px']}
               >
                 $.{product?.price}
               </Text>

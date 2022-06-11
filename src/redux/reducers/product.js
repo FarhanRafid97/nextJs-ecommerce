@@ -1,6 +1,6 @@
 import data from '../../../product.json';
 const dataProducts = data.products;
-export default (state = dataProducts, action) => {
+export default (state = [], action) => {
   switch (action.type) {
     case 'DATA_PRODUCT':
     case 'FILTER_PRODUCT_JAWEL':

@@ -53,11 +53,8 @@ const TotalPay = () => {
             onChange={shippingPrice}
             backgroundColor="black"
             color="white"
-            defaultValue="jne"
+            placeholder="Select option"
           >
-            <option defaultValue disabled>
-              --select shipping--
-            </option>
             <option value="jne">jne</option>
             <option value="jnt">jnt</option>
             <option value="sicepat">siCepat</option>

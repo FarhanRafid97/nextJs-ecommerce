@@ -24,20 +24,29 @@ const HomeIndex = () => {
         position="relative"
         overflow="hidden"
       >
-        <Box
+        <Flex
           position="absolute"
           textColor="white"
           textAlign="start"
+          flexDirection="column"
           left="0"
-          fontSize={['16px', '28px']}
+          fontSize={['16px', '26px']}
         >
-          <Text backgroundColor="black" padding="5px 10px">
+          <Text backgroundColor="black" padding="10px 25px">
             {dataProductHome[0].title}
           </Text>
-          <Text backgroundColor="black" display="inline" padding="5px 10px">
+          <Text
+            textAlign="center"
+            width="100px"
+            backgroundColor="black"
+            height="100%"
+            display="inline"
+            fontSize="18px"
+            padding="10px 25px"
+          >
             ${dataProductHome[0].price}
           </Text>
-        </Box>
+        </Flex>
         <Box
           width="100%"
           display="flex"
@@ -71,20 +80,28 @@ const HomeIndex = () => {
             justifyContent="center"
             overflow="hidden"
           >
-            <Box
+            <Flex
               position="absolute"
               textColor="white"
               textAlign="start"
+              flexDirection="column"
               left="0"
-              fontSize={['16  px', '28px']}
+              fontSize={['16px', '26px']}
             >
-              <Text backgroundColor="black" padding="5px 10px">
+              <Text backgroundColor="black" padding="10px 25px">
                 {product.title}
               </Text>
-              <Text backgroundColor="black" display="inline" padding="5px 10px">
+              <Text
+                textAlign="center"
+                backgroundColor="black"
+                display="inline"
+                padding="5px 10px"
+                fontSize="18px"
+                width="100px"
+              >
                 ${product.price}
               </Text>
-            </Box>
+            </Flex>
             <NextLink href={`/product/${product.id}`}>
               <Link
                 maxWidth="100%"

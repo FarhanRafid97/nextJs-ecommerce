@@ -53,7 +53,7 @@ const ShoppingCart = () => {
         placement="right"
         onClose={onClose}
         finalFocusRef={btnRef}
-        size={['sm', 'sm']}
+        size={['xs', 'sm']}
       >
         <DrawerOverlay />
         <DrawerContent>
