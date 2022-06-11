@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import ProductItem from '../../components/product/ProductItem';
-import { Flex, Image, Text, Link } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
 import HeaderProduct from './HeaderProduct';
+import ProductItem from '../../components/product/ProductItem';
 import { getDataProduk } from '../../src/redux/actions/product';
 
 const ListProduct = () => {
@@ -10,9 +10,14 @@ const ListProduct = () => {
   const [limit, setLimit] = useState(8);
   const dataProducts = useSelector((state) => state.product);
   const dataLimit = dataProducts.filter((data, index) => index < limit);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     dispatch(getDataProduk());
+    setLoading(false);
+  }, [dispatch]);
+
+  useEffect(() => {
     const scrollAddData = () => {
       var maxHeigh =
         document.documentElement.scrollHeight -

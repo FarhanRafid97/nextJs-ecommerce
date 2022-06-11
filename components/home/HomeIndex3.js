@@ -23,7 +23,7 @@ const HomeIndex3 = () => {
             maxWidth="100%"
             key={index}
             display={product.id === 10 ? 'none' : 'flex'}
-            backgroundColor={product.id === 11 ? '#d62828' : 'orange.500'}
+            backgroundColor={product.id === 11 ? '#284b63' : '#2b2d42'}
             h="50%"
             justifyContent="center"
             overflow="hidden"
@@ -40,12 +40,12 @@ const HomeIndex3 = () => {
                 {product.title}
               </Text>
               <Text
-                width="100px"
+                width={['80px', '100px']}
                 textAlign="center"
                 backgroundColor="black"
                 display="inline"
                 padding="5px 10px"
-                fontSize="16px"
+                fontSize={['14px', '16px']}
               >
                 ${product.price}
               </Text>
@@ -58,13 +58,19 @@ const HomeIndex3 = () => {
                 justifyContent="center"
                 className={homeStyle.imageHome}
               >
-                <Image width="300px" src={product.image} alt={product.title} />
+                <Image width="350px" src={product.image} alt={product.title} />
               </Link>
             </NextLink>
           </Flex>
         ))}
       </Flex>
-      <Flex flexBasis="72%" h="100vh" position="relative" overflow="hidden">
+      <Flex
+        flexBasis="72%"
+        h="100vh"
+        position="relative"
+        backgroundColor="gray.600"
+        overflow="hidden"
+      >
         <Flex
           position="absolute"
           textColor="white"
@@ -80,9 +86,9 @@ const HomeIndex3 = () => {
             backgroundColor="black"
             textAlign="center"
             display="inline"
-            fontSize="18px"
+            fontSize={['14px', '18px']}
             padding="10px 20px"
-            width="100px"
+            width={['80px', '100px']}
           >
             ${dataProductHome[1].price}
           </Text>

@@ -56,7 +56,7 @@ const ShoppingCart = () => {
         size={['xs', 'sm']}
       >
         <DrawerOverlay />
-        <DrawerContent>
+        <DrawerContent backgroundColor="black" color="white">
           <DrawerCloseButton />
           <DrawerHeader>Your items{`(${cartItems.length})`}</DrawerHeader>
 
@@ -75,8 +75,8 @@ const ShoppingCart = () => {
                   width="100%"
                   textAlign="center"
                   padding="15px"
-                  backgroundColor="black"
-                  color="White"
+                  backgroundColor="white"
+                  color="black"
                   onClick={onClose}
                   cursor="pointer"
                 >

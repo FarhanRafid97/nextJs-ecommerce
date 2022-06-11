@@ -12,7 +12,7 @@ const ProductItem = ({ product }) => {
         backgroundColor="white"
         _hover={{ textDecoration: 'none' }}
       >
-        <Flex padding={['2rem', '50px']} height={['200px', '350px']}>
+        <Flex padding={['2rem 1.3rem', '50px']} height={['200px', '350px']}>
           <Image src={product.image} width="100%" height="  100%" />
         </Flex>
         <Flex

@@ -7,7 +7,14 @@ import { removeChartData } from '../../src/redux/actions/product';
 const CartItems = ({ items, index }) => {
   const dispatch = useDispatch();
   return (
-    <Flex alignItems="center" flexDirection="column" w="100%" boxShadow="lg">
+    <Flex
+      alignItems="center"
+      flexDirection="column"
+      w="100%"
+      boxShadow="2px 15px 30px rgb(124, 124, 124,0.35)"
+      backgroundColor="white"
+      color="black"
+    >
       <Flex w="100%" alignItems="center" padding="15px" columnGap="8px">
         <Box>
           <Img src={items.product.image} width="90px"></Img>

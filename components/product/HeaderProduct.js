@@ -1,17 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Flex, Image, Text, Select } from '@chakra-ui/react';
+import { Flex, Text, Select } from '@chakra-ui/react';
+import {
+  getDataProduk,
+  getJaweleryCategory,
+  getMenCategory,
+  getWomenCategory,
+} from '../../src/redux/actions/product';
+
 const HeaderProduct = () => {
   const dispatch = useDispatch();
+  const [categoryNow, setCategoryNow] = useState('All Product');
 
   const mobileCategory = (e) => {
     if (e.target.value === 'all') {
+      setCategoryNow('All Product');
       dispatch(getDataProduk());
     } else if (e.target.value === 'women') {
+      setCategoryNow('Women Product');
       dispatch(getWomenCategory());
     } else if (e.target.value === 'men') {
+      setCategoryNow('Men Product');
       dispatch(getMenCategory());
     } else {
+      setCategoryNow('Jawelery');
       dispatch(getJaweleryCategory());
     }
   };
@@ -24,7 +36,7 @@ const HeaderProduct = () => {
       alignItems="center"
     >
       <Text fontSize={['10px', '14px']} fontWeight="thin" color="white">
-        Product | All Product
+        Product | {categoryNow}
       </Text>
       <Select
         bg="black"
@@ -34,6 +46,7 @@ const HeaderProduct = () => {
         fontSize={['10px', '14px']}
         height={['24px', '30px']}
         fontWeight="light"
+        onChange={mobileCategory}
       >
         <option value="all">All Product</option>
         <option value="men">Men Product</option>

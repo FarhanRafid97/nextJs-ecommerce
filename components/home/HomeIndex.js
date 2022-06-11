@@ -20,7 +20,7 @@ const HomeIndex = () => {
       <Flex
         flexBasis={['100%', '100%', '100%', '72%']}
         h="100vh"
-        backgroundColor="orange.500"
+        backgroundColor="#8d99ae"
         position="relative"
         overflow="hidden"
       >
@@ -37,11 +37,11 @@ const HomeIndex = () => {
           </Text>
           <Text
             textAlign="center"
-            width="100px"
+            width={['80px', '100px']}
             backgroundColor="black"
             height="100%"
             display="inline"
-            fontSize="18px"
+            fontSize={['14px', '18px']}
             padding="10px 25px"
           >
             ${dataProductHome[0].price}
@@ -75,7 +75,7 @@ const HomeIndex = () => {
             maxWidth="100%"
             key={index}
             display={product.id === 9 ? 'none' : 'flex'}
-            backgroundColor={product.id === 10 ? '#d62828' : ''}
+            backgroundColor={product.id === 10 ? '#edf2f4' : '#4a4e69'}
             h="50%"
             justifyContent="center"
             overflow="hidden"
@@ -96,8 +96,8 @@ const HomeIndex = () => {
                 backgroundColor="black"
                 display="inline"
                 padding="5px 10px"
-                fontSize="18px"
-                width="100px"
+                fontSize={['14px', '18px']}
+                width={['80px', '100px']}
               >
                 ${product.price}
               </Text>

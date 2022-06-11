@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, Image, Text, Link } from '@chakra-ui/react';
+import { Flex, Text } from '@chakra-ui/react';
 
 const BannerProduct = () => {
   return (
@@ -11,16 +11,16 @@ const BannerProduct = () => {
       alignItems="center"
       flexDirection="column"
     >
-      <Text fontSize="24px" fontWeight="thin" color="gray.100">
-        Welcome
+      <Text fontSize={['16px', '24px']} fontWeight="thin" color="gray.100">
+        All Product
       </Text>
       <Text
-        fontSize="38px"
-        fontWeight="bold"
+        fontSize={['18px', '38px']}
+        fontWeight={['light', 'normal']}
         letterSpacing="0.1rem"
-        color="gray.100"
+        color="white"
       >
-        All Our Product
+        This Our Latest Updated Product
       </Text>
     </Flex>
   );
