@@ -57,7 +57,7 @@ const DetailProduct = ({ product, router }) => {
         color="black"
         top="40px"
         left={['31%', '13%', '37%', '43%']}
-        backgroundColor="green.300"
+        backgroundColor="gray.300"
         padding="2px 10px"
         borderRadius="10px"
         zIndex="99"

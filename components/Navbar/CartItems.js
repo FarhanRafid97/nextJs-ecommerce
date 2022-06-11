@@ -15,11 +15,16 @@ const CartItems = ({ items, index }) => {
       backgroundColor="white"
       color="black"
     >
-      <Flex w="100%" alignItems="center" padding="15px" columnGap="8px">
+      <Flex w="100%" alignItems="center" padding="15px" columnGap="20px">
         <Box>
-          <Img src={items.product.image} width="90px"></Img>
+          <Img src={items.product.image} width="90px" height="100px" />
         </Box>
-        <Flex fontSize="14px" flexDirection="column" rowGap="4px">
+        <Flex
+          fontSize="12px"
+          flexDirection="column"
+          rowGap="4px"
+          justifyContent="center"
+        >
           <Text
             maxW={['180px', '', '210px', '220px']}
             overflow="hidden"

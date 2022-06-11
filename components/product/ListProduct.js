@@ -4,17 +4,16 @@ import { Flex } from '@chakra-ui/react';
 import HeaderProduct from './HeaderProduct';
 import ProductItem from '../../components/product/ProductItem';
 import { getDataProduk } from '../../src/redux/actions/product';
+import data from '../../product.json';
 
 const ListProduct = () => {
   const dispatch = useDispatch();
   const [limit, setLimit] = useState(8);
   const dataProducts = useSelector((state) => state.product);
   const dataLimit = dataProducts.filter((data, index) => index < limit);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     dispatch(getDataProduk());
-    setLoading(false);
   }, [dispatch]);
 
   useEffect(() => {
@@ -23,7 +22,7 @@ const ListProduct = () => {
         document.documentElement.scrollHeight -
         document.documentElement.clientHeight;
 
-      if (maxHeigh <= window.scrollY && limit !== dataProducts.jmlData) {
+      if (maxHeigh <= window.scrollY && limit !== data.products.length) {
         setTimeout(() => {
           setLimit(limit + 4);
         }, 500);

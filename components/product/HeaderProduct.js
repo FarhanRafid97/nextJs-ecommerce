@@ -49,8 +49,8 @@ const HeaderProduct = () => {
         onChange={mobileCategory}
       >
         <option value="all">All Product</option>
-        <option value="men">Men Product</option>
         <option value="women">Women Product</option>
+        <option value="men">Men Product</option>
         <option value="jawelery">Jawelery</option>
       </Select>
     </Flex>
