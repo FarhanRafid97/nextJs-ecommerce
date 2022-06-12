@@ -22,7 +22,7 @@ const ListProduct = () => {
         document.documentElement.scrollHeight -
         document.documentElement.clientHeight;
 
-      if (maxHeigh <= window.scrollY && limit !== data.products.length) {
+      if (maxHeigh - 100 <= window.scrollY && limit !== data.products.length) {
         setTimeout(() => {
           setLimit(limit + 4);
         }, 500);
