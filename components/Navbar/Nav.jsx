@@ -15,6 +15,7 @@ import { useEffect, useState } from 'react';
 import ShoppingCart from './ShoppingCart';
 import NavMenuMobile from './NavMenuMobile';
 import NextLink from 'next/link';
+import SearchMobile from './SearchMobile';
 
 const Nav = () => {
   const [search, setSearch] = useState(false);
@@ -38,20 +39,24 @@ const Nav = () => {
         color="white"
       >
         <Flex
-          width={['90%', '95%']}
+          width={['100%', '95%']}
           margin="auto"
           justifyContent="space-between"
           alignItems="center"
         >
-          <NextLink href="/">
-            <Link
-              width={['100px', '100px', '100px', '300px']}
-              fontSize={['16px', '24px']}
-              _hover={{ textDecoration: 'none' }}
-            >
-              VorteX
-            </Link>
-          </NextLink>
+          <Flex alignItems="center" columnGap="10px">
+            <SearchMobile />
+
+            <NextLink href="/">
+              <Link
+                width={['100px', '100px', '100px', '300px']}
+                fontSize={['16px', '24px']}
+                _hover={{ textDecoration: 'none' }}
+              >
+                VorteX
+              </Link>
+            </NextLink>
+          </Flex>
           <Flex
             display={['none', 'flex']}
             padding="7px"

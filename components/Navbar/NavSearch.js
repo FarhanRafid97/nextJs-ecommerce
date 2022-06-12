@@ -65,8 +65,8 @@ const NavSearch = ({ setSearch, search }) => {
                 return val;
               }
             })
-            .map((product) => (
-              <NextLink href={`/product/${product.id}`}>
+            .map((product, index) => (
+              <NextLink href={`/product/${product.id}`} key={index}>
                 <Link
                   onClick={() => setSearch(false)}
                   border="2px"
@@ -77,7 +77,12 @@ const NavSearch = ({ setSearch, search }) => {
                   }}
                 >
                   <Flex alignItems="center" padding="15px" columnGap="15px">
-                    <Image src={product.image} w="60px" h="80px" />
+                    <Image
+                      src={product.image}
+                      w="60px"
+                      h="80px"
+                      alt={product.title}
+                    />
                     <Text fontSize="14px" fontWeight="light">
                       {product.title}
                     </Text>

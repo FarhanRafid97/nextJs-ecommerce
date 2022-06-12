@@ -11,7 +11,7 @@ const Detail = ({ params }) => {
 
   return (
     <Flex
-      marginTop="76px"
+      marginTop={['64px', '76px']}
       bg="black"
       position="relative"
       width="100vw"
@@ -29,7 +29,7 @@ export function getStaticProps(context) {
 }
 
 export const getStaticPaths = async () => {
-  const ids = data.products.map((article) => article.id);
+  const ids = data.products.map((product) => product.id);
   const paths = ids.map((id) => ({ params: { id: id.toString() } }));
 
   return {
