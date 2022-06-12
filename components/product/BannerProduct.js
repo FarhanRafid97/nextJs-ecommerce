@@ -6,8 +6,12 @@ const BannerProduct = () => {
     <Flex
       w="100%"
       h="50vh"
-      backgroundImage="url('https://thumbs.dreamstime.com/b/e-commerce-symbol-black-background-friday-concept-d-illustration-shop-shopping-cart-trolley-icon-banner-copy-space-156159363.jpg')"
+      backgroundImage="url('https://images.unsplash.com/photo-1518002171953-a080ee817e1f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80')"
       justifyContent="center"
+      backgroundRepeat="no-repeat"
+      backgroundSize="cover"
+      backgroundPosition="center"
+      brightness="20%"
       alignItems="center"
       flexDirection="column"
     >

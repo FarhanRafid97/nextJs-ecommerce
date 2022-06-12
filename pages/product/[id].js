@@ -11,6 +11,7 @@ const Detail = ({ params }) => {
 
   return (
     <Flex
+      marginTop="76px"
       bg="black"
       position="relative"
       width="100vw"

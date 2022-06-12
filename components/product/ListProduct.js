@@ -35,12 +35,7 @@ const ListProduct = () => {
   }, [limit]);
 
   return (
-    <Flex
-      flexDirection="column"
-      width="100%"
-      padding={['0 15px', '0 25px']}
-      rowGap="35px"
-    >
+    <Flex flexDirection="column" width="100%" rowGap="35px">
       <HeaderProduct />
       <Flex
         flexWrap="wrap"

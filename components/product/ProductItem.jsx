@@ -7,12 +7,12 @@ const ProductItem = ({ product }) => {
   return (
     <NextLink href={`/product/${product.id}`}>
       <Link
-        w={['48%', '330px']}
+        w={['48%', '345px']}
         padding="15px"
         backgroundColor="white"
         _hover={{ textDecoration: 'none' }}
       >
-        <Flex padding={['2rem 1.3rem', '50px']} height={['200px', '350px']}>
+        <Flex padding={['2rem 1.3rem', '4.5rem']} height={['200px', '350px']}>
           <Image
             src={product.image}
             width="100%"

@@ -16,6 +16,7 @@ const Product = () => {
   return (
     <>
       <Flex
+        marginTop={['64px', '76px']}
         minW="100vw"
         rowGap="25px"
         columnGap="15px"

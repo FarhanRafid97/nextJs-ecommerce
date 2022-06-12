@@ -4,6 +4,7 @@ import {
   UnorderedList,
   Text,
   Container,
+  Avatar,
   Link,
 } from '@chakra-ui/react';
 
@@ -22,13 +23,15 @@ const Nav = () => {
     <>
       {search && <NavSearch setSearch={setSearch} search={search} />}
       <Container
+        position="fixed"
+        zIndex="99"
         minWidth="100%"
         padding="20px"
         backgroundColor="black"
         color="white"
       >
         <Flex
-          width={['90%', '80%']}
+          width={['90%', '95%']}
           margin="auto"
           justifyContent="space-between"
           alignItems="center"
@@ -36,10 +39,10 @@ const Nav = () => {
           <NextLink href="/">
             <Link
               width={['100px', '100px', '100px', '300px']}
-              fontSize="24px"
+              fontSize={['16px', '24px']}
               _hover={{ textDecoration: 'none' }}
             >
-              Logo
+              VorteX
             </Link>
           </NextLink>
           <Flex
@@ -75,6 +78,13 @@ const Nav = () => {
               </ListItem>
               <ListItem>
                 <NextLink href="/product">Product</NextLink>
+              </ListItem>
+              <ListItem marginLeft="25px">
+                <Avatar
+                  name="Dan Abrahmov"
+                  size="sm"
+                  src="https://bit.ly/dan-abramov"
+                />
               </ListItem>
               <ListItem fontSize="20px">
                 <ShoppingCart />

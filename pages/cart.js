@@ -7,11 +7,12 @@ const Cart = () => {
   return (
     <>
       <Container
+        marginTop={['64px', '76px']}
         minW="100vw"
         minHeight="100vh"
         paddingX={['0px', '0px', '50px']}
       >
-        <Text fontSize="38px" marginTop="35px">
+        <Text fontSize={['28px', '38px']} marginTop="35px" fontWeight="thin">
           My Shopping Cart
         </Text>
         <Flex w="100%" marginTop="50px">

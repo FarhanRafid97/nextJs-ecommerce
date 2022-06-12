@@ -12,6 +12,7 @@ export default function Home() {
       minH="100vh"
       backgroundColor="red.100"
       alignItems="start"
+      marginTop={['64px', '76px']}
     >
       <HomeIndex />
       <Homeindex2 />

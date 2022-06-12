@@ -40,7 +40,7 @@ const CartItems = ({ items, index }) => {
         </Flex>
       </Flex>
       <Button
-        colorScheme="red"
+        colorScheme="facebook"
         variant="solid"
         width="100%"
         borderRadius="1px"

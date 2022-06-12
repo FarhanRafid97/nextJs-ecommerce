@@ -31,7 +31,7 @@ const HeaderProduct = () => {
   return (
     <Flex
       justifyContent="space-between"
-      paddingBottom="25px"
+      padding="0 25px 15px"
       borderBottom="1px solid white"
       alignItems="center"
     >
