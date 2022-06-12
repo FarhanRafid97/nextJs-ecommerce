@@ -42,63 +42,69 @@ const SearchMobile = () => {
           <DrawerHeader>Create your account</DrawerHeader>
 
           <DrawerBody>
-            <Flex
-              flexDirection="column"
-              width="100%"
-              paddingTop="25px"
-              overflowY="scroll"
-              className={navbarStyle.hideScroll}
-              rowGap="15px"
-            >
-              {searchVal === '    ' && (
-                <Text w="100%" textAlign="center">
-                  Serach Your items
-                </Text>
-              )}
-              {data.products
-                .filter((val) => {
-                  if (val === '') {
-                    return val;
-                  } else if (
-                    val.title.toLowerCase().includes(searchVal.toLowerCase())
-                  ) {
-                    return val;
-                  }
-                })
-                .map((product, index) => (
-                  <NextLink href={`/product/${product.id}`} key={index}>
-                    <Link
-                      onClick={() => setSearch(false)}
-                      border="2px"
-                      borderRadius="lg"
-                      _hover={{
-                        textDecoration: 'none',
-                        border: '2px solid #48cae4',
-                      }}
-                    >
-                      <Flex alignItems="center" padding="15px" columnGap="15px">
-                        <Image
-                          src={product.image}
-                          w="50px"
-                          h="70px"
-                          alt={product.title}
-                        />
-                        <Text fontSize="10px" fontWeight="light">
-                          {product.title}
-                        </Text>
-                      </Flex>
-                    </Link>
-                  </NextLink>
-                ))}
+            <Flex flexDirection="column" height="100%" rowGap="25px">
+              <Input
+                placeholder="Type here..."
+                onChange={(e) => setSearchVal(e.target.value)}
+              />
+              <Flex
+                flexDirection="column"
+                width="100%"
+                height="100%"
+                paddingTop="25px"
+                overflowY="scroll"
+                className={navbarStyle.hideScroll}
+                rowGap="15px"
+              >
+                {searchVal === '    ' && (
+                  <Text w="100%" textAlign="center">
+                    Serach Your items
+                  </Text>
+                )}
+                {data.products
+                  .filter((val) => {
+                    if (val === '') {
+                      return val;
+                    } else if (
+                      val.title.toLowerCase().includes(searchVal.toLowerCase())
+                    ) {
+                      return val;
+                    }
+                  })
+                  .map((product, index) => (
+                    <NextLink href={`/product/${product.id}`} key={index}>
+                      <Link
+                        onClick={() => setSearch(false)}
+                        border="2px"
+                        borderRadius="lg"
+                        _hover={{
+                          textDecoration: 'none',
+                          border: '2px solid #48cae4',
+                        }}
+                      >
+                        <Flex
+                          alignItems="center"
+                          padding="15px"
+                          columnGap="15px"
+                        >
+                          <Image
+                            src={product.image}
+                            w="50px"
+                            h="70px"
+                            alt={product.title}
+                          />
+                          <Text fontSize="10px" fontWeight="light">
+                            {product.title}
+                          </Text>
+                        </Flex>
+                      </Link>
+                    </NextLink>
+                  ))}
+              </Flex>
             </Flex>
           </DrawerBody>
 
-          <DrawerFooter>
-            <Input
-              placeholder="Type here..."
-              onChange={(e) => setSearchVal(e.target.value)}
-            />
-          </DrawerFooter>
+          <DrawerFooter></DrawerFooter>
         </DrawerContent>
       </Drawer>
     </>
