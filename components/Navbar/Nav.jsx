@@ -11,13 +11,20 @@ import {
 import { AiOutlineSearch } from 'react-icons/ai';
 
 import NavSearch from './NavSearch';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ShoppingCart from './ShoppingCart';
 import NavMenuMobile from './NavMenuMobile';
 import NextLink from 'next/link';
 
 const Nav = () => {
   const [search, setSearch] = useState(false);
+  useEffect(() => {
+    if (search === true) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'visible';
+    }
+  }, [search]);
 
   return (
     <>
@@ -54,6 +61,7 @@ const Nav = () => {
             fontSize="20px"
             alignItems="center"
             columnGap="5px"
+            backgroundColor="white"
             cursor="pointer"
             borderRadius="5px"
             onClick={() => setSearch(!search)}

@@ -1,0 +1,8 @@
+.hideScroll::-webkit-scrollbar {
+  background-color: rgb(224, 224, 224);
+  width: 4px;
+}
+.hideScroll::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 15px;
+}

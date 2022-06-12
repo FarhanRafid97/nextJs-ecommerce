@@ -7,8 +7,7 @@ import {
   Img,
   UnorderedList,
   ListItem,
-  Spinner,
-  Skeleton,
+  useToast,
 } from '@chakra-ui/react';
 
 import {
@@ -27,6 +26,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addToChart } from '../src/redux/actions/product';
 
 const DetailProduct = ({ product, router }) => {
+  const toast = useToast();
   const dispatch = useDispatch();
   const [size, setSize] = useState('XL');
 
@@ -40,34 +40,21 @@ const DetailProduct = ({ product, router }) => {
   const [value, setValue] = useState(1);
 
   const [like, setLike] = useState(false);
-  const [addChart, setAddChart] = useState(false);
 
   const addChartHandler = () => {
-    setAddChart(true);
+    toast({
+      title: 'Items Added.',
+      position: 'top',
+      description: "We've add your item for you.",
+      status: 'success',
+      duration: 2000,
+      isClosable: true,
+    });
     dispatch(addToChart({ jumlah: value, size: size, product }));
-    setTimeout(() => {
-      setAddChart(false);
-    }, 2000);
   };
 
   return (
     <>
-      <Flex
-        position="fixed"
-        color="black"
-        top="40px"
-        left={['31%', '13%', '37%', '43%']}
-        backgroundColor="gray.300"
-        padding="2px 10px"
-        borderRadius="10px"
-        zIndex="99"
-        fontSize={['12px', '18px']}
-        transition="0.6s"
-        opacity={addChart ? '1' : '0'}
-      >
-        Data berhasil di tambahkan
-      </Flex>
-
       <Flex
         flex="1.5"
         position="relative"
@@ -107,11 +94,7 @@ const DetailProduct = ({ product, router }) => {
           {!like ? <AiOutlineHeart /> : <AiFillHeart />}
         </Button>
 
-        {product?.image ? (
-          <Img src={product?.image} maxW={['200px', '600px']} maxH="500px" />
-        ) : (
-          <Spinner size="xl" />
-        )}
+        <Img src={product?.image} maxW={['200px', '600px']} maxH="500px" />
       </Flex>
       <Container
         color="gray.300"
@@ -129,11 +112,9 @@ const DetailProduct = ({ product, router }) => {
         >
           {product?.title}
         </Text>
-        {product?.price ? (
-          <Text padding="15px 5px">${product?.price}</Text>
-        ) : (
-          <Skeleton height="20px" margin="15px 5px" />
-        )}
+
+        <Text padding="15px 5px">${product?.price}</Text>
+
         <Flex
           padding="25px 0"
           borderBottom="2px solid white"
