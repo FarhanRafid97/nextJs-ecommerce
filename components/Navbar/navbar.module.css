@@ -6,3 +6,7 @@
   background: black;
   border-radius: 15px;
 }
+
+.hideScrollMobie::-webkit-scrollbar {
+  display: none;
+}

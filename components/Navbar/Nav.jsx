@@ -45,7 +45,9 @@ const Nav = () => {
           alignItems="center"
         >
           <Flex alignItems="center" columnGap="10px">
-            <SearchMobile />
+            <Flex display={['flex', 'flex', 'flex', 'none']}>
+              <SearchMobile />
+            </Flex>
 
             <NextLink href="/">
               <Link

@@ -39,7 +39,7 @@ const SearchMobile = () => {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton onClick={() => setSearchVal('    ')} />
-          <DrawerHeader>Create your account</DrawerHeader>
+          <DrawerHeader>Search Your Items</DrawerHeader>
 
           <DrawerBody>
             <Flex flexDirection="column" height="100%" rowGap="25px">
@@ -50,10 +50,10 @@ const SearchMobile = () => {
               <Flex
                 flexDirection="column"
                 width="100%"
-                height="100%"
+                height="70%"
                 paddingTop="25px"
                 overflowY="scroll"
-                className={navbarStyle.hideScroll}
+                className={navbarStyle.hideScrollMobie}
                 rowGap="15px"
               >
                 {searchVal === '    ' && (
@@ -74,12 +74,11 @@ const SearchMobile = () => {
                   .map((product, index) => (
                     <NextLink href={`/product/${product.id}`} key={index}>
                       <Link
-                        onClick={() => setSearch(false)}
+                        onClick={onClose}
                         border="2px"
                         borderRadius="lg"
                         _hover={{
                           textDecoration: 'none',
-                          border: '2px solid #48cae4',
                         }}
                       >
                         <Flex
