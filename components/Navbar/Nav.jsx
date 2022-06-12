@@ -24,7 +24,7 @@ const Nav = () => {
       {search && <NavSearch setSearch={setSearch} search={search} />}
       <Container
         position="fixed"
-        zIndex="99"
+        zIndex="99  "
         minWidth="100%"
         padding="20px"
         backgroundColor="black"
