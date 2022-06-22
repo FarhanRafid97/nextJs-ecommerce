@@ -2,8 +2,12 @@ import React from 'react';
 
 import NextLink from 'next/link';
 import { Flex, Image, Text, Link } from '@chakra-ui/react';
-
-const ProductItem = ({ product }) => {
+import { Product } from '../../src/redux/actions/typeActionProduct';
+interface ProductItem {
+  product: Product;
+  key: number;
+}
+const ProductItem: React.FC<ProductItem> = ({ product, key }) => {
   return (
     <NextLink href={`/product/${product.id}`}>
       <Link

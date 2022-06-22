@@ -10,9 +10,8 @@ import { IndexType } from 'sequelize/types';
 import { Product } from '../../src/redux/actions/typeActionProduct';
 import { AppDispatch } from '../../src/redux/store';
 
-const ListProduct = () => {
-  const UseAppDispatch: AppDispatch = useDispatch();
-  const dispatch = useDispatch();
+const ListProduct: React.FC<{}> = () => {
+  const dispatch: AppDispatch = useDispatch();
   const [limit, setLimit] = useState(8);
   const dataProducts = useSelector((state: State) => state.product);
   const dataLimit = dataProducts.filter(
@@ -20,7 +19,7 @@ const ListProduct = () => {
   );
 
   useEffect(() => {
-    UseAppDispatch(getDataProduk());
+    dispatch(getDataProduk());
   }, [dispatch]);
 
   useEffect(() => {
@@ -52,7 +51,7 @@ const ListProduct = () => {
         w="100%"
         justifyContent="center  "
       >
-        {dataLimit.map((product: object, index: number) => (
+        {dataLimit.map((product, index) => (
           <ProductItem product={product} key={index} />
         ))}
       </Flex>

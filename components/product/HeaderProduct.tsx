@@ -7,12 +7,13 @@ import {
   getMenCategory,
   getWomenCategory,
 } from '../../src/redux/actions/product';
+import { AppDispatch } from '../../src/redux/store';
 
-const HeaderProduct = () => {
-  const dispatch = useDispatch();
+const HeaderProduct: React.FC<{}> = ({}) => {
+  const dispatch: AppDispatch = useDispatch();
   const [categoryNow, setCategoryNow] = useState('All Product');
 
-  const mobileCategory = (e) => {
+  const mobileCategory = (e: React.ChangeEvent<HTMLSelectElement>) => {
     if (e.target.value === 'all') {
       setCategoryNow('All Product');
       dispatch(getDataProduk());

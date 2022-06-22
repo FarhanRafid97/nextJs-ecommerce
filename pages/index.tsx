@@ -5,7 +5,7 @@ import Homeindex2 from '../components/home/HomeIndex2';
 import HomeIndex3 from '../components/home/HomeIndex3';
 import HomeIndex4 from '../components/home/HomeIndex4';
 
-export default function Home() {
+const Home = () => {
   return (
     <Box
       width="100vw"
@@ -21,4 +21,6 @@ export default function Home() {
       <Footer />
     </Box>
   );
-}
+};
+
+export default Home;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Flex, Text } from '@chakra-ui/react';
 
-const BannerProduct = () => {
+const BannerProduct: React.FC<{}> = () => {
   return (
     <Flex
       w="100%"

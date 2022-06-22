@@ -24,10 +24,18 @@ import Review from './detailProductComponents/Review';
 import SelectSize from './detailProductComponents/SelectSize';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToChart } from '../src/redux/actions/product';
+import { AppDispatch } from '../src/redux/store';
+import { Product } from '../src/redux/actions/typeActionProduct';
+import { useRouter } from 'next/router';
 
-const DetailProduct = ({ product, router }) => {
+interface DetailProduct {
+  product: Product;
+  router: ReturnType<typeof useRouter>;
+}
+
+const DetailProduct: React.FC<DetailProduct> = ({ product, router }) => {
   const toast = useToast();
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
   const [size, setSize] = useState('XL');
 
   const moreInfo = [
@@ -50,7 +58,7 @@ const DetailProduct = ({ product, router }) => {
       duration: 2000,
       isClosable: true,
     });
-    dispatch(addToChart({ jumlah: value, size: size, product }));
+    // dispatch(addToChart({ jumlah: value, size: size, product }));
   };
 
   return (
