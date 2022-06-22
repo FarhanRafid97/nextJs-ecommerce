@@ -1,3 +1,5 @@
+import { Action } from '../ActionTypes/action';
+
 export default (state = [], action) => {
   switch (action.type) {
     case 'ADD_CHART':

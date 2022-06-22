@@ -4,10 +4,12 @@ import NextLink from 'next/link';
 import { AiFillDelete } from 'react-icons/ai';
 import { useSelector, useDispatch } from 'react-redux';
 import { addTotal, removeChartData } from '../../src/redux/actions/product';
+import { State } from '../../src/redux/reducers';
+
 const TableCart = () => {
   const dispatch = useDispatch();
   const dataCart = useSelector((state) => state.chart);
-  console.log(dataCart);
+
   return (
     <Container minW="100%">
       <Flex

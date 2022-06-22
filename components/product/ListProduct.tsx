@@ -7,8 +7,11 @@ import { getDataProduk } from '../../src/redux/actions/product';
 import data from '../../product.json';
 import { State } from '../../src/redux/reducers';
 import { IndexType } from 'sequelize/types';
+import { Product } from '../../src/redux/actions/typeActionProduct';
+import { AppDispatch } from '../../src/redux/store';
 
 const ListProduct = () => {
+  const UseAppDispatch: AppDispatch = useDispatch();
   const dispatch = useDispatch();
   const [limit, setLimit] = useState(8);
   const dataProducts = useSelector((state: State) => state.product);
@@ -17,7 +20,7 @@ const ListProduct = () => {
   );
 
   useEffect(() => {
-    dispatch(getDataProduk());
+    UseAppDispatch(getDataProduk());
   }, [dispatch]);
 
   useEffect(() => {

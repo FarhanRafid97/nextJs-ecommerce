@@ -14,3 +14,4 @@ const makeStore = () =>
 //const store = createStore(rootReducer, compose(applyMiddleware(...middleware)))
 
 export const wrapper = createWrapper(makeStore);
+export type AppDispatch = ReturnType<typeof store.dispatch>;
