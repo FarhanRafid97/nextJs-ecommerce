@@ -94,6 +94,9 @@ const Nav = () => {
               <ListItem>
                 <NextLink href="/product">Product</NextLink>
               </ListItem>
+              <ListItem>
+                <NextLink href="/history">History</NextLink>
+              </ListItem>
               <ListItem marginLeft="25px">
                 <Avatar
                   name="Dan Abrahmov"

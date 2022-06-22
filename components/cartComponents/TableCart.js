@@ -42,21 +42,15 @@ const TableCart = () => {
             borderTop={index !== 0 && '1px solid black'}
             fontSize={['12px', '12px', '12px', '14px']}
             columnGap="20px"
-            padding=" 3px 10px"
             key={index}
           >
             <NextLink href={`/product/${cart.product.id}`}>
-              <Link
-                flex="1"
-                display="flex"
-                minHeight="150px"
-                padding="5px 0 10px 10px"
-              >
+              <Link flex="1" display="flex" minHeight="150px">
                 <Image
                   src={cart.product.image}
-                  margin={['5px 0', 'auto']}
-                  maxW={['60px', '100px']}
-                  maxH={['100px', '140px']}
+                  margin={['auto', 'auto']}
+                  maxW={['110px', '100px']}
+                  maxH={['200px', '140px']}
                   flex="1"
                   alt={cart.product.title}
                 />
@@ -108,7 +102,7 @@ const TableCart = () => {
               </Flex>
               <Text flex="1">Total : ${cart.jumlah * cart.product.price}</Text>
             </Flex>
-            <Flex flex="1" justifyContent="center">
+            <Flex flex="1" justifyContent="center" mr={4}>
               <Button
                 w="10px"
                 padding="2px"

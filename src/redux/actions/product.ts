@@ -1,13 +1,14 @@
 import data from '../../../product.json';
+import { Dispatch } from 'redux';
 
-export const getDataProduk = () => (dispatch) => {
+export const getDataProduk = () => (dispatch: Dispatch) => {
   dispatch({
     type: 'DATA_PRODUCT',
     data: data.products,
   });
 };
 
-export const getWomenCategory = () => (dispatch) => {
+export const getWomenCategory = () => (dispatch: Dispatch) => {
   try {
     const filterProduct = data.products.filter(
       (data) => data.category === "women's clothing"
@@ -21,7 +22,7 @@ export const getWomenCategory = () => (dispatch) => {
   }
 };
 
-export const getMenCategory = () => (dispatch) => {
+export const getMenCategory = () => (dispatch: Dispatch) => {
   try {
     const filterProduct = data.products.filter(
       (data) => data.category === "men's clothing"
@@ -35,7 +36,7 @@ export const getMenCategory = () => (dispatch) => {
   }
 };
 
-export const getJaweleryCategory = () => (dispatch) => {
+export const getJaweleryCategory = () => (dispatch: Dispatch) => {
   try {
     const filterProduct = data.products.filter(
       (data) => data.category === 'jewelery'
@@ -60,7 +61,7 @@ export const getJaweleryCategory = () => (dispatch) => {
 //     console.log(error.message);
 //   }
 // };
-export const addToChart = (product) => (dispatch) => {
+export const addToChart = (product) => (dispatch: Dispatch) => {
   try {
     dispatch({
       type: 'ADD_CHART',

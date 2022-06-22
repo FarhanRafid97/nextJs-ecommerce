@@ -2,15 +2,19 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Flex } from '@chakra-ui/react';
 import HeaderProduct from './HeaderProduct';
-import ProductItem from '../../components/product/ProductItem';
+import ProductItem from './ProductItem';
 import { getDataProduk } from '../../src/redux/actions/product';
 import data from '../../product.json';
+import { State } from '../../src/redux/reducers';
+import { IndexType } from 'sequelize/types';
 
 const ListProduct = () => {
   const dispatch = useDispatch();
   const [limit, setLimit] = useState(8);
-  const dataProducts = useSelector((state) => state.product);
-  const dataLimit = dataProducts.filter((data, index) => index < limit);
+  const dataProducts = useSelector((state: State) => state.product);
+  const dataLimit = dataProducts.filter(
+    (data: object, index: number) => index < limit
+  );
 
   useEffect(() => {
     dispatch(getDataProduk());
@@ -45,7 +49,7 @@ const ListProduct = () => {
         w="100%"
         justifyContent="center  "
       >
-        {dataLimit.map((product, index) => (
+        {dataLimit.map((product: object, index: number) => (
           <ProductItem product={product} key={index} />
         ))}
       </Flex>

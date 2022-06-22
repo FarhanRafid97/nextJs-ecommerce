@@ -5,4 +5,5 @@ import chart from './chart';
 
 const index = combineReducers({ product, chart });
 
+export type State = ReturnType<typeof index>;
 export default index;
