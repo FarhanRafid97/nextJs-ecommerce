@@ -14,9 +14,7 @@ import { useAppDispatch, useAppSelector } from '../../src/redux/reducers/hook';
 const ListProduct: React.FC<{}> = () => {
   const [limit, setLimit] = useState(8);
   const dataProducts = useAppSelector((state) => state.product);
-  const dataLimit = dataProducts.filter(
-    (data: object, index: number) => index < limit
-  );
+  const dataLimit = dataProducts.filter((data, index: number) => index < limit);
 
   useEffect(() => {
     useAppDispatch(getDataProduk());
