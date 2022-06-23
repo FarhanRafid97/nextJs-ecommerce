@@ -1,5 +1,5 @@
 import React from 'react';
-import TableCart from '../components/cartComponents/TableCart';
+import TableCart from '../components/cartComponents/TableCart.js';
 import { Flex, Text, Container } from '@chakra-ui/react';
 import Footer from '../components/Footer/Footer';
 import TotalPay from '../components/cartComponents/TotalPay';

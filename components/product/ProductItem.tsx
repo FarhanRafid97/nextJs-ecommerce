@@ -3,6 +3,7 @@ import React from 'react';
 import NextLink from 'next/link';
 import { Flex, Image, Text, Link } from '@chakra-ui/react';
 import { Product } from '../../src/redux/actions/typeActionProduct';
+
 interface ProductItem {
   product: Product;
   key: number;

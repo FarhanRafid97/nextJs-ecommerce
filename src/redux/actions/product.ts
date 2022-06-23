@@ -1,8 +1,11 @@
 import data from '../../../product.json';
 import { Dispatch } from 'redux';
-import { Product, ProductType } from './typeActionProduct';
-import { ProductActionType } from '../ActionTypes/action';
+import { AnyAction } from 'redux';
+import { ChartActionType, ProductActionType } from '../ActionTypes/action';
 import { ActionType } from '../ActionTypes/product';
+import { ChartTypeAction } from '../ActionTypes/chartType';
+import { ChartProduct } from './typeChartProduct';
+import { Product } from './typeActionProduct';
 
 export const getDataProduk = () => (dispatch: Dispatch<ProductActionType>) => {
   console.log(typeof data.products);
@@ -71,48 +74,50 @@ export const getJaweleryCategory =
 //     console.log(error.message);
 //   }
 // };
-export const addToChart = (product: ProductType) => (dispatch: Dispatch) => {
-  try {
-    dispatch({
-      type: 'ADD_CHART',
-      data: product,
-    });
-  } catch (error: unknown) {
-    if (error instanceof Error) {
-      console.log(error.message);
+export const addToChart =
+  (product: ChartProduct) => (dispatch: Dispatch<ChartActionType>) => {
+    try {
+      dispatch({
+        type: ChartTypeAction.ADD_CHART,
+        data: product,
+      });
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        console.log(error.message);
+      }
     }
-  }
-};
+  };
 
-export const getChartData = () => (dispatch: Dispatch) => {
-  try {
-    dispatch({
-      type: 'FETCH_DATA',
-    });
-  } catch (error: unknown) {
-    if (error instanceof Error) {
-      console.log(error.message);
+// export const getChartData = () => (dispatch: Dispatch<ChartActionType>) => {
+//   try {
+//     dispatch({
+//       type: ChartTypeAction.ADD_CHART,
+//     });
+//   } catch (error: unknown) {
+//     if (error instanceof Error) {
+//       console.log(error.message);
+//     }
+//   }
+// };
+export const removeChartData =
+  (index: ChartProduct) => (dispatch: Dispatch<ChartActionType>) => {
+    try {
+      dispatch({
+        type: ChartTypeAction.REMOVE_CHART,
+        data: index,
+      });
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        console.log(error.message);
+      }
     }
-  }
-};
-export const removeChartData = (index: number) => (dispatch: Dispatch) => {
-  try {
-    dispatch({
-      type: 'REMOVE_CHART',
-      index,
-    });
-  } catch (error: unknown) {
-    if (error instanceof Error) {
-      console.log(error.message);
-    }
-  }
-};
+  };
 export const addTotal =
   (index: number, params: string) => (dispatch: Dispatch) => {
     try {
       dispatch({
         type: 'ADD_TOTAL_CART',
-        payload: { index, params },
+        data: { index, params },
       });
     } catch (error: unknown) {
       if (error instanceof Error) {

@@ -7,3 +7,4 @@ const index = combineReducers({ product, chart });
 
 export default index;
 export type State = ReturnType<typeof index>;
+export type UseDispatch = ReturnType<typeof index>;

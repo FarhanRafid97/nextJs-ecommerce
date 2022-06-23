@@ -1,3 +1,4 @@
+import { AnyAction } from 'redux';
 import data from '../../../product.json';
 import { Product, ProductType } from '../actions/typeActionProduct';
 import { ProductActionType } from '../ActionTypes/action';

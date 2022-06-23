@@ -1,11 +1,15 @@
 import { ActionType } from './product';
 import { Product, ProductType } from '../actions/typeActionProduct';
+import { ChartTypeAction } from './chartType';
+import { ChartProduct } from '../actions/typeChartProduct';
 
 export interface ProductActionType {
-  type:
-    | ActionType.DATA_PRODUCT
-    | ActionType.FILTER_PRODUCT_JAWEL
-    | ActionType.FILTER_PRODUCT_MEN
-    | ActionType.FILTER_PRODUCT_WOMEN;
+  type: ActionType;
   data: Product[];
+}
+
+export interface ChartActionType {
+  index?: number;
+  type: ChartTypeAction;
+  data?: ChartProduct;
 }

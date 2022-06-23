@@ -9,18 +9,18 @@ import { State } from '../../src/redux/reducers';
 import { IndexType } from 'sequelize/types';
 import { Product } from '../../src/redux/actions/typeActionProduct';
 import { AppDispatch } from '../../src/redux/store';
+import { useAppDispatch, useAppSelector } from '../../src/redux/reducers/hook';
 
 const ListProduct: React.FC<{}> = () => {
-  const dispatch: AppDispatch = useDispatch();
   const [limit, setLimit] = useState(8);
-  const dataProducts = useSelector((state: State) => state.product);
+  const dataProducts = useAppSelector((state) => state.product);
   const dataLimit = dataProducts.filter(
     (data: object, index: number) => index < limit
   );
 
   useEffect(() => {
-    dispatch(getDataProduk());
-  }, [dispatch]);
+    useAppDispatch(getDataProduk());
+  }, []);
 
   useEffect(() => {
     const scrollAddData = () => {

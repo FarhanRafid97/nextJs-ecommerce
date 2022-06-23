@@ -58,7 +58,7 @@ const DetailProduct: React.FC<DetailProduct> = ({ product, router }) => {
       duration: 2000,
       isClosable: true,
     });
-    // dispatch(addToChart({ jumlah: value, size: size, product }));
+    dispatch(addToChart({ jumlah: value, size: size, product }));
   };
 
   return (

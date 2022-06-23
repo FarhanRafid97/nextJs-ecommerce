@@ -7,7 +7,7 @@ import { ParsedUrlQuery } from 'querystring';
 import { WithRouterProps } from 'next/dist/client/with-router';
 
 interface DetailProps {
-  params: any;
+  params: { id?: number };
 }
 const Detail: React.FC<DetailProps> = ({ params }) => {
   const router = useRouter();
