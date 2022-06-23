@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import Footer from '../../components/Footer/Footer';
-import { Flex, Text, Select, Button } from '@chakra-ui/react';
+import { Flex, Text, Select, Button, Spinner } from '@chakra-ui/react';
 
 import {
   getDataProduk,
@@ -13,6 +13,7 @@ import BannerProduct from '../../components/product/BannerProduct';
 import ListProduct from '../../components/product/ListProduct';
 
 const Product = () => {
+  const [loading, setLoading] = useState(false);
   return (
     <>
       <Flex
@@ -26,6 +27,7 @@ const Product = () => {
       >
         <BannerProduct />
         <ListProduct />
+
         <Footer />
       </Flex>
     </>

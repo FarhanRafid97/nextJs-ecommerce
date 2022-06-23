@@ -8,23 +8,39 @@ import {
   getWomenCategory,
 } from '../../src/redux/actions/product';
 
-const HeaderProduct = () => {
+const HeaderProduct = ({ loading, setLoading }) => {
   const dispatch = useDispatch();
   const [categoryNow, setCategoryNow] = useState('All Product');
 
   const mobileCategory = (e) => {
     if (e.target.value === 'all') {
-      setCategoryNow('All Product');
-      dispatch(getDataProduk());
+      setLoading(true);
+      setTimeout(() => {
+        setCategoryNow('All Product');
+        dispatch(getDataProduk());
+        setLoading(false);
+      }, 300);
     } else if (e.target.value === 'women') {
-      setCategoryNow('Women Product');
-      dispatch(getWomenCategory());
+      setLoading(true);
+      setTimeout(() => {
+        setCategoryNow('Women Product');
+        dispatch(getWomenCategory());
+        setLoading(false);
+      }, 300);
     } else if (e.target.value === 'men') {
-      setCategoryNow('Men Product');
-      dispatch(getMenCategory());
+      setLoading(true);
+      setTimeout(() => {
+        setCategoryNow('Men Product');
+        dispatch(getMenCategory());
+        setLoading(false);
+      }, 300);
     } else {
-      setCategoryNow('Jawelery');
-      dispatch(getJaweleryCategory());
+      setLoading(true);
+      setTimeout(() => {
+        setCategoryNow('Jawelery');
+        dispatch(getJaweleryCategory());
+        setLoading(false);
+      }, 300);
     }
   };
 

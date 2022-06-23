@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Flex } from '@chakra-ui/react';
+import { Flex, Spinner } from '@chakra-ui/react';
 import HeaderProduct from './HeaderProduct';
 import ProductItem from '../../components/product/ProductItem';
 import { getDataProduk } from '../../src/redux/actions/product';
@@ -33,10 +33,10 @@ const ListProduct = () => {
       window.removeEventListener('scroll', scrollAddData);
     };
   }, [limit]);
-
+  const [loading, setLoading] = useState(false);
   return (
     <Flex flexDirection="column" width="100%" rowGap="35px">
-      <HeaderProduct />
+      <HeaderProduct setLoading={setLoading} />
       <Flex
         flexWrap="wrap"
         rowGap="5px"
@@ -45,6 +45,25 @@ const ListProduct = () => {
         w="100%"
         justifyContent="center  "
       >
+        {loading && (
+          <Flex
+            position="fixed"
+            top={0}
+            w="100vw"
+            h="100vh"
+            bg="blackAlpha.300"
+          >
+            <Spinner
+              display="flex"
+              margin="auto"
+              thickness="4px"
+              speed="0.65s"
+              emptyColor="gray.200"
+              color="blue.500"
+              size="xl"
+            />
+          </Flex>
+        )}
         {dataLimit.map((product, index) => (
           <ProductItem product={product} key={index} />
         ))}
