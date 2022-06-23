@@ -5,7 +5,7 @@ import { ChartTypeAction } from '../ActionTypes/chartType';
 
 export default (
   state: ChartProduct[] | [] = [],
-  action: PayloadAction<ChartActionType> | AnyAction
+  action: PayloadAction<ChartActionType> | AnyAction | any
 ) => {
   switch (action.type) {
     case ChartTypeAction.ADD_CHART:
