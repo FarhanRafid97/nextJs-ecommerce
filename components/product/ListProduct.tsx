@@ -1,23 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { Flex } from '@chakra-ui/react';
+import React, { useEffect, useState } from 'react';
+import data from '../../product.json';
+import { getDataProduk } from '../../src/redux/actions/product';
+import { useDispatch, useSelector } from '../../src/redux/store';
 import HeaderProduct from './HeaderProduct';
 import ProductItem from './ProductItem';
-import { getDataProduk } from '../../src/redux/actions/product';
-import data from '../../product.json';
-import { State } from '../../src/redux/reducers';
-import { IndexType } from 'sequelize/types';
-import { Product } from '../../src/redux/actions/typeActionProduct';
-import { AppDispatch } from '../../src/redux/store';
-import { useAppDispatch, useAppSelector } from '../../src/redux/reducers/hook';
 
 const ListProduct: React.FC<{}> = () => {
+  const dispatch = useDispatch();
   const [limit, setLimit] = useState(8);
-  const dataProducts = useAppSelector((state) => state.product);
+  const dataProducts = useSelector((state) => state.product);
   const dataLimit = dataProducts.filter((data, index: number) => index < limit);
 
   useEffect(() => {
-    useAppDispatch(getDataProduk());
+    dispatch(getDataProduk());
   }, []);
 
   useEffect(() => {

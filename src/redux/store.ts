@@ -1,27 +1,24 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-import thunk from 'redux-thunk';
+import { configureStore } from '@reduxjs/toolkit';
 import { createWrapper } from 'next-redux-wrapper';
-import rootReducer from './reducers';
-import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
+// import userSlice from './slices/userSlice';
+import {
+  useDispatch as useDispatchBase,
+  useSelector as useSelectorBase,
+} from 'react-redux';
+import reducer from './reducers';
 
-const middleware = [thunk];
+export const store = configureStore({
+  reducer,
+});
 
-export const store = createStore(
-  rootReducer,
-  compose(applyMiddleware(...middleware))
-);
-export const reducersConfig = configureStore({ reducer: rootReducer });
-const makeStore = () =>
-  createStore(rootReducer, compose(applyMiddleware(...middleware)));
-//const store = createStore(rootReducer, compose(applyMiddleware(...middleware)))
+export type RootState = ReturnType<typeof store.getState>;
 
-export type RootState = ReturnType<typeof reducersConfig.getState>;
-export type AppDispatch = typeof store.dispatch;
-export const wrapper = createWrapper(makeStore);
+type AppDispatch = typeof store.dispatch;
 
-export type AppThunk<ReturnType = void> = ThunkAction<
-  ReturnType,
-  RootState,
-  unknown,
-  Action<string>
->;
+export const useDispatch = () => useDispatchBase<AppDispatch>();
+
+export const useSelector = <TSelected = unknown>(
+  selector: (state: RootState) => TSelected
+): TSelected => useSelectorBase<RootState, TSelected>(selector);
+
+export const wrapper = createWrapper(store as any, { debug: true });

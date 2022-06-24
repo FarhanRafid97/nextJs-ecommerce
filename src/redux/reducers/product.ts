@@ -1,10 +1,10 @@
 import { AnyAction } from 'redux';
 import data from '../../../product.json';
 import { Product, ProductType } from '../actions/typeActionProduct';
-import { ProductActionType } from '../ActionTypes/action';
+import { Action, ProductActionType } from '../ActionTypes/action';
 import { ActionType } from '../ActionTypes/product';
 const dataProducts = data.products;
-export default (state: Product[] = [], action: ProductActionType) => {
+export default (state: Product[] = [], action: Action) => {
   switch (action.type) {
     case ActionType.DATA_PRODUCT:
     case ActionType.FILTER_PRODUCT_JAWEL:

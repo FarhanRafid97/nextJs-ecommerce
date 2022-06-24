@@ -22,9 +22,9 @@ import CollapseEx from './detailProductComponents/CollapsEx';
 import HowMany from './detailProductComponents/HowMany';
 import Review from './detailProductComponents/Review';
 import SelectSize from './detailProductComponents/SelectSize';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from '../src/redux/store';
 import { addToChart } from '../src/redux/actions/product';
-import { AppDispatch } from '../src/redux/store';
+
 import { Product } from '../src/redux/actions/typeActionProduct';
 import { useRouter } from 'next/router';
 
@@ -35,7 +35,7 @@ interface DetailProduct {
 
 const DetailProduct: React.FC<DetailProduct> = ({ product, router }) => {
   const toast = useToast();
-  const dispatch: AppDispatch = useDispatch();
+  const dispatch = useDispatch();
   const [size, setSize] = useState('XL');
 
   const moreInfo = [

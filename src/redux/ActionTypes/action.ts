@@ -8,8 +8,15 @@ export interface ProductActionType {
   data: Product[];
 }
 
-export interface ChartActionType {
-  index?: number;
-  type: ChartTypeAction;
-  data?: ChartProduct;
+export interface RemoveChart {
+  type: ChartTypeAction.REMOVE_CHART;
+  data: number;
 }
+export interface ChartActionTypeAdd {
+  type: ChartTypeAction.ADD_CHART;
+  data: ChartProduct;
+}
+
+export type Action = ProductActionType | ChartActionTypeAdd | RemoveChart;
+
+export type EnumType = Product[] | ChartProduct[];

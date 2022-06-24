@@ -1,13 +1,13 @@
 import data from '../../../product.json';
 import { Dispatch } from 'redux';
 import { AnyAction } from 'redux';
-import { ChartActionType, ProductActionType } from '../ActionTypes/action';
+import { Action, ProductActionType } from '../ActionTypes/action';
 import { ActionType } from '../ActionTypes/product';
 import { ChartTypeAction } from '../ActionTypes/chartType';
 import { ChartProduct } from './typeChartProduct';
 import { Product } from './typeActionProduct';
 
-export const getDataProduk = () => (dispatch: Dispatch<ProductActionType>) => {
+export const getDataProduk = () => (dispatch: Dispatch<Action>) => {
   console.log(typeof data.products);
   dispatch({
     type: ActionType.DATA_PRODUCT,
@@ -15,22 +15,21 @@ export const getDataProduk = () => (dispatch: Dispatch<ProductActionType>) => {
   });
 };
 
-export const getWomenCategory =
-  () => (dispatch: Dispatch<ProductActionType>) => {
-    try {
-      const filterProduct = data.products.filter(
-        (data) => data.category === "women's clothing"
-      );
-      dispatch({
-        type: ActionType.FILTER_PRODUCT_WOMEN,
-        data: filterProduct,
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  };
+export const getWomenCategory = () => (dispatch: Dispatch<Action>) => {
+  try {
+    const filterProduct = data.products.filter(
+      (data) => data.category === "women's clothing"
+    );
+    dispatch({
+      type: ActionType.FILTER_PRODUCT_WOMEN,
+      data: filterProduct,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
 
-export const getMenCategory = () => (dispatch: Dispatch<ProductActionType>) => {
+export const getMenCategory = () => (dispatch: Dispatch<Action>) => {
   try {
     const filterProduct = data.products.filter(
       (data) => data.category === "men's clothing"
@@ -46,22 +45,21 @@ export const getMenCategory = () => (dispatch: Dispatch<ProductActionType>) => {
   }
 };
 
-export const getJaweleryCategory =
-  () => (dispatch: Dispatch<ProductActionType>) => {
-    try {
-      const filterProduct = data.products.filter(
-        (data) => data.category === 'jewelery'
-      );
-      dispatch({
-        type: ActionType.FILTER_PRODUCT_JAWEL,
-        data: filterProduct,
-      });
-    } catch (error: unknown) {
-      if (error instanceof Error) {
-        console.log(error.message);
-      }
+export const getJaweleryCategory = () => (dispatch: Dispatch<Action>) => {
+  try {
+    const filterProduct = data.products.filter(
+      (data) => data.category === 'jewelery'
+    );
+    dispatch({
+      type: ActionType.FILTER_PRODUCT_JAWEL,
+      data: filterProduct,
+    });
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      console.log(error.message);
     }
-  };
+  }
+};
 // export const detailPorduct = (id) => async (dispatch) => {
 //   try {
 //     const { data } = await api.getDetailProuct(id);
@@ -75,7 +73,7 @@ export const getJaweleryCategory =
 //   }
 // };
 export const addToChart =
-  (product: ChartProduct) => (dispatch: Dispatch<ChartActionType>) => {
+  (product: ChartProduct) => (dispatch: Dispatch<Action>) => {
     try {
       dispatch({
         type: ChartTypeAction.ADD_CHART,
@@ -100,7 +98,7 @@ export const addToChart =
 //   }
 // };
 export const removeChartData =
-  (index: ChartProduct) => (dispatch: Dispatch<ChartActionType>) => {
+  (index: number) => (dispatch: Dispatch<Action>) => {
     try {
       dispatch({
         type: ChartTypeAction.REMOVE_CHART,
