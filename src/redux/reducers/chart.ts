@@ -1,5 +1,5 @@
 import { ChartProduct } from '../actions/typeChartProduct';
-import { Action } from '../ActionTypes/action';
+import { Action, ChartActionTypeAdd } from '../ActionTypes/action';
 import { ChartTypeAction } from '../ActionTypes/chartType';
 
 export default (state: ChartProduct[] = [], action: Action) => {
@@ -24,27 +24,27 @@ export default (state: ChartProduct[] = [], action: Action) => {
         ? duplicateData
         : (state = [...state, action.data]);
 
-    // case 'REMOVE_CHART':
-    //   return state.filter((data, index) => index !== action.index);
-    // case 'ADD_TOTAL_CART':
-    //   console.log(action);
-    //   return state.map((data, index) => {
-    //     if (index === action.index) {
-    //       return action.data.params === 'add'
-    //         ? {
-    //             size: data.size,
-    //             jumlah: data.jumlah + 1,
-    //             product: data.product,
-    //           }
-    //         : {
-    //             size: data.size,
-    //             jumlah: data.jumlah <= 0 ? 0 : data.jumlah - 1,
-    //             product: data.product,
-    //           };
-    //     } else {
-    //       return data;
-    //     }
-    //   });
+    case 'REMOVE_CHART':
+      return state.filter((data, index) => index !== action.index);
+    case 'ADD_TOTAL_CART':
+      console.log(action);
+      return state.map((data, index) => {
+        if (index === action.index) {
+          return action.data.params === 'add'
+            ? {
+                size: data.size,
+                jumlah: data.jumlah + 1,
+                product: data.product,
+              }
+            : {
+                size: data.size,
+                jumlah: data.jumlah <= 0 ? 0 : data.jumlah - 1,
+                product: data.product,
+              };
+        } else {
+          return data;
+        }
+      });
 
     default:
       return state;

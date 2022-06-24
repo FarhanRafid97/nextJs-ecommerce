@@ -45,7 +45,7 @@ const DetailProduct: React.FC<DetailProduct> = ({ product, router }) => {
     'One size fits most',
   ];
 
-  const [value, setValue] = useState(1);
+  const [value, setValue] = useState<number>(1);
 
   const [like, setLike] = useState(false);
 

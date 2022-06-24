@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Select, Flex, Text, Button, Switch } from '@chakra-ui/react';
-import { useSelector } from 'react-redux';
+import { useSelector } from '../../src/redux/store';
+import { ChartProduct } from '../../src/redux/actions/typeChartProduct';
+
 const TotalPay = () => {
-  const dataCart = useSelector((state) => state.chart);
+  const dataCart = useSelector((state) => state.chart as ChartProduct[]);
   const totalPerProduct = dataCart?.map((a) => a.jumlah * a.product.price);
 
   const [shipPrice, setShipPrice] = useState(0);
@@ -12,7 +14,7 @@ const TotalPay = () => {
     totalPerProduct.reduce((a, b) => a + b).toFixed(2);
 
   const [asuransi, setAsuransi] = useState(0);
-  const shippingPrice = (e) => {
+  const shippingPrice = (e: React.ChangeEvent<HTMLSelectElement>) => {
     if (e.target.value === 'jne') {
       setShipPrice(4);
       return;
@@ -69,7 +71,7 @@ const TotalPay = () => {
         </Flex>
         <Flex justifyContent="space-between">
           <Text>Shipping price</Text>
-          <Text>${shipPrice}</Text>
+          <Text>$ {shipPrice}</Text>
         </Flex>
         <Flex justifyContent="space-between">
           <Text>Assuransi</Text>
@@ -92,7 +94,7 @@ const TotalPay = () => {
           marginTop="30px"
         >
           <Text>Total</Text>
-          <Text>${Number(dataTotal) + shipPrice + asuransi}</Text>
+          <Text>$ {Number(dataTotal) + shipPrice + asuransi}</Text>
         </Flex>
 
         <Button

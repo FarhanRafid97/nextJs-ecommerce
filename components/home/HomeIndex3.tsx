@@ -47,14 +47,14 @@ const HomeIndex3 = () => {
                 padding="5px 10px"
                 fontSize={['14px', '16px']}
               >
-                ${product.price}
+                $ {product.price}
               </Text>
             </Flex>
             <NextLink href={`/product/${product.id}`}>
               <Link
                 maxWidth="100%"
                 display="flex"
-                alignitem="center"
+                alignItems="center"
                 justifyContent="center"
                 className={homeStyle.imageHome}
               >
@@ -96,13 +96,13 @@ const HomeIndex3 = () => {
         <Box
           width="100%"
           display="flex"
-          alignitem="center"
+          alignItems="center"
           justifyContent="center"
         >
           <NextLink href={`/product/${dataProductHome[1].id}`}>
             <Link
               display="flex"
-              alignitem="center"
+              alignItems="center"
               justifyContent="center"
               className={homeStyle.imageHome}
             >

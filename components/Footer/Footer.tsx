@@ -2,7 +2,7 @@ import { ButtonGroup, IconButton, Text, Flex } from '@chakra-ui/react';
 import * as React from 'react';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
-const Footer = () => {
+const Footer: React.FC<{}> = () => {
   return (
     <Flex
       w="100%"
@@ -14,7 +14,6 @@ const Footer = () => {
       backgroundColor="white"
     >
       <Flex
-        spacing={{ base: '4', md: '5' }}
         justifyContent="center"
         alignItems="center"
         rowGap="15px    "

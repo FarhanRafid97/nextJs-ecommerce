@@ -1,6 +1,12 @@
 import React from 'react';
 import { Select } from '@chakra-ui/react';
-const SelectSize = ({ size, setSize }) => {
+
+interface SelectSizeProps {
+  setSize: React.Dispatch<React.SetStateAction<string>>;
+  size: string;
+}
+
+const SelectSize: React.FC<SelectSizeProps> = ({ size, setSize }) => {
   return (
     <Select
       marginTop="15px"

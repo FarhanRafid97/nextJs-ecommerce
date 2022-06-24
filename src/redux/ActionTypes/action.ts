@@ -8,15 +8,23 @@ export interface ProductActionType {
   data: Product[];
 }
 
-export interface RemoveChart {
-  type: ChartTypeAction.REMOVE_CHART;
-  data: number;
-}
+// export interface RemoveChart {
+//   type: ChartTypeAction.REMOVE_CHART;
+//   data: number;
+// }
 export interface ChartActionTypeAdd {
-  type: ChartTypeAction.ADD_CHART;
+  type: ChartTypeAction.ADD_CHART | ChartTypeAction.ADD_TOTAL_CART;
   data: ChartProduct;
+  index?: number;
+}
+export interface ChartActionTypeDelete {
+  type: ChartTypeAction.REMOVE_CHART;
+  index?: number;
 }
 
-export type Action = ProductActionType | ChartActionTypeAdd | RemoveChart;
+export type Action =
+  | ProductActionType
+  | ChartActionTypeAdd
+  | ChartActionTypeDelete;
 
 export type EnumType = Product[] | ChartProduct[];

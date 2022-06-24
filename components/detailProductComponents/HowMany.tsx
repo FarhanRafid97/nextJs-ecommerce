@@ -1,7 +1,12 @@
 import React from 'react';
 import { Flex, Button, Input } from '@chakra-ui/react';
 
-const HowMany = ({ value, setValue }) => {
+interface HowMnayProps {
+  setValue: React.Dispatch<React.SetStateAction<number>>;
+  value: number;
+}
+
+const HowMany: React.FC<HowMnayProps> = ({ value, setValue }) => {
   const reductionValue = () => {
     if (value > 0) {
       setValue(value - 1);
@@ -27,7 +32,7 @@ const HowMany = ({ value, setValue }) => {
       </Button>
       <Input
         value={value}
-        onChange={(e) => setValue(e.target.value)}
+        onChange={(e) => setValue(parseInt(e.target.value))}
         width="60px"
         type="number"
         textAlign="center"

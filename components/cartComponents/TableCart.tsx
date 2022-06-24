@@ -2,13 +2,15 @@ import React from 'react';
 import { Flex, Image, Text, Button, Container, Link } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import { AiFillDelete } from 'react-icons/ai';
-import { useSelector, useDispatch } from 'react-redux';
+
 import { addTotal, removeChartData } from '../../src/redux/actions/product';
 import { State } from '../../src/redux/reducers';
+import { useDispatch, useSelector } from '../../src/redux/store';
+import { ChartProduct } from '../../src/redux/actions/typeChartProduct';
 
 const TableCart = () => {
   const dispatch = useDispatch();
-  const dataCart = useSelector((state) => state.chart);
+  const dataCart = useSelector((state) => state.chart as ChartProduct[]);
 
   return (
     <Container minW="100%">
@@ -41,7 +43,7 @@ const TableCart = () => {
             justifyContent="space-between"
             textAlign="center"
             alignItems="center"
-            borderTop={index !== 0 && '1px solid black'}
+            borderTop={index !== 0 ? '1px solid black' : undefined}
             fontSize={['12px', '12px', '12px', '14px']}
             columnGap="20px"
             key={index}
@@ -75,7 +77,7 @@ const TableCart = () => {
               >
                 {cart.product.title}
               </Text>
-              <Text flex="1">${cart.product.price}</Text>
+              <Text flex="1">$ {cart.product.price}</Text>
               <Text flex="1">{cart.size}</Text>
 
               <Flex alignItems="center" columnGap="5px" flex="1">
@@ -102,7 +104,7 @@ const TableCart = () => {
                   +
                 </Button>
               </Flex>
-              <Text flex="1">Total : ${cart.jumlah * cart.product.price}</Text>
+              <Text flex="1">Total : $ {cart.jumlah * cart.product.price}</Text>
             </Flex>
             <Flex flex="1" justifyContent="center" mr={4}>
               <Button

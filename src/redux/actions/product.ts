@@ -102,7 +102,7 @@ export const removeChartData =
     try {
       dispatch({
         type: ChartTypeAction.REMOVE_CHART,
-        data: index,
+        index,
       });
     } catch (error: unknown) {
       if (error instanceof Error) {
