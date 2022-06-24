@@ -1,11 +1,9 @@
-import data from '../../../product.json';
 import { Dispatch } from 'redux';
-import { AnyAction } from 'redux';
-import { Action, ProductActionType } from '../ActionTypes/action';
-import { ActionType } from '../ActionTypes/product';
+import data from '../../../product.json';
+import { Action } from '../ActionTypes/action';
 import { ChartTypeAction } from '../ActionTypes/chartType';
+import { ActionType } from '../ActionTypes/product';
 import { ChartProduct } from './typeChartProduct';
-import { Product } from './typeActionProduct';
 
 export const getDataProduk = () => (dispatch: Dispatch<Action>) => {
   console.log(typeof data.products);

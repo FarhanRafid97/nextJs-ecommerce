@@ -1,16 +1,16 @@
-import React from 'react';
 import {
   Drawer,
   DrawerBody,
+  DrawerCloseButton,
+  DrawerContent,
   DrawerHeader,
   DrawerOverlay,
-  DrawerContent,
-  useDisclosure,
-  DrawerCloseButton,
-  Text,
   Flex,
+  Text,
+  useDisclosure,
 } from '@chakra-ui/react';
 import NextLink from 'next/link';
+import React from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
 const NavMenuMobile: React.FC<{}> = () => {

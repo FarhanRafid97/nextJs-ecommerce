@@ -1,5 +1,5 @@
+import { Button, Flex, Input } from '@chakra-ui/react';
 import React from 'react';
-import { Flex, Button, Input } from '@chakra-ui/react';
 
 interface HowMnayProps {
   setValue: React.Dispatch<React.SetStateAction<number>>;

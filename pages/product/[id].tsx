@@ -1,10 +1,8 @@
+import { Flex } from '@chakra-ui/react';
+import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
 import { useRouter } from 'next/router';
 import DetailProduct from '../../components/DetailProduct';
 import data from '../../product.json';
-import { Flex } from '@chakra-ui/react';
-import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
-import { ParsedUrlQuery } from 'querystring';
-import { WithRouterProps } from 'next/dist/client/with-router';
 
 interface DetailProps {
   params: { id?: number };

@@ -1,8 +1,8 @@
+import { Container, Flex, Text } from '@chakra-ui/react';
 import React from 'react';
 import TableCart from '../components/cartComponents/TableCart';
-import { Flex, Text, Container } from '@chakra-ui/react';
-import Footer from '../components/Footer/Footer';
 import TotalPay from '../components/cartComponents/TotalPay';
+import Footer from '../components/Footer/Footer';
 const Cart = () => {
   return (
     <>

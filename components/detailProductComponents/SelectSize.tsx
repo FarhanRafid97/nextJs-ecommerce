@@ -1,5 +1,5 @@
-import React from 'react';
 import { Select } from '@chakra-ui/react';
+import React from 'react';
 
 interface SelectSizeProps {
   setSize: React.Dispatch<React.SetStateAction<string>>;

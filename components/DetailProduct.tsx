@@ -1,32 +1,29 @@
-import React, { useState } from 'react';
 import {
-  Flex,
   Button,
   Container,
-  Text,
+  Flex,
   Img,
-  UnorderedList,
   ListItem,
+  Text,
+  UnorderedList,
   useToast,
 } from '@chakra-ui/react';
-
+import { useRouter } from 'next/router';
+import React, { useState } from 'react';
 import {
-  AiOutlineHeart,
-  AiOutlineShoppingCart,
-  AiOutlineShopping,
   AiFillHeart,
+  AiOutlineHeart,
+  AiOutlineShopping,
+  AiOutlineShoppingCart,
 } from 'react-icons/ai';
-
 import { IoIosArrowBack } from 'react-icons/io';
+import { addToChart } from '../src/redux/actions/product';
+import { Product } from '../src/redux/actions/typeActionProduct';
+import { useDispatch } from '../src/redux/store';
 import CollapseEx from './detailProductComponents/CollapsEx';
 import HowMany from './detailProductComponents/HowMany';
 import Review from './detailProductComponents/Review';
 import SelectSize from './detailProductComponents/SelectSize';
-import { useDispatch } from '../src/redux/store';
-import { addToChart } from '../src/redux/actions/product';
-
-import { Product } from '../src/redux/actions/typeActionProduct';
-import { useRouter } from 'next/router';
 
 interface DetailProduct {
   product: Product;

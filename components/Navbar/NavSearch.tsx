@@ -1,8 +1,8 @@
-import { Flex, Input, Image, Text, Link } from '@chakra-ui/react';
+import { Flex, Image, Input, Link, Text } from '@chakra-ui/react';
+import NextLink from 'next/link';
 import React, { Dispatch, SetStateAction, useState } from 'react';
 import data from '../../product.json';
 import navbarStyle from './navbar.module.css';
-import NextLink from 'next/link';
 
 interface NavSearchProps {
   setSearch: Dispatch<SetStateAction<boolean>>;

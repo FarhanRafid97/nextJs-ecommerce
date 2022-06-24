@@ -1,7 +1,6 @@
-import React from 'react';
-
+import { Flex, Image, Link, Text } from '@chakra-ui/react';
 import NextLink from 'next/link';
-import { Flex, Image, Text, Link } from '@chakra-ui/react';
+import React from 'react';
 import { Product } from '../../src/redux/actions/typeActionProduct';
 
 interface ProductItem {

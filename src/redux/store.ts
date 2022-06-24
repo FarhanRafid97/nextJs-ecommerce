@@ -1,13 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { createWrapper } from 'next-redux-wrapper';
-import { createStore, applyMiddleware, compose } from 'redux';
-
 import {
   useDispatch as useDispatchBase,
   useSelector as useSelectorBase,
 } from 'react-redux';
-import reducer from './reducers';
+import { applyMiddleware, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
+import reducer from './reducers';
 
 const middleware = [thunk];
 

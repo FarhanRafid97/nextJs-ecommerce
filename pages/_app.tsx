@@ -1,9 +1,8 @@
-import '../styles/layout.css';
-import Layout from '../components/Layout';
-import { wrapper, store } from '../src/redux/store';
 import { ChakraProvider } from '@chakra-ui/react';
-import { Provider } from 'react-redux';
 import { AppProps } from 'next/app';
+import Layout from '../components/Layout';
+import { wrapper } from '../src/redux/store';
+import '../styles/layout.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

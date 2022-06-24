@@ -1,5 +1,5 @@
 import { ChartProduct } from '../actions/typeChartProduct';
-import { Action, ChartActionTypeAdd } from '../ActionTypes/action';
+import { Action } from '../ActionTypes/action';
 import { ChartTypeAction } from '../ActionTypes/chartType';
 
 export default (state: ChartProduct[] = [], action: Action) => {

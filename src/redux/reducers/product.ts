@@ -1,7 +1,6 @@
-import { AnyAction } from 'redux';
 import data from '../../../product.json';
-import { Product, ProductType } from '../actions/typeActionProduct';
-import { Action, ProductActionType } from '../ActionTypes/action';
+import { Product } from '../actions/typeActionProduct';
+import { Action } from '../ActionTypes/action';
 import { ActionType } from '../ActionTypes/product';
 const dataProducts = data.products;
 

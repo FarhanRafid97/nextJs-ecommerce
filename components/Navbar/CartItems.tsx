@@ -1,7 +1,6 @@
-import { Flex, Text, Img, Box, Button } from '@chakra-ui/react';
+import { Box, Button, Flex, Img, Text } from '@chakra-ui/react';
 import React from 'react';
 import { AiFillDelete } from 'react-icons/ai';
-
 import { removeChartData } from '../../src/redux/actions/product';
 import { ChartProduct } from '../../src/redux/actions/typeChartProduct';
 import { useDispatch } from '../../src/redux/store';

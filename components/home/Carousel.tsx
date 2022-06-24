@@ -1,7 +1,7 @@
+import { Box, Flex, Image, Link, Text } from '@chakra-ui/react';
+import NextLink from 'next/link';
 import React from 'react';
 import dataProduct from '../../product.json';
-import NextLink from 'next/link';
-import { Flex, Image, Box, Text, Link } from '@chakra-ui/react';
 import homeStyle from './home.module.css';
 
 const Carousel = () => {

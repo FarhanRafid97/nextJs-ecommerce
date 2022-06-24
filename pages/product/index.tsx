@@ -1,14 +1,6 @@
-import React, { useEffect, useState } from 'react';
-
+import { Flex } from '@chakra-ui/react';
+import React from 'react';
 import Footer from '../../components/Footer/Footer';
-import { Flex, Text, Select, Button } from '@chakra-ui/react';
-
-import {
-  getDataProduk,
-  getJaweleryCategory,
-  getMenCategory,
-  getWomenCategory,
-} from '../../src/redux/actions/product';
 import BannerProduct from '../../components/product/BannerProduct';
 import ListProduct from '../../components/product/ListProduct';
 

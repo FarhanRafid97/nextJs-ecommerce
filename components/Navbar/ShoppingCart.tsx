@@ -1,23 +1,22 @@
-import React from 'react';
 import {
+  Badge,
   Drawer,
   DrawerBody,
+  DrawerCloseButton,
+  DrawerContent,
   DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
-  DrawerContent,
-  DrawerCloseButton,
-  useDisclosure,
-  Link,
   Flex,
-  Badge,
+  Link,
+  useDisclosure,
 } from '@chakra-ui/react';
-import { AiOutlineShoppingCart } from 'react-icons/ai';
-
 import NextLink from 'next/link';
-import CartItems from './CartItems';
-import { useSelector } from '../../src/redux/store';
+import React from 'react';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { ChartProduct } from '../../src/redux/actions/typeChartProduct';
+import { useSelector } from '../../src/redux/store';
+import CartItems from './CartItems';
 
 const ShoppingCart = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();

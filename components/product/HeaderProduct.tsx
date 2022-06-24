@@ -1,16 +1,15 @@
+import { Flex, Select, Text } from '@chakra-ui/react';
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { Flex, Text, Select } from '@chakra-ui/react';
 import {
   getDataProduk,
   getJaweleryCategory,
   getMenCategory,
   getWomenCategory,
 } from '../../src/redux/actions/product';
-import { AppDispatch } from '../../src/redux/store';
+import { useDispatch } from '../../src/redux/store';
 
 const HeaderProduct: React.FC<{}> = ({}) => {
-  const dispatch: AppDispatch = useDispatch();
+  const dispatch = useDispatch();
   const [categoryNow, setCategoryNow] = useState('All Product');
 
   const mobileCategory = (e: React.ChangeEvent<HTMLSelectElement>) => {

@@ -1,9 +1,9 @@
-import React from 'react';
-
-import product from '../../product.json';
+import { Box, Flex, Image, Link, Text } from '@chakra-ui/react';
 import NextLink from 'next/link';
-import { Flex, Image, Box, Text, Link } from '@chakra-ui/react';
+import React from 'react';
+import product from '../../product.json';
 import homeStyle from './home.module.css';
+
 const HomeIndex3 = () => {
   const dataProductHome = product.products.filter(
     (prod) => prod.forHome === true

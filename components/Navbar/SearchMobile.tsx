@@ -1,24 +1,23 @@
 import {
   Drawer,
   DrawerBody,
+  DrawerCloseButton,
+  DrawerContent,
   DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
-  DrawerContent,
-  DrawerCloseButton,
-  useDisclosure,
-  Button,
   Flex,
-  Link,
   Image,
-  Text,
   Input,
+  Link,
+  Text,
+  useDisclosure,
 } from '@chakra-ui/react';
+import NextLink from 'next/link';
 import React, { useState } from 'react';
+import { AiOutlineSearch } from 'react-icons/ai';
 import data from '../../product.json';
 import navbarStyle from './navbar.module.css';
-import NextLink from 'next/link';
-import { AiOutlineSearch } from 'react-icons/ai';
 
 const SearchMobile: React.FC<{}> = () => {
   const [searchVal, setSearchVal] = useState('    ');

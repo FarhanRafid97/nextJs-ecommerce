@@ -1,4 +1,4 @@
-import { ButtonGroup, IconButton, Text, Flex } from '@chakra-ui/react';
+import { ButtonGroup, Flex, IconButton, Text } from '@chakra-ui/react';
 import * as React from 'react';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 

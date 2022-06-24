@@ -1,10 +1,10 @@
 import {
+  Box,
   Button,
   Container,
-  Box,
-  useDisclosure,
-  Text,
   Flex,
+  Text,
+  useDisclosure,
 } from '@chakra-ui/react';
 import { Collapse } from '@chakra-ui/transition';
 

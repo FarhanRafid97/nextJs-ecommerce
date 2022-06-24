@@ -1,6 +1,6 @@
-import React from 'react';
+import { Flex, Link, Text } from '@chakra-ui/react';
 import NextLink from 'next/link';
-import { Flex, Image, Box, Text, Link } from '@chakra-ui/react';
+import React from 'react';
 const SomeText = () => {
   return (
     <Flex

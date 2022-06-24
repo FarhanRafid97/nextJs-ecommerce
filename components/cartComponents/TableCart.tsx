@@ -1,12 +1,10 @@
-import React from 'react';
-import { Flex, Image, Text, Button, Container, Link } from '@chakra-ui/react';
+import { Button, Container, Flex, Image, Link, Text } from '@chakra-ui/react';
 import NextLink from 'next/link';
+import React from 'react';
 import { AiFillDelete } from 'react-icons/ai';
-
 import { addTotal, removeChartData } from '../../src/redux/actions/product';
-import { State } from '../../src/redux/reducers';
-import { useDispatch, useSelector } from '../../src/redux/store';
 import { ChartProduct } from '../../src/redux/actions/typeChartProduct';
+import { useDispatch, useSelector } from '../../src/redux/store';
 
 const TableCart = () => {
   const dispatch = useDispatch();

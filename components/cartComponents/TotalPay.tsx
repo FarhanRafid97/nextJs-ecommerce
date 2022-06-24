@@ -1,7 +1,7 @@
+import { Button, Flex, Select, Switch, Text } from '@chakra-ui/react';
 import React, { useState } from 'react';
-import { Select, Flex, Text, Button, Switch } from '@chakra-ui/react';
-import { useSelector } from '../../src/redux/store';
 import { ChartProduct } from '../../src/redux/actions/typeChartProduct';
+import { useSelector } from '../../src/redux/store';
 
 const TotalPay = () => {
   const dataCart = useSelector((state) => state.chart as ChartProduct[]);

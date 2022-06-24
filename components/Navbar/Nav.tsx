@@ -1,21 +1,19 @@
 import {
-  Flex,
-  ListItem,
-  UnorderedList,
-  Text,
-  Container,
   Avatar,
+  Container,
+  Flex,
   Link,
+  ListItem,
+  Text,
+  UnorderedList,
 } from '@chakra-ui/react';
-
-import { AiOutlineSearch } from 'react-icons/ai';
-
-import NavSearch from './NavSearch';
-import { useEffect, useState } from 'react';
-import ShoppingCart from './ShoppingCart';
-import NavMenuMobile from './NavMenuMobile';
 import NextLink from 'next/link';
+import { useEffect, useState } from 'react';
+import { AiOutlineSearch } from 'react-icons/ai';
+import NavMenuMobile from './NavMenuMobile';
+import NavSearch from './NavSearch';
 import SearchMobile from './SearchMobile';
+import ShoppingCart from './ShoppingCart';
 
 const Nav: React.FC<{}> = () => {
   const [search, setSearch] = useState<boolean>(false);
