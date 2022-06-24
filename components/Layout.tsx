@@ -1,7 +1,11 @@
+import { AppProps } from 'next/app';
 import layout from '../styles/Layout.module.css';
 
 import Nav from './Navbar/Nav';
-const Layout = ({ children }) => {
+interface LayoutInterface {
+  children: React.ReactNode;
+}
+const Layout: React.FC<LayoutInterface> = ({ children }) => {
   return (
     <>
       <Nav />
