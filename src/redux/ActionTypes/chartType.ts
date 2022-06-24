@@ -1,0 +1,6 @@
+export enum ChartTypeAction {
+  ADD_CHART = 'ADD_CHART',
+  FETCH_DATA = 'FETCH_DATA',
+  REMOVE_CHART = 'REMOVE_CHART',
+  ADD_TOTAL_CART = 'ADD_TOTAL_CART',
+}
