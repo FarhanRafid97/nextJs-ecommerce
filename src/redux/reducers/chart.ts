@@ -15,7 +15,7 @@ export default (state: ChartProduct[] = [], action: Action) => {
         data.product.id === action?.data.product.id &&
         data.size === action.data.size
           ? {
-              ...action,
+              ...action.data,
               jumlah: action.data.jumlah + data.jumlah,
             }
           : data
