@@ -121,7 +121,7 @@ const DetailProduct: React.FC<DetailProduct> = ({ product, router }) => {
           {product?.title}
         </Text>
 
-        <Text padding="15px 5px">${product?.price}</Text>
+        <Text padding="15px 5px">$ {product?.price}</Text>
 
         <Flex
           padding="25px 0"

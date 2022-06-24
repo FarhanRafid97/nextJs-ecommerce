@@ -1,9 +1,14 @@
 import { Flex, Input, Image, Text, Link } from '@chakra-ui/react';
-import React, { useState } from 'react';
+import React, { Dispatch, SetStateAction, useState } from 'react';
 import data from '../../product.json';
 import navbarStyle from './navbar.module.css';
 import NextLink from 'next/link';
-const NavSearch = ({ setSearch, search }) => {
+
+interface NavSearchProps {
+  setSearch: Dispatch<SetStateAction<boolean>>;
+  search: boolean;
+}
+const NavSearch: React.FC<NavSearchProps> = ({ setSearch, search }) => {
   const [searchVal, setSearchVal] = useState('   ');
   return (
     <>
@@ -57,7 +62,7 @@ const NavSearch = ({ setSearch, search }) => {
           )}
           {data.products
             .filter((val) => {
-              if (val === '') {
+              if (searchVal === '') {
                 return val;
               } else if (
                 val.title.toLowerCase().includes(searchVal.toLowerCase())

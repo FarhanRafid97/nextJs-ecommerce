@@ -17,8 +17,8 @@ import NavMenuMobile from './NavMenuMobile';
 import NextLink from 'next/link';
 import SearchMobile from './SearchMobile';
 
-const Nav = () => {
-  const [search, setSearch] = useState(false);
+const Nav: React.FC<{}> = () => {
+  const [search, setSearch] = useState<boolean>(false);
   useEffect(() => {
     if (search === true) {
       document.body.style.overflow = 'hidden';

@@ -4,6 +4,7 @@ import { Product, ProductType } from '../actions/typeActionProduct';
 import { Action, ProductActionType } from '../ActionTypes/action';
 import { ActionType } from '../ActionTypes/product';
 const dataProducts = data.products;
+
 export default (state: Product[] = [], action: Action) => {
   switch (action.type) {
     case ActionType.DATA_PRODUCT:

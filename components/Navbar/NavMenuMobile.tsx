@@ -13,7 +13,7 @@ import {
 import NextLink from 'next/link';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
-const NavMenuMobile = () => {
+const NavMenuMobile: React.FC<{}> = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>

@@ -13,13 +13,14 @@ import {
   Badge,
 } from '@chakra-ui/react';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
-import { useSelector } from 'react-redux';
+
 import NextLink from 'next/link';
 import CartItems from './CartItems';
+import { useSelector } from '../../src/redux/store';
 
 const ShoppingCart = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const btnRef = React.useRef();
+  const btnRef = React.useRef() as any;
   const cartItems = useSelector((state) => state.chart);
 
   return (

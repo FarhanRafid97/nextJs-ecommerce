@@ -20,10 +20,10 @@ import navbarStyle from './navbar.module.css';
 import NextLink from 'next/link';
 import { AiOutlineSearch } from 'react-icons/ai';
 
-const SearchMobile = () => {
+const SearchMobile: React.FC<{}> = () => {
   const [searchVal, setSearchVal] = useState('    ');
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const btnRef = React.useRef();
+  const btnRef = React.useRef() as any;
   return (
     <>
       <Flex onClick={onOpen}>
@@ -63,7 +63,7 @@ const SearchMobile = () => {
                 )}
                 {data.products
                   .filter((val) => {
-                    if (val === '') {
+                    if (searchVal === '') {
                       return val;
                     } else if (
                       val.title.toLowerCase().includes(searchVal.toLowerCase())

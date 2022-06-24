@@ -1,4 +1,3 @@
-import { AnyAction, PayloadAction } from '@reduxjs/toolkit';
 import { ChartProduct } from '../actions/typeChartProduct';
 import { Action } from '../ActionTypes/action';
 import { ChartTypeAction } from '../ActionTypes/chartType';

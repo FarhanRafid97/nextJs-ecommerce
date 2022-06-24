@@ -1,10 +1,17 @@
 import { Flex, Text, Img, Box, Button } from '@chakra-ui/react';
 import React from 'react';
 import { AiFillDelete } from 'react-icons/ai';
-import { useDispatch } from 'react-redux';
-import { removeChartData } from '../../src/redux/actions/product';
 
-const CartItems = ({ items, index }) => {
+import { removeChartData } from '../../src/redux/actions/product';
+import { ChartProduct } from '../../src/redux/actions/typeChartProduct';
+import { useDispatch } from '../../src/redux/store';
+
+interface CartItemPorps {
+  items: ChartProduct;
+  index: number;
+}
+
+const CartItems: React.FC<CartItemPorps> = ({ items, index }) => {
   const dispatch = useDispatch();
   return (
     <Flex
@@ -34,7 +41,7 @@ const CartItems = ({ items, index }) => {
           >
             {items.product.title}
           </Text>
-          <Text>Price:${items.product.price}</Text>
+          <Text>Price:$ {items.product.price}</Text>
           <Text>Size :{items.size}</Text>
           <Text>Total:{items.jumlah}</Text>
         </Flex>
