@@ -14,7 +14,7 @@ const ListProduct: React.FC<{}> = () => {
 
   useEffect(() => {
     dispatch(getDataProduk());
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     const scrollAddData = () => {
