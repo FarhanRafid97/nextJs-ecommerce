@@ -16,4 +16,5 @@ npm install
 ```
 
 State management:Redux
+</br>
 styleing: @Chakra-ui
