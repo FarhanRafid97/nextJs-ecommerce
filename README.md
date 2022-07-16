@@ -15,4 +15,6 @@ Instalation
 npm install
 ```
 
-unfinished preview : https://wonderful-fox-bd6967.netlify.app/
+State management:Redux
+</br>
+styling: @Chakra-ui
