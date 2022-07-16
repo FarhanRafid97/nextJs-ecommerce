@@ -49,8 +49,7 @@ const SearchMobile: React.FC<{}> = () => {
               <Flex
                 flexDirection="column"
                 width="100%"
-                height="70%"
-                paddingTop="25px"
+                height="80%"
                 overflowY="scroll"
                 className={navbarStyle.hideScrollMobie}
                 rowGap="15px"

@@ -76,7 +76,7 @@ const TotalPay = () => {
         <Flex justifyContent="space-between">
           <Text>Assuransi</Text>
           <Switch
-            colorScheme="green"
+            colorScheme="blue"
             onChange={(e) => {
               if (e.target.checked === true) {
                 setAsuransi(10);
@@ -94,7 +94,7 @@ const TotalPay = () => {
           marginTop="30px"
         >
           <Text>Total</Text>
-          <Text>$ {Number(dataTotal) + shipPrice + asuransi}</Text>
+          <Text>$ {totalPay.toFixed(2)}</Text>
         </Flex>
 
         <Button

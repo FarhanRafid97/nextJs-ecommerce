@@ -61,7 +61,7 @@ const ShoppingCart = () => {
           <DrawerCloseButton />
           <DrawerHeader>Your items{`(${cartItems.length})`}</DrawerHeader>
 
-          <DrawerBody>
+          <DrawerBody height="100vh">
             <Flex flexDirection="column" rowGap="15px">
               {cartItems.map((items, index) => (
                 <CartItems items={items} key={index} index={index} />
