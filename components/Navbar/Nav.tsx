@@ -6,6 +6,7 @@ import {
   ListItem,
   Text,
   UnorderedList,
+  Box,
 } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import { useEffect, useState } from 'react';
@@ -47,14 +48,15 @@ const Nav: React.FC<{}> = () => {
               <SearchMobile />
             </Flex>
 
-            <NextLink href="/">
-              <Link
+            <NextLink href="/" as="/">
+              <Text
                 width={['100px', '100px', '100px', '300px']}
                 fontSize={['16px', '24px']}
                 _hover={{ textDecoration: 'none' }}
+                cursor="pointer"
               >
                 VorteX
-              </Link>
+              </Text>
             </NextLink>
           </Flex>
           <Flex
@@ -84,21 +86,23 @@ const Nav: React.FC<{}> = () => {
               fontSize="16px"
             >
               <ListItem>
-                <NextLink href="/">Home</NextLink>
+                <NextLink href="/" as="/">
+                  Home
+                </NextLink>
               </ListItem>
               <ListItem>
-                <NextLink href="/cart">Cart</NextLink>
+                <NextLink href="/cart" as="/cart">
+                  Cart
+                </NextLink>
               </ListItem>
               <ListItem>
-                <NextLink href="/product">Product</NextLink>
+                <NextLink href="/product" as="/product">
+                  Product
+                </NextLink>
               </ListItem>
 
               <ListItem marginLeft="25px">
-                <Avatar
-                  name="Dan Abrahmov"
-                  size="sm"
-                  src="https://bit.ly/dan-abramov"
-                />
+                <Avatar name="Dan Abrahmov" size="sm" src="/dann.jpeg" />
               </ListItem>
               <ListItem fontSize="20px">
                 <ShoppingCart />

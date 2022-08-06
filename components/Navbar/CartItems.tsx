@@ -1,4 +1,5 @@
-import { Box, Button, Flex, Img, Text } from '@chakra-ui/react';
+import { Box, Button, Flex, Text } from '@chakra-ui/react';
+import Image from 'next/image';
 import React from 'react';
 import { AiFillDelete } from 'react-icons/ai';
 import { removeChartData } from '../../src/redux/actions/product';
@@ -23,7 +24,12 @@ const CartItems: React.FC<CartItemPorps> = ({ items, index }) => {
     >
       <Flex w="100%" alignItems="center" padding="15px" columnGap="20px">
         <Box>
-          <Img src={items.product.image} width="90px" height="100px" />
+          <Image
+            src={items.product.image}
+            alt={items.product.title}
+            width={90}
+            height={100}
+          />
         </Box>
         <Flex
           fontSize="12px"

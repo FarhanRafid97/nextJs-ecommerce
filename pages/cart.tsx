@@ -3,6 +3,7 @@ import React from 'react';
 import TableCart from '../components/cartComponents/TableCart';
 import TotalPay from '../components/cartComponents/TotalPay';
 import Footer from '../components/Footer/Footer';
+import Head from 'next/head';
 const Cart = () => {
   return (
     <>
@@ -12,6 +13,18 @@ const Cart = () => {
         minHeight="100vh"
         paddingX={['0px', '0px', '50px']}
       >
+        <Head>
+          <title>Cart Items</title>
+          <meta
+            name="viewport"
+            content="initial-scale=1.0, width=device-width"
+          />
+          <meta name="robots" content="index, follow" />
+          <meta
+            name="description"
+            content="All your items store here and you can add more"
+          />
+        </Head>
         <Text fontSize={['28px', '38px']} marginTop="35px" fontWeight="thin">
           My Shopping Cart
         </Text>

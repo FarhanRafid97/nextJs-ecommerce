@@ -1,11 +1,11 @@
-import { Button, Container, Flex, Image, Link, Text } from '@chakra-ui/react';
+import { Button, Container, Flex, Box, Text } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import React from 'react';
 import { AiFillDelete } from 'react-icons/ai';
 import { addTotal, removeChartData } from '../../src/redux/actions/product';
 import { ChartProduct } from '../../src/redux/actions/typeChartProduct';
 import { useDispatch, useSelector } from '../../src/redux/store';
-
+import Image from 'next/image';
 const TableCart = () => {
   const dispatch = useDispatch();
   const dataCart = useSelector((state) => state.chart as ChartProduct[]);
@@ -22,16 +22,17 @@ const TableCart = () => {
       >
         {dataCart.length <= 0 && (
           <Flex w="100%" h="50vh" alignItems="center" justifyContent="center">
-            <NextLink href={`/product`}>
-              <Link
+            <NextLink href="/product" as="/product">
+              <Text
                 width="200px"
                 height="40px"
                 padding="5px 15px"
                 backgroundColor="black"
                 color="white"
+                cursor="pointer"
               >
                 Buy Something
-              </Link>
+              </Text>
             </NextLink>
           </Flex>
         )}
@@ -46,17 +47,15 @@ const TableCart = () => {
             columnGap="20px"
             key={index}
           >
-            <NextLink href={`/product/${cart.product.id}`}>
-              <Link flex="1" display="flex" minHeight="150px">
+            <NextLink href="/product/[id]" as={`/product/${cart.product.id}`}>
+              <Box flex="1" padding={[8]} display="flex" height="150px">
                 <Image
                   src={cart.product.image}
-                  margin={['auto', 'auto']}
-                  maxW={['110px', '100px']}
-                  maxH={['200px', '140px']}
-                  flex="1"
+                  width={80}
+                  height={100}
                   alt={cart.product.title}
                 />
-              </Link>
+              </Box>
             </NextLink>
             <Flex
               alignItems={['start', 'center']}

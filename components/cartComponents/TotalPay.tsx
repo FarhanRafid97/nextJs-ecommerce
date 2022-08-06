@@ -76,6 +76,7 @@ const TotalPay = () => {
         <Flex justifyContent="space-between">
           <Text>Assuransi</Text>
           <Switch
+            title="asuransi"
             colorScheme="blue"
             onChange={(e) => {
               if (e.target.checked === true) {
