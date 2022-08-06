@@ -18,7 +18,7 @@ function CollapseEx() {
           <Text fontSize="16px">Deskription</Text>
           <Button
             fontSize="14px"
-            colorScheme="orange"
+            colorScheme="facebook"
             _focus={{ border: 'none' }}
             onClick={onToggle}
           >

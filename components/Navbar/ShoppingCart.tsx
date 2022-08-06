@@ -14,14 +14,14 @@ import {
 import NextLink from 'next/link';
 import React from 'react';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
-import { ChartProduct } from '../../src/redux/actions/typeChartProduct';
+import { ChartProduct } from '../../src/redux/ActionTypes/typeChartProduct';
 import { useSelector } from '../../src/redux/store';
 import CartItems from './CartItems';
 
 const ShoppingCart = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef() as any;
-  const cartItems = useSelector((state) => state.chart as ChartProduct[]);
+  const cartItems = useSelector((state) => state.chartSlice.value);
 
   return (
     <>

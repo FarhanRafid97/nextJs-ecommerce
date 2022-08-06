@@ -3,7 +3,7 @@ import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
 import { useRouter } from 'next/router';
 import DetailProduct from '../../components/DetailProduct';
 import data from '../../product.json';
-
+import Head from 'next/head';
 interface DetailProps {
   params: { id?: number };
 }
@@ -22,6 +22,12 @@ const Detail: React.FC<DetailProps> = ({ params }) => {
       width="100vw"
       flexDirection={['column', 'column', 'column', 'row']}
     >
+      <Head>
+        <title>{product.title}</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="robots" content="index, follow" />
+        <meta name="description" content={product.description} />
+      </Head>
       <DetailProduct product={product} router={router} />
     </Flex>
   );

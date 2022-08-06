@@ -2,14 +2,14 @@ import { Button, Container, Flex, Box, Text } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import React from 'react';
 import { AiFillDelete } from 'react-icons/ai';
-import { addTotal, removeChartData } from '../../src/redux/actions/product';
-import { ChartProduct } from '../../src/redux/actions/typeChartProduct';
+import { removeChartItem, addTotalChart } from '../../src/redux/slice/chart';
+
 import { useDispatch, useSelector } from '../../src/redux/store';
 import Image from 'next/image';
 const TableCart = () => {
   const dispatch = useDispatch();
-  const dataCart = useSelector((state) => state.chart as ChartProduct[]);
-
+  const dataCart = useSelector((state) => state.chartSlice.value);
+  console.log(dataCart);
   return (
     <Container minW="100%">
       <Flex
@@ -20,7 +20,7 @@ const TableCart = () => {
         rowGap="15px"
         border="1px solid black"
       >
-        {dataCart.length <= 0 && (
+        {dataCart.length === 0 && (
           <Flex w="100%" h="50vh" alignItems="center" justifyContent="center">
             <NextLink href="/product" as="/product">
               <Text
@@ -50,9 +50,9 @@ const TableCart = () => {
             <NextLink href="/product/[id]" as={`/product/${cart.product.id}`}>
               <Box flex="1" padding={[8]} display="flex" height="150px">
                 <Image
-                  src={cart.product.image}
                   width={80}
                   height={100}
+                  src={cart?.product?.image}
                   alt={cart.product.title}
                 />
               </Box>
@@ -83,9 +83,9 @@ const TableCart = () => {
                   width="5px"
                   height="25px"
                   onClick={() => {
-                    dispatch(addTotal(index, 'minus'));
+                    dispatch(addTotalChart({ index, params: 'minus' }));
                     if (cart.jumlah === 0) {
-                      return dispatch(removeChartData(index));
+                      return dispatch(removeChartItem(index));
                     }
                   }}
                 >
@@ -96,7 +96,9 @@ const TableCart = () => {
 
                 <Button
                   height="25px"
-                  onClick={() => dispatch(addTotal(index, 'add'))}
+                  onClick={() =>
+                    dispatch(addTotalChart({ index, params: 'add' }))
+                  }
                 >
                   +
                 </Button>
@@ -109,7 +111,7 @@ const TableCart = () => {
                 padding="2px"
                 backgroundColor="red.600"
                 color="white"
-                onClick={() => dispatch(removeChartData(index))}
+                onClick={() => dispatch(removeChartItem({ index }))}
               >
                 <AiFillDelete />
               </Button>

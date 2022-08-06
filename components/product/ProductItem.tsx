@@ -1,8 +1,8 @@
-import { Flex, Link, Text, Box } from '@chakra-ui/react';
+import { Box, Flex, Text } from '@chakra-ui/react';
+import Image from 'next/image';
 import NextLink from 'next/link';
 import React from 'react';
-import { Product } from '../../src/redux/actions/typeActionProduct';
-import Image from 'next/image';
+import { Product } from '../../src/redux/ActionTypes/typeActionProduct';
 interface ProductItem {
   product: Product;
   key: number;
@@ -15,6 +15,7 @@ const ProductItem: React.FC<ProductItem> = ({ product }) => {
         padding="15px"
         backgroundColor="white"
         _hover={{ textDecoration: 'none' }}
+        cursor="pointer"
       >
         <Flex padding={['2rem 1.3rem', '4.5rem']} height={['200px', '350px']}>
           <Image

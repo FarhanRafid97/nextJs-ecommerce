@@ -1,17 +1,13 @@
 import { ActionType } from './product';
-import { Product, ProductType } from '../actions/typeActionProduct';
+import { Product } from './typeActionProduct';
 import { ChartTypeAction } from './chartType';
-import { ChartProduct } from '../actions/typeChartProduct';
+import { ChartProduct } from './typeChartProduct';
 
 export interface ProductActionType {
   type: ActionType;
   data: Product[];
 }
 
-// export interface RemoveChart {
-//   type: ChartTypeAction.REMOVE_CHART;
-//   data: number;
-// }
 export interface ChartActionTypeAdd {
   type: ChartTypeAction.ADD_CHART | ChartTypeAction.ADD_TOTAL_CART;
   data: ChartProduct;

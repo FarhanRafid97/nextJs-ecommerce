@@ -1,11 +1,12 @@
 import { Flex, Select, Text } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import {
-  getDataProduk,
-  getJaweleryCategory,
-  getMenCategory,
-  getWomenCategory,
-} from '../../src/redux/actions/product';
+  jawelryProduct,
+  menProduct,
+  womenProduct,
+  allProduct,
+} from '../../src/redux/slice/product';
+import { CategoryType } from '../../src/redux/slice/product';
 import { useDispatch } from '../../src/redux/store';
 
 interface HeaderProduct {
@@ -20,28 +21,28 @@ const HeaderProduct: React.FC<HeaderProduct> = ({ setLoading }) => {
       setLoading(true);
       setTimeout(() => {
         setCategoryNow('All Product');
-        dispatch(getDataProduk());
+        dispatch(allProduct());
         setLoading(false);
       }, 300);
     } else if (e.target.value === 'women') {
       setLoading(true);
       setTimeout(() => {
-        setCategoryNow('Women Product');
-        dispatch(getWomenCategory());
+        dispatch(womenProduct(CategoryType.WOMEN));
+        dispatch(womenProduct({}));
         setLoading(false);
       }, 300);
     } else if (e.target.value === 'men') {
       setLoading(true);
       setTimeout(() => {
         setCategoryNow('Men Product');
-        dispatch(getMenCategory());
+        dispatch(menProduct(CategoryType.MEN));
         setLoading(false);
       }, 300);
     } else {
       setLoading(true);
       setTimeout(() => {
         setCategoryNow('Jawelery');
-        dispatch(getJaweleryCategory());
+        dispatch(jawelryProduct(CategoryType.ACCESSORIES));
         setLoading(false);
       }, 300);
     }
