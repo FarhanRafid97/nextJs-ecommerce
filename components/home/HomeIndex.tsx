@@ -1,7 +1,8 @@
-import { Box, Flex, Image, Link, Text } from '@chakra-ui/react';
+import { Box, Flex, Link, Text } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import React from 'react';
 import product from '../../product.json';
+import Image from 'next/image';
 import homeStyle from './home.module.css';
 
 const HomeIndex = () => {
@@ -53,7 +54,10 @@ const HomeIndex = () => {
           alignItems="center"
           justifyContent="center"
         >
-          <NextLink href={`/product/${dataProductHome[0].id}`}>
+          <NextLink
+            href="/product/[id]"
+            as={`/product/${dataProductHome[0].id}`}
+          >
             <Link
               display="flex"
               alignItems="center"
@@ -61,7 +65,8 @@ const HomeIndex = () => {
               className={homeStyle.imageHome}
             >
               <Image
-                width={['300px', '100%']}
+                width={720}
+                height={720}
                 src={dataProductHome[0].image}
                 alt={dataProductHome[0].title}
               />
@@ -102,7 +107,7 @@ const HomeIndex = () => {
                 $ {product.price}
               </Text>
             </Flex>
-            <NextLink href={`/product/${product.id}`}>
+            <NextLink href="/product/[id]" as={`/product/${product.id}`}>
               <Link
                 maxWidth="100%"
                 display="flex"
@@ -111,7 +116,8 @@ const HomeIndex = () => {
                 className={homeStyle.imageHome}
               >
                 <Image
-                  width={['300px', '400px']}
+                  width={720}
+                  height={720}
                   src={product.image}
                   alt={product.title}
                 />

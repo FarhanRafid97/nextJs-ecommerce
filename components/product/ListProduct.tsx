@@ -66,8 +66,8 @@ const ListProduct: React.FC<{}> = () => {
             />
           </Flex>
         )}
-        {dataLimit.map((product, index) => (
-          <ProductItem product={product} key={index} />
+        {dataLimit.map((product) => (
+          <ProductItem product={product} key={product.id} />
         ))}
       </Flex>
     </Flex>

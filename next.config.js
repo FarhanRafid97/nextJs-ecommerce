@@ -2,7 +2,12 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['fakestoreapi.com', 'demo.vercel.store'],
+    domains: [
+      'fakestoreapi.com',
+      'demo.vercel.store',
+      'nextjs-eshop.vercel.app',
+      'bit.ly',
+    ],
   },
 };
 

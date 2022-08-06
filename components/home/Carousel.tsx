@@ -1,8 +1,9 @@
-import { Box, Flex, Image, Link, Text } from '@chakra-ui/react';
+import { Box, Flex, Link, Text } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import React from 'react';
 import dataProduct from '../../product.json';
 import homeStyle from './home.module.css';
+import Image from 'next/image';
 
 const Carousel = () => {
   const carouselProduct = dataProduct.products
@@ -40,8 +41,8 @@ const Carousel = () => {
             >
               <Image
                 src={product?.image}
-                width={['130px', '180px', '200px', '220px']}
-                height={['130px', '180px', '200px', '250px']}
+                width={120}
+                height={120}
                 alt="Landscape picture"
               />
             </Flex>
