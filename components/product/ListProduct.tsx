@@ -1,21 +1,16 @@
 import { Flex, Spinner } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
-
-import data from '../../product.json';
-import { getDataProduk } from '../../src/redux/actions/product';
-import { useDispatch, useSelector } from '../../src/redux/store';
+import { useSelector } from '../../src/redux/store';
+import { CategoryType } from '../../utils/product';
 import HeaderProduct from './HeaderProduct';
 import ProductItem from './ProductItem';
 
 const ListProduct: React.FC<{}> = () => {
-  const dispatch = useDispatch();
   const [limit, setLimit] = useState(8);
-  const dataProducts = useSelector((state) => state.product);
+  // const dataProducts = useSelector((state) => state.product);
+  const [category, setCategory] = useState(CategoryType.ALL);
+  const dataProducts = useSelector((state) => state.productSlice.value);
   const dataLimit = dataProducts.filter((data, index: number) => index < limit);
-
-  useEffect(() => {
-    dispatch(getDataProduk());
-  }, [dispatch]);
 
   useEffect(() => {
     const scrollAddData = () => {
@@ -23,7 +18,7 @@ const ListProduct: React.FC<{}> = () => {
         document.documentElement.scrollHeight -
         document.documentElement.clientHeight;
 
-      if (maxHeigh - 100 <= window.scrollY && limit !== data.products.length) {
+      if (maxHeigh - 100 <= window.scrollY && limit !== dataProducts.length) {
         setTimeout(() => {
           setLimit(limit + 4);
         }, 500);
@@ -33,7 +28,7 @@ const ListProduct: React.FC<{}> = () => {
     return () => {
       window.removeEventListener('scroll', scrollAddData);
     };
-  }, [limit]);
+  }, [dataProducts.length, limit]);
 
   const [loading, setLoading] = useState<boolean>(false);
   return (

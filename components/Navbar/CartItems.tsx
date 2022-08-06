@@ -2,10 +2,10 @@ import { Box, Button, Flex, Text } from '@chakra-ui/react';
 import Image from 'next/image';
 import React from 'react';
 import { AiFillDelete } from 'react-icons/ai';
-import { removeChartData } from '../../src/redux/actions/product';
-import { ChartProduct } from '../../src/redux/actions/typeChartProduct';
-import { useDispatch } from '../../src/redux/store';
 
+import { ChartProduct } from '../../src/redux/ActionTypes/typeChartProduct';
+import { useDispatch } from '../../src/redux/store';
+import { removeChartItem } from '../../src/redux/slice/chart';
 interface CartItemPorps {
   items: ChartProduct;
   index: number;
@@ -56,7 +56,7 @@ const CartItems: React.FC<CartItemPorps> = ({ items, index }) => {
         variant="solid"
         width="100%"
         borderRadius="1px"
-        onClick={() => dispatch(removeChartData(index))}
+        onClick={() => dispatch(removeChartItem({ index }))}
       >
         <AiFillDelete /> Remove
       </Button>

@@ -7,7 +7,9 @@ import {
   Text,
   UnorderedList,
   useToast,
+  Box,
 } from '@chakra-ui/react';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import {
@@ -17,8 +19,8 @@ import {
   AiOutlineShoppingCart,
 } from 'react-icons/ai';
 import { IoIosArrowBack } from 'react-icons/io';
-import { addToChart } from '../src/redux/actions/product';
-import { Product } from '../src/redux/actions/typeActionProduct';
+import { Product } from '../src/redux/ActionTypes/typeActionProduct';
+import { addChart } from '../src/redux/slice/chart';
 import { useDispatch } from '../src/redux/store';
 import CollapseEx from './detailProductComponents/CollapsEx';
 import HowMany from './detailProductComponents/HowMany';
@@ -55,7 +57,7 @@ const DetailProduct: React.FC<DetailProduct> = ({ product, router }) => {
       duration: 2000,
       isClosable: true,
     });
-    dispatch(addToChart({ jumlah: value, size: size, product }));
+    dispatch(addChart({ jumlah: value, size: size, product }));
   };
 
   return (
@@ -69,6 +71,8 @@ const DetailProduct: React.FC<DetailProduct> = ({ product, router }) => {
         padding="50px"
       >
         <Button
+          aria-label="back button"
+          name="back"
           position="absolute"
           bg="black"
           top="0"
@@ -84,6 +88,7 @@ const DetailProduct: React.FC<DetailProduct> = ({ product, router }) => {
         </Button>
 
         <Button
+          aria-label="favorite items"
           position="absolute"
           bg="black"
           top="0"
@@ -99,7 +104,14 @@ const DetailProduct: React.FC<DetailProduct> = ({ product, router }) => {
           {!like ? <AiOutlineHeart /> : <AiFillHeart />}
         </Button>
 
-        <Img src={product?.image} maxW={['200px', '600px']} maxH="500px" />
+        <Box w="400px">
+          <Image
+            src={product?.image}
+            width={682}
+            height={700}
+            alt={product.title}
+          />
+        </Box>
       </Flex>
       <Container
         color="gray.300"
@@ -147,10 +159,12 @@ const DetailProduct: React.FC<DetailProduct> = ({ product, router }) => {
         </Flex>
         <Flex padding="30px 25px" columnGap="20px">
           <Button
+            aria-label="buy now"
             width="50%"
             display="flex"
             columnGap="4px"
-            colorScheme="orange"
+            colorScheme="facebook"
+            color="gray.50"
             _focus={{ border: 'none' }}
           >
             <AiOutlineShopping />
@@ -158,8 +172,10 @@ const DetailProduct: React.FC<DetailProduct> = ({ product, router }) => {
           </Button>
 
           <Button
+            aria-label="chart"
+            name="add to chart"
             width="50%"
-            colorScheme="orange"
+            colorScheme="facebook"
             _focus={{ border: 'none' }}
             display="flex"
             columnGap="4px"

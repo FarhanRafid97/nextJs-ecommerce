@@ -1,19 +1,23 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import { AppProps } from 'next/app';
 import Layout from '../components/Layout';
-import { wrapper } from '../src/redux/store';
+import { store } from '../src/redux/store';
+
+import { Provider } from 'react-redux';
 import '../styles/layout.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <ChakraProvider>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <Provider store={store}>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </Provider>
       </ChakraProvider>
     </>
   );
 }
 
-export default wrapper.withRedux(MyApp);
+export default MyApp;

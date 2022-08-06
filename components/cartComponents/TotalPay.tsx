@@ -1,10 +1,10 @@
 import { Button, Flex, Select, Switch, Text } from '@chakra-ui/react';
 import React, { useState } from 'react';
-import { ChartProduct } from '../../src/redux/actions/typeChartProduct';
+import { ChartProduct } from '../../src/redux/ActionTypes/typeChartProduct';
 import { useSelector } from '../../src/redux/store';
 
 const TotalPay = () => {
-  const dataCart = useSelector((state) => state.chart as ChartProduct[]);
+  const dataCart = useSelector((state) => state.chartSlice.value);
   const totalPerProduct = dataCart?.map((a) => a.jumlah * a.product.price);
 
   const [shipPrice, setShipPrice] = useState(0);

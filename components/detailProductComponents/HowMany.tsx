@@ -23,7 +23,7 @@ const HowMany: React.FC<HowMnayProps> = ({ value, setValue }) => {
       <Button
         borderRadius="none"
         borderLeftRadius="5px"
-        colorScheme="orange"
+        colorScheme="facebook"
         _focus={{ border: '1px solid white' }}
         border="1px solid white"
         onClick={reductionValue}
@@ -39,7 +39,7 @@ const HowMany: React.FC<HowMnayProps> = ({ value, setValue }) => {
         borderRadius="none"
       />
       <Button
-        colorScheme="orange"
+        colorScheme="facebook"
         _focus={{ border: '1px solid white' }}
         borderRadius="none"
         border="1px solid white"
