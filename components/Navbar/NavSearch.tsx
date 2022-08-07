@@ -1,9 +1,9 @@
-import { Flex, Image, Input, Link, Text } from '@chakra-ui/react';
+import { Flex, Input, Link, Text } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import React, { Dispatch, SetStateAction, useState } from 'react';
 import data from '../../product.json';
 import navbarStyle from './navbar.module.css';
-
+import Image from 'next/image';
 interface NavSearchProps {
   setSearch: Dispatch<SetStateAction<boolean>>;
   search: boolean;
@@ -84,8 +84,8 @@ const NavSearch: React.FC<NavSearchProps> = ({ setSearch, search }) => {
                   <Flex alignItems="center" padding="15px" columnGap="15px">
                     <Image
                       src={product.image}
-                      w="60px"
-                      h="80px"
+                      width={60}
+                      height={80}
                       alt={product.title}
                     />
                     <Text fontSize="14px" fontWeight="light">

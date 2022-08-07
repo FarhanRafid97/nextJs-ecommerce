@@ -7,7 +7,6 @@ import {
   DrawerHeader,
   DrawerOverlay,
   Flex,
-  Image,
   Input,
   Link,
   Text,
@@ -18,7 +17,7 @@ import React, { useState } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 import data from '../../product.json';
 import navbarStyle from './navbar.module.css';
-
+import Image from 'next/image';
 const SearchMobile: React.FC<{}> = () => {
   const [searchVal, setSearchVal] = useState('    ');
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -86,8 +85,8 @@ const SearchMobile: React.FC<{}> = () => {
                         >
                           <Image
                             src={product.image}
-                            w="50px"
-                            h="70px"
+                            width={50}
+                            height={70}
                             alt={product.title}
                           />
                           <Text fontSize="10px" fontWeight="light">

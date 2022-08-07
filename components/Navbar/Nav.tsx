@@ -44,7 +44,7 @@ const Nav: React.FC<{}> = () => {
           alignItems="center"
         >
           <Flex alignItems="center" columnGap="10px">
-            <Flex display={['flex', 'flex', 'flex', 'none']}>
+            <Flex display={['flex', 'flex', 'none', 'none']}>
               <SearchMobile />
             </Flex>
 
@@ -60,7 +60,7 @@ const Nav: React.FC<{}> = () => {
             </NextLink>
           </Flex>
           <Flex
-            display={['none', 'flex']}
+            display={['none', 'none', 'flex', 'flex']}
             padding="7px"
             bg="white"
             width={['200px', '200px', '250px', '300px']}
