@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Product } from '../ActionTypes/typeActionProduct';
-import { ChartProduct } from '../ActionTypes/typeChartProduct';
+
 import data from '../../../product.json';
 
 export enum CategoryType {

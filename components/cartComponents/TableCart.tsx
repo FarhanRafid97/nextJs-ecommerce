@@ -85,7 +85,7 @@ const TableCart = () => {
                   onClick={() => {
                     dispatch(addTotalChart({ index, params: 'minus' }));
                     if (cart.jumlah === 0) {
-                      return dispatch(removeChartItem(index));
+                      return dispatch(removeChartItem({ index }));
                     }
                   }}
                 >

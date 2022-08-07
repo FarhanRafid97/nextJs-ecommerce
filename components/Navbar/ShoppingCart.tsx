@@ -57,7 +57,7 @@ const ShoppingCart = () => {
         size={['full', 'sm']}
       >
         <DrawerOverlay />
-        <DrawerContent backgroundColor="black" color="white">
+        <DrawerContent backgroundColor="black" color="white" h="100vh">
           <DrawerCloseButton />
           <DrawerHeader>Your items{`(${cartItems.length})`}</DrawerHeader>
 

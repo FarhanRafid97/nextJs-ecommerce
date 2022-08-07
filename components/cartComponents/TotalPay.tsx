@@ -73,8 +73,8 @@ const TotalPay = () => {
           <Text>Shipping price</Text>
           <Text>$ {shipPrice}</Text>
         </Flex>
-        <Flex justifyContent="space-between">
-          <Text>Assuransi</Text>
+        <Flex justifyContent="space-between" mt={4}>
+          <Text>Insurance</Text>
           <Switch
             title="asuransi"
             colorScheme="blue"
